@@ -1,0 +1,23 @@
+{
+    "name": "twigger/unioncloud",
+    "description": "An API Wrapper for the NUS UnionCloud platform",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Toby Twigger",
+            "email": "tt15951@bristol.ac.uk"
+        }
+    ],
+    "require": {
+        "nesbot/carbon": "dev-master",
+        "guzzlehttp/guzzle": "^6.3@dev",
+        "ext-json": "^1.6"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+         "psr-4": {
+             "Twigger\\UnionCloud\\": "src/"
+         }
+    }
+}

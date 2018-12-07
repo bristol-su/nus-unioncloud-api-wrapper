@@ -25,4 +25,13 @@ trait Authenticates
 
         return true;
     }
+
+    /**
+     * Add header to guzzle HTTP options
+     */
+    public function addHeader($options, $headerName, $headerValue)
+    {
+        $options['headers'][$headerName] = $headerValue;
+        return $options;
+    }
 }

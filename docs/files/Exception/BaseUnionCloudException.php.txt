@@ -4,7 +4,7 @@ namespace Twigger\UnionCloud\Exception;
 
 use Throwable;
 
-class UnionCloudException extends \Exception {
+class BaseUnionCloudException extends \Exception {
 
     /**
      * The unioncloud response code

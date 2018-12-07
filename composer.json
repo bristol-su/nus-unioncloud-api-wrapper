@@ -11,7 +11,7 @@
     ],
     "require": {
         "nesbot/carbon": "dev-master",
-        "guzzlehttp/guzzle": "^6.3@dev",
+        "guzzlehttp/guzzle": "^6.3",
         "ext-json": "^1.6"
     },
     "minimum-stability": "dev",

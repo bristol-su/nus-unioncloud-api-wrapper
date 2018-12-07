@@ -4,7 +4,7 @@ namespace Twigger\UnionCloud\Exception\Authentication;
 
 use Throwable;
 
-class UnionCloudResponseAuthenticationException extends UnionCloudAuthenticationException
+class UnionCloudResponseAuthenticationException extends BaseUnionCloudAuthenticationException
 {
 
     public function __construct($message, $code, Throwable $previous = null, $unionCloudCode=0)

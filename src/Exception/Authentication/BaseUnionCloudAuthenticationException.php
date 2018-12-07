@@ -1,10 +1,11 @@
 <?php
 
-namespace Twigger\UnionCloud\Exception;
+namespace Twigger\UnionCloud\Exception\Authentication;
 
+use Twigger\UnionCloud\Exception\BaseUnionCloudException;
 use Throwable;
 
-class InsufficientPermissionException extends UnionCloudException
+class BaseUnionCloudAuthenticationException extends BaseUnionCloudException
 {
 
     public function __construct($message = "", $code = 0, Throwable $previous = null, $unionCloudCode=0)

@@ -5,7 +5,7 @@ namespace Twigger\UnionCloud;
 use Twigger\UnionCloud\Auth\Authentication;
 use Twigger\UnionCloud\Auth\IAuthenticator;
 use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
-use Twigger\UnionCloud\Exception\Authentication\UnionCloudAuthenticationException;
+use Twigger\UnionCloud\Exception\Authentication\BaseUnionCloudAuthenticationException;
 use Twigger\UnionCloud\Request;
 
 /**
@@ -21,6 +21,8 @@ class UnionCloud
      */
     protected $authentication = null;
 
+    protected $configuration;
+
     /**
      * UnionCloud constructor.
      *
@@ -28,12 +30,11 @@ class UnionCloud
      *
      * @param null $authParams
      * @param string $authenticator
-     *
-     * @throws UnionCloudAuthenticationException
      */
     public function __construct($authParams = null, $authenticator=null)
     {
         $this->authentication = new Authentication($authParams, $authenticator);
+        $this->configuration = new Configuration();
     }
 
     /**
@@ -41,7 +42,7 @@ class UnionCloud
      *
      * @param IAuthenticator $authenticator
      *
-     * @throws UnionCloudAuthenticationException
+     * @throws BaseUnionCloudAuthenticationException
      */
     public function setAuthenticator($authenticator)
     {
@@ -64,6 +65,16 @@ class UnionCloud
         return;
     }
 
+    public function setBaseURL($baseURL)
+    {
+        $this->configuration->setBaseUrl($baseURL);
+    }
+
+    public function setMode($mode)
+    {
+        $this->configuration->setMode($mode);
+    }
+
     /**
      * Retrieves a new Event Request
      *
@@ -74,7 +85,7 @@ class UnionCloud
     public function events()
     {
         $this->checkReadyForRequest();
-        return new Request\EventRequest($this->authentication);
+        return new Request\EventRequest($this->authentication, $this->configuration);
     }
 
 }

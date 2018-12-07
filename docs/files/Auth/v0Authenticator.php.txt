@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * V0 Authenticator
+ */
 namespace Twigger\UnionCloud\Auth;
 
 use Carbon\Carbon;
@@ -11,23 +13,81 @@ use Twigger\UnionCloud\Exception\Authentication\AuthenticationIncorrectParameter
 use Twigger\UnionCloud\Exception\Authentication\AuthenticationParameterMissing;
 use Twigger\UnionCloud\Exception\Authentication\UnionCloudResponseAuthenticationException;
 use Twigger\UnionCloud\Exception\InsufficientPermissionException;
-use Twigger\UnionCloud\Exception\UnionCloudException;
+use Twigger\UnionCloud\Exception\BaseUnionCloudException;
 use Twigger\UnionCloud\Traits\Authenticates;
 
+/**
+ * The authenticator for version 0 of the API.
+ *
+ * Version 0 uses the API Endpoint '/api/authenticate'
+ * to collect an Authentication token. This is then
+ * added into the header of the request in 'auth_token'
+ *
+ * Class v0Authenticator
+ *
+ * @package Twigger\UnionCloud\Auth
+ */
 class v0Authenticator implements IAuthenticator
 {
     use Authenticates;
 
     // Define the configuration variables
-    protected $email;
-    protected $password;
-    protected $appID;
-    protected $appPassword;
-    protected $apiURL;
+
+    /**
+     * User Email
+     *
+     * @var string
+     */
+    private $email;
+    /**
+     * User Password
+     *
+     * @var string
+     */
+    private $password;
+    /**
+     * User App ID
+     *
+     * @var string
+     */
+    private $appID;
+    /**
+     * User App Password
+     *
+     * @var string
+     */
+    private $appPassword;
+    /**
+     * User Auth Token
+     *
+     * @var string
+     */
     private $authToken;
+    /**
+     * User Union ID
+     *
+     * @var string
+     */
     private $union_id;
+    /**
+     * Expiry of the auth token
+     *
+     * @var integer
+     */
     private $expires;
 
+    /**
+     * Ensure the necessary parameters for making a request
+     * are present within the $parameters array.
+     *
+     * Uses the Authenticates trait for $this->checkParameterIndices.
+     * This function simply ensures the required parameters are present
+     * in the parameters from the user.
+     *
+     * @param array $parameters
+     *
+     * @return bool
+     */
     public function validateParameters($parameters)
     {
         $requiredParameters = [
@@ -35,42 +95,41 @@ class v0Authenticator implements IAuthenticator
             'password',
             'appID',
             'appPassword',
-            'apiURL',
         ];
         return $this->checkParameterIndices($requiredParameters, $parameters);
     }
 
     /**
-     * @param array $parameters
+     * Set the authentication parameters
      *
-     * @throws AuthenticationParameterMissing
+     * Save the authentication configuration
+     * by storing the user values in class properties
+     *
+     * @param array $parameters
      */
     public function setParameters($parameters)
     {
-
-        // Ensure the parameters are valid
-        if(!$this->validateParameters($parameters))
-        {
-            throw new AuthenticationParameterMissing();
-        };
 
         $this->email = $parameters['email'];
         $this->password = $parameters['password'];
         $this->appID = $parameters['appID'];
         $this->appPassword = $parameters['appPassword'];
-        $this->apiURL = $parameters['apiURL'];
     }
 
-    protected $rrrr;
     /**
-     * @return bool|mixed|\Psr\Http\Message\ResponseInterface
+     * Make a call to the api/authenticate endpoint. Ensure the
+     * authentication token is received and save it.
+     *
+     * @param string $baseURL
+     *
+     * @return void
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws UnionCloudResponseAuthenticationException
      */
-    public function authenticate()
+    public function authenticate($baseURL)
     {
-        $client = new Client(['base_uri' => $this->apiURL]);
+        $client = new Client(['base_uri' => $baseURL]);
 
         try {
             $response = $client->request(
@@ -78,7 +137,7 @@ class v0Authenticator implements IAuthenticator
                 '/api/authenticate',
                 $this->getDefaultOptions()
             );
-        } catch (RequestException $e) {
+        } catch (RequestException $e) { // TODO remove this check below. We can't throw a 401 on auth!
             if(!$e->getCode() === 401)
             {
                 throw new AuthenticationExpiredException('Auth Token Expired', 401, $e);
@@ -88,13 +147,13 @@ class v0Authenticator implements IAuthenticator
         }
 
         $this->extractAuthToken($response);
-
-        //var_dump($response);
-        // Save the API key
     }
 
-
-
+    /**
+     * Build up an array to pass in the body of the authentication request
+     *
+     * @return array
+     */
     private function createBodyArray()
     {
         return [
@@ -108,6 +167,11 @@ class v0Authenticator implements IAuthenticator
         ];
     }
 
+    /**
+     * Get the options for the authentication request.
+     *
+     * @return array GuzzleHTTP option array
+     */
     private function getDefaultOptions()
     {
         return [
@@ -122,7 +186,10 @@ class v0Authenticator implements IAuthenticator
             'debug' => false
         ];
     }
+
     /**
+     * Check the body of the authentication request and ensure no errors were produced.
+     *
      * @param RequestException $e
      *
      * @throws UnionCloudResponseAuthenticationException
@@ -171,6 +238,9 @@ class v0Authenticator implements IAuthenticator
     }
 
     /**
+     * Get human readable error messages corresponding to those on the
+     * UnionCloud API Documentation
+     *
      * @return array
      */
     private function getAuthFailureCodes()
@@ -200,6 +270,8 @@ class v0Authenticator implements IAuthenticator
     }
 
     /**
+     * Get the auth token from the API response from UnionCloud
+     *
      * @param ResponseInterface $response
      * @throws UnionCloudResponseAuthenticationException
      */
@@ -221,9 +293,25 @@ class v0Authenticator implements IAuthenticator
         }
     }
 
+    /**
+     * Get the auth token
+     *
+     * @return string
+     */
+    private function getAuthToken()
+    {
+        return $this->authToken;
+    }
+
+    /**
+     * Add authentication into the request headers.
+     *
+     * @param $options
+     * @return array|mixed
+     */
     public function addAuthentication($options)
     {
-        $options['auth_token'] = $this->authToken;
+        $options = $this->addHeader($options, 'auth_token', $this->getAuthToken());
         return $options;
     }
 }

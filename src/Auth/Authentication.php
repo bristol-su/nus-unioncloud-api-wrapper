@@ -1,28 +1,48 @@
 <?php
+/**
+ * Authentication Class
+ */
 
 namespace Twigger\UnionCloud\Auth;
 
+use Twigger\UnionCloud\Configuration;
 use Twigger\UnionCloud\Exception\Authentication\AuthenticationParameterMissing;
 use Twigger\UnionCloud\Exception\Authentication\AuthenticatorMustExtendIAuthenticator;
 use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
 
+/**
+ * Thanks to a changeover in the authentication method
+ * for the UnionCloud API in late 2018, this package aims
+ * to allow for different authenticators to be plugged in.
+ *
+ * This is a wrapper which controls an authenticator. A
+ * class is an authenticator if it extends IAuthenticator.
+ *
+ * Class Authentication
+ * @package Twigger\UnionCloud\Auth
+ */
 class Authentication
 {
 
     /**
+     * Implementation of the IAuthenticator interface.
+     *
+     * This will be used to authenticate the API
+     *
      * @var IAuthenticator
      */
     private $authenticator;
+
     /**
      * Authentication constructor.
      *
-     * Creates an Authentication instance if possible
+     * Creates and populates an authenticator if possible.
      *
-     * @param null $authParams
-     * @param null $authenticator
+     * @param array $authParams
+     * @param IAuthenticator $authenticator
      *
-     * @throws AuthenticatorNotFound
      * @throws AuthenticationParameterMissing
+     * @throws AuthenticatorNotFound
      */
     public function __construct($authParams = null, $authenticator=null)
     {
@@ -37,7 +57,11 @@ class Authentication
                 throw new AuthenticatorNotFound();
             }
 
-            // Set the parameters
+            // Validate and set the parameters
+            if( ! $this->authenticator->validateParameters($authParams) )
+            {
+                throw new AuthenticationParameterMissing();
+            }
             $this->authenticator->setParameters($authParams);
         }
     }
@@ -48,6 +72,7 @@ class Authentication
      * @param IAuthenticator $authenticator The authenticator to use for authentication
      *
      * @throws AuthenticatorMustExtendIAuthenticator
+     * @throws AuthenticationParameterMissing
      *
      * @return void
      */
@@ -62,15 +87,24 @@ class Authentication
         throw new AuthenticatorMustExtendIAuthenticator();
     }
 
-    public function addAuthentication($options)
-    {
-        $this->authenticator->authenticate();
 
+    /**
+     * Add authentication options to a GuzzleHTTP request option array.
+     *
+     * @param array $options
+     * @param Configuration $configuration
+     *
+     * @return array Guzzle HTTP options with authentication options
+     */
+    public function addAuthentication($options, $configuration)
+    {
+        $this->authenticator->authenticate($configuration->getBaseURL());
         return $this->authenticator->addAuthentication($options);
     }
 
     /**
-     * Check the authenticator is present and ready
+     * Check the authenticator has been loaded and is ready to be used.
+     *
      * @return bool
      */
     public function hasAuthentication()

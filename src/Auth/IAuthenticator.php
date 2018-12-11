@@ -5,10 +5,13 @@
 namespace Twigger\UnionCloud\Auth;
 
 /**
- * Interface to guide the creation of an authenticator
+ * Interface to guide the creation of an authenticator.
+ *
+ * An authenticator is the class that actually deals with
+ * Authentications. The Authentication wrapper interacts with it.
  *
  * Interface IAuthenticator
- * @package Twigger\UnionCloud\Auth
+ * @package Twigger\UnionCloud
  */
 interface IAuthenticator
 {
@@ -27,30 +30,6 @@ interface IAuthenticator
      * @return bool
      */
     public function validateParameters($parameters);
-
-    /**
-     * Save the parameters into the Authenticator class
-     *
-     * This function takes an associative array of authentication
-     * parameters required by the authenticator, and
-     * saves them to be used later.
-     *
-     * For example, if the only parameter required by the
-     * API was an API key, we could implement this function
-     * in the following:
-     *
-     * private $apiKey;
-     *
-     * public function setParameters($parameters)
-     * {
-     *      $this->apiKey = $parameters['api_key'];
-     * }
-     *
-     * @param array $parameters
-     *
-     * @return void
-     */
-    public function setParameters($parameters);
 
     /**
      * Transform the Guzzle HTTP request options to include the authentication
@@ -84,8 +63,44 @@ interface IAuthenticator
      *
      * @param string $baseURL Base URL for making API calls
      *
-     * @return bool
+     * @return void
      */
     public function authenticate($baseURL);
 
+    /**
+     * Determine if the authenticate function needs to be called.
+     *
+     * For example, you could check an API key is present and
+     * the expiry is still in the future.
+     *
+     * @return bool
+     */
+    public function needsRefresh();
+
+    /**
+     * Save the parameters into the Authenticator class
+     *
+     * This function takes an associative array of authentication
+     * parameters required by the authenticator, and
+     * saves them to be used later.
+     *
+     * For example, if the only parameter required by the
+     * API was an API key, we could implement this function
+     * in the following:
+     *
+     * private $apiKey;
+     *
+     * public function setParameters($parameters)
+     * {
+     *      $this->apiKey = $parameters['api_key'];
+     * }
+     *
+     * You may assume all the parameters are present, since we
+     * will call your 'validateParameters' function first.
+     *
+     * @param array $parameters
+     *
+     * @return void
+     */
+    public function setParameters($parameters);
 }

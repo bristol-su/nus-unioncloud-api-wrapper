@@ -1,7 +1,18 @@
 <?php
-
+/**
+ * Authenticates Trait
+ */
 namespace Twigger\UnionCloud\Traits;
 
+/**
+ * Helper functions for Authenticators
+ *
+ * Includes:
+ *      an array_keys_exist function, to validate parameters are all given
+ *      A header function to add a header to Guzzle HTTP options
+ *
+ * @package Twigger\UnionCloud
+ */
 trait Authenticates
 {
     /**
@@ -15,7 +26,7 @@ trait Authenticates
      *
      * @return bool
      */
-    public function checkParameterIndices($keys, $parameters)
+    public function authArrayKeysExist($keys, $parameters)
     {
         foreach ($keys as $key) {
             if(!array_key_exists($key, $parameters)){
@@ -27,7 +38,13 @@ trait Authenticates
     }
 
     /**
-     * Add header to guzzle HTTP options
+     * Add header to Guzzle HTTP options array
+     *
+     * @param array $options An options array
+     * @param string $headerName Name of the header to input into the Guzzle options array
+     * @param mixed $headerValue Value of the header
+     *
+     * @return mixed options array (transformed)
      */
     public function addHeader($options, $headerName, $headerValue)
     {

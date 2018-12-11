@@ -1,4 +1,7 @@
 <?php
+/**
+ * UnionCloud Wrapper Class
+ */
 
 namespace Twigger\UnionCloud;
 
@@ -9,27 +12,43 @@ use Twigger\UnionCloud\Exception\Authentication\BaseUnionCloudAuthenticationExce
 use Twigger\UnionCloud\Request;
 
 /**
- * @package    UnionCloud
+ * Class UnionCloud
+ *
+ * Choose your resource from here!
+ *
+ * @package Twigger\UnionCloud
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  * @author     Toby Twigger <tt15951@bristol.ac.uk>
  */
+
 class UnionCloud
 {
 
     /**
-     * @var null|Authentication
+     * Holds the Authentication wrapper, a wrapper for the authenticator
+     *
+     * @var Authentication
      */
     protected $authentication = null;
 
+    /**
+     * Holds configuration variables
+     *      - Base URL
+     *      - Debug
+     * @var Configuration
+     */
     protected $configuration;
 
     /**
      * UnionCloud constructor.
      *
-     * Creates an Authentication instance
+     * Creates an Authenticator and a blank Configuration
      *
-     * @param null $authParams
-     * @param string $authenticator
+     * @param null|array $authParams Associative array of the Authentication Parameters
+     * @param null|string $authenticator AuthenticatorClass::class
+     *
+     * @throws AuthenticatorNotFound
+     * @throws Exception\Authentication\AuthenticationParameterMissing
      */
     public function __construct($authParams = null, $authenticator=null)
     {
@@ -65,27 +84,40 @@ class UnionCloud
         return;
     }
 
+    /**
+     * Set the Base URL in the configuration class
+     *
+     * @param string $baseURL
+     */
     public function setBaseURL($baseURL)
     {
         $this->configuration->setBaseUrl($baseURL);
     }
 
-    public function setMode($mode)
+    /**
+     * Set the debug status of the API call.
+     *
+     * By calling debug(), you'll see a lot more details
+     * about the API call.
+     *
+     * @param bool $debug Defaults to true
+     */
+    public function debug($debug = true)
     {
-        $this->configuration->setMode($mode);
+        $this->configuration->setDebug($debug);
     }
 
     /**
-     * Retrieves a new Event Request
+     * Return a user resource request.
      *
-     * @return Request\EventRequest
+     * @return Request\UserRequest
      *
      * @throws AuthenticatorNotFound
      */
-    public function events()
+    public function users()
     {
         $this->checkReadyForRequest();
-        return new Request\EventRequest($this->authentication, $this->configuration);
+        return new Request\UserRequest($this->authentication, $this->configuration);
     }
 
 }

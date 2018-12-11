@@ -1,0 +1,2278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Twigger.html">\Twigger</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">6</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1330775026"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-1330775026" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-448929206"></a>
+                                <a href="../namespaces/Twigger.html" style="margin-left: 30px; padding-left: 0">Twigger</a>
+            </div>
+            <div id="namespace-448929206" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2103482102"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.html" style="margin-left: 30px; padding-left: 0">UnionCloud</a>
+            </div>
+            <div id="namespace-2103482102" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-399708457"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Auth.html" style="margin-left: 30px; padding-left: 0">Auth</a>
+            </div>
+            <div id="namespace-399708457" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Auth.IAuthenticator.html">IAuthenticator</a></li>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Auth.Authentication.html">Authentication</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Auth.v0Authenticator.html">v0Authenticator</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1250248922"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
+            </div>
+            <div id="namespace-1250248922" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1106541915"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Exception.Authentication.html" style="margin-left: 30px; padding-left: 0">Authentication</a>
+            </div>
+            <div id="namespace-1106541915" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticationExpiredException.html">AuthenticationExpiredException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticationIncorrectParameters.html">AuthenticationIncorrectParameters</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticationParameterMissing.html">AuthenticationParameterMissing</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticatorMustExtendIAuthenticator.html">AuthenticatorMustExtendIAuthenticator</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticatorNotFound.html">AuthenticatorNotFound</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.BaseUnionCloudAuthenticationException.html">BaseUnionCloudAuthenticationException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.UnionCloudResponseAuthenticationException.html">UnionCloudResponseAuthenticationException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1731311283"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Exception.Pagination.html" style="margin-left: 30px; padding-left: 0">Pagination</a>
+            </div>
+            <div id="namespace-1731311283" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Pagination.BasePaginationException.html">BasePaginationException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Pagination.PageNotFoundException.html">PageNotFoundException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-254997146"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Exception.Request.html" style="margin-left: 30px; padding-left: 0">Request</a>
+            </div>
+            <div id="namespace-254997146" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Request.BaseRequestException.html">BaseRequestException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Request.IncorrectRequestParameterException.html">IncorrectRequestParameterException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Request.RequestHistoryNotFound.html">RequestHistoryNotFound</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1226210797"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Exception.Resource.html" style="margin-left: 30px; padding-left: 0">Resource</a>
+            </div>
+            <div id="namespace-1226210797" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Resource.BaseResourceException.html">BaseResourceException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Resource.ResourceNotFoundException.html">ResourceNotFoundException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-509801164"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Exception.Response.html" style="margin-left: 30px; padding-left: 0">Response</a>
+            </div>
+            <div id="namespace-509801164" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.AuthRefreshRequiredException.html">AuthRefreshRequiredException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.BaseResponseException.html">BaseResponseException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.IncorrectResponseTypeException.html">IncorrectResponseTypeException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.ResponseMustInheritIResponse.html">ResponseMustInheritIResponse</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.BaseUnionCloudException.html">BaseUnionCloudException</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.InsufficientPermissionException.html">InsufficientPermissionException</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2002331271"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Request.html" style="margin-left: 30px; padding-left: 0">Request</a>
+            </div>
+            <div id="namespace-2002331271" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Request.IRequest.html">IRequest</a></li>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html">BaseRequest</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Request.UserRequest.html">UserRequest</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-401552535"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Resource.html" style="margin-left: 30px; padding-left: 0">Resource</a>
+            </div>
+            <div id="namespace-401552535" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Resource.IResource.html">IResource</a></li>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Resource.BaseResource.html">BaseResource</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Resource.User.html">User</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-932714107"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Response.html" style="margin-left: 30px; padding-left: 0">Response</a>
+            </div>
+            <div id="namespace-932714107" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Response.IResponse.html">IResponse</a></li>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Response.BaseResponse.html">BaseResponse</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Response.UserResponse.html">UserResponse</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1444647528"></a>
+                                <a href="../namespaces/Twigger.UnionCloud.Traits.html" style="margin-left: 30px; padding-left: 0">Traits</a>
+            </div>
+            <div id="namespace-1444647528" class="accordion-body collapse ">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                                            <li class="trait"><a href="../classes/Twigger.UnionCloud.Traits.Authenticates.html">Authenticates</a></li>
+                                                                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Configuration.html">Configuration</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.ResourceCollection.html">ResourceCollection</a></li>
+                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.UnionCloud.html">UnionCloud</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                    
+                    <ul>
+                                                                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/Twigger.UnionCloud.Request.html">\Twigger\UnionCloud\Request</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\Twigger\UnionCloud\Request</small>UserRequest</h1>
+                    <p><em>Class UserRequest</em></p>
+                    
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.UserRequest.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setMode" class="">setMode()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setBody" class="">setBody()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setEndpoint" class="">setEndpoint()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setMethod" class="">setMethod()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setContentType" class="">setContentType()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setResponseClass" class="">setResponseClass()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getQueryParameters" class="">getQueryParameters()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_paginate" class="">paginate()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setPage" class="">setPage()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_addPage" class="">addPage()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_minusPage" class="">minusPage()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_next" class="">next()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_previous" class="">previous()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getAll" class="">getAll()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_processResponse" class="">processResponse()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_get" class="">get()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getResponse" class="">getResponse()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.UserRequest.html#method_search" class="">search()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.UserRequest.html#method_getInstance" class="">getInstance()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_enablePagination" class="">enablePagination()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_enableMode" class="">enableMode()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_setAPIParameters" class="">setAPIParameters()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_call" class="">call()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getReturnDetails" class="">getReturnDetails()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_authentication" class="">$authentication</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_configuration" class="">$configuration</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getChildInstance" class="">getChildInstance()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getDefaultGuzzleOptions" class="">getDefaultGuzzleOptions()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getBody" class="">getBody()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getContentType" class="">getContentType()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_createClient" class="">createClient()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getMethod" class="">getMethod()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getFullURL" class="">getFullURL()</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#method_getEndPoint" class="">getEndPoint()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_responseClass" class="">$responseClass</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_body" class="">$body</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_method" class="">$method</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_contentType" class="">$contentType</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_endPoint" class="">$endPoint</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_queryParameters" class="">$queryParameters</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_useMode" class="">$useMode</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_mode" class="">$mode</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_paginates" class="">$paginates</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_page" class="">$page</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_debugResponse" class="">$debugResponse</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_debugRequest" class="">$debugRequest</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_requestOptions" class="">$requestOptions</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_container" class="">$container</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_returnRequestClass" class="">$returnRequestClass</a><br />
+                                                                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html#property_response" class="">$response</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/Request.UserRequest.html"><div class="path-wrapper">Request/UserRequest.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">Twigger\UnionCloud</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                                                                                                                                                
+                                        <div class="namespace-wrapper"><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html">\Twigger\UnionCloud\Request\BaseRequest</a></div>
+                                                                                                    <div class="namespace-wrapper">\Twigger\UnionCloud\Request\UserRequest</div>
+                            </dd>
+
+                                                                            <dt>Implements</dt>
+                                                        <dd><a href="../classes/Twigger.UnionCloud.Request.IRequest.html"><div class="namespace-wrapper">\Twigger\UnionCloud\Request\IRequest</div></a></dd>
+                        
+                        
+                        
+                        
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                license
+                            </th>
+                            <td>
+                                                                    <p><a href="https://opensource.org/licenses/GPL-3.0">https://opensource.org/licenses/GPL-3.0</a>  GNU Public License v3</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>Toby Twigger <a href="mailto:tt15951@bristol.ac.uk">tt15951@bristol.ac.uk</a></p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_authentication" name="property_authentication" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$authentication</h3>
+                <pre class="signature">$authentication : \Twigger\UnionCloud\Auth\Authentication</pre>
+                <p><em>Authentication wrapper</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Twigger.UnionCloud.Auth.Authentication.html">\Twigger\UnionCloud\Auth\Authentication</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_configuration" name="property_configuration" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$configuration</h3>
+                <pre class="signature">$configuration : \Twigger\UnionCloud\Configuration</pre>
+                <p><em>Configuration wrapper</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Twigger.UnionCloud.Configuration.html">\Twigger\UnionCloud\Configuration</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_responseClass" name="property_responseClass" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$responseClass</h3>
+                <pre class="signature">$responseClass : \Twigger\UnionCloud\Response\BaseResponse</pre>
+                <p><em>A response class that implements IResponse</em></p>
+                
+
+                                <h4>Type</h4>
+                <a href="../classes/Twigger.UnionCloud.Response.BaseResponse.html">\Twigger\UnionCloud\Response\BaseResponse</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_body" name="property_body" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$body</h3>
+                <pre class="signature">$body : array</pre>
+                <p><em>Body of the request</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_method" name="property_method" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$method</h3>
+                <pre class="signature">$method : string</pre>
+                <p><em>Method to use for the API request</em></p>
+                <p>POST, GET etc.</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_contentType" name="property_contentType" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$contentType</h3>
+                <pre class="signature">$contentType : string</pre>
+                <p><em>Content Type of the request</em></p>
+                <p>This is either
+-application\json if the body is a string
+-x-www-form-encoded if the body is an array</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_endPoint" name="property_endPoint" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$endPoint</h3>
+                <pre class="signature">$endPoint : string</pre>
+                <p><em>Endpoint to send the API request to</em></p>
+                <p>Relevant to '/api/'</p>
+
+                                <h4>Type</h4>
+                string
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_queryParameters" name="property_queryParameters" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$queryParameters</h3>
+                <pre class="signature">$queryParameters : array</pre>
+                <p><em>Query parameters to enter at the end of the URL</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_useMode" name="property_useMode" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$useMode</h3>
+                <pre class="signature">$useMode : boolean</pre>
+                <p><em>If this is true, the &#039;mode&#039; query parameter will be set</em></p>
+                
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_mode" name="property_mode" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$mode</h3>
+                <pre class="signature">$mode : string</pre>
+                <p><em>Mode to use for the request.</em></p>
+                
+
+                                <h4>Type</h4>
+                string
+                &mdash; basic|standard|full                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_paginates" name="property_paginates" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$paginates</h3>
+                <pre class="signature">$paginates : boolean</pre>
+                <p><em>Should pagination be used?</em></p>
+                <p>This will be set by the Request Class, i,e, by the developer</p>
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_page" name="property_page" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$page</h3>
+                <pre class="signature">$page : integer</pre>
+                <p><em>Page to use.</em></p>
+                <p>This will be put into the query parameters if $pagination is true</p>
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_debugResponse" name="property_debugResponse" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$debugResponse</h3>
+                <pre class="signature">$debugResponse : \GuzzleHttp\Psr7\Response</pre>
+                <p><em>Response captured from Guzzle for debugging</em></p>
+                
+
+                                <h4>Type</h4>
+                \GuzzleHttp\Psr7\Response
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_debugRequest" name="property_debugRequest" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$debugRequest</h3>
+                <pre class="signature">$debugRequest : \GuzzleHttp\Psr7\Request</pre>
+                <p><em>Request captured from Guzzle for debugging</em></p>
+                
+
+                                <h4>Type</h4>
+                \GuzzleHttp\Psr7\Request
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_requestOptions" name="property_requestOptions" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$requestOptions</h3>
+                <pre class="signature">$requestOptions : array</pre>
+                <p><em>Request options passed into Guzzle, for debugging</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_container" name="property_container" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$container</h3>
+                <pre class="signature">$container : array</pre>
+                <p><em>Container for the Guzzle HTTP Stack</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_returnRequestClass" name="property_returnRequestClass" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$returnRequestClass</h3>
+                <pre class="signature">$returnRequestClass : boolean</pre>
+                <p><em>Determines what calling a request action (i.e. search()) will return</em></p>
+                <p>If set to false, as is by default, the response class alone will be returned
+If set to true, the whole request class will be passed back. This allows the
+user to access the pagination methods</p>
+
+                                <h4>Type</h4>
+                boolean
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property_response" name="property_response" class="anchor"></a>
+            <article class="property">
+                <h3 class="private ">$response</h3>
+                <pre class="signature">$response : \Twigger\UnionCloud\Response\BaseResponse</pre>
+                <p><em>Response from UnionCloud</em></p>
+                <p>This is populated by the $this-&gt;call() function</p>
+
+                                <h4>Type</h4>
+                <a href="../classes/Twigger.UnionCloud.Response.BaseResponse.html">\Twigger\UnionCloud\Response\BaseResponse</a>
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct(\Twigger\UnionCloud\Auth\Authentication  <span class="argument">$authentication</span>, \Twigger\UnionCloud\Configuration  <span class="argument">$configuration</span>) </pre>
+                <p><em>UserRequest constructor.</em></p>
+                <p>Saves the given authenticator and configuration</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td><a href="../classes/Twigger.UnionCloud.Auth.Authentication.html">\Twigger\UnionCloud\Auth\Authentication</a></td>
+                                <td>$authentication </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td><a href="../classes/Twigger.UnionCloud.Configuration.html">\Twigger\UnionCloud\Configuration</a></td>
+                                <td>$configuration </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMode" name="method_setMode" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMode(  <span class="argument">$mode</span>) : $this</pre>
+                <p><em>Allow the user to set the mode of the API</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$mode </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                                    <h4>Returns</h4>
+                    $this
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setBody" name="method_setBody" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setBody()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setBody(  <span class="argument">$body</span>) </pre>
+                <p><em>Set the body as an array</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$body </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setEndpoint" name="method_setEndpoint" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setEndpoint()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setEndpoint(string  <span class="argument">$endPoint</span>) </pre>
+                <p><em>Set the endpoint for the API request</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$endPoint </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setMethod" name="method_setMethod" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setMethod()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setMethod(  <span class="argument">$method</span>) </pre>
+                <p><em>Set the method for the API</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$method </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setContentType" name="method_setContentType" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setContentType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setContentType(  <span class="argument">$contentType</span>) </pre>
+                <p><em>Set the content type</em></p>
+                <p>You may pass in full content types, or use the shortcuts
+'json' =&gt; 'application/json',
+'form' =&gt; 'application//x-www-form-urlencoded'</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$contentType </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setResponseClass" name="method_setResponseClass" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setResponseClass()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setResponseClass(  <span class="argument">$responseClass</span>) </pre>
+                <p><em>Set the class to handle the response</em></p>
+                <p>This must implement IResponse</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$responseClass </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getQueryParameters" name="method_getQueryParameters" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getQueryParameters()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getQueryParameters() : array|null</pre>
+                <p><em>Get the query parameters for the API URL</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array|null
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_paginate" name="method_paginate" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">paginate()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">paginate() : $this</pre>
+                <p><em>Enable pagination from the user side.</em></p>
+                <p>Will tell the UnionCloud request that the
+request class should be returned, as opposed to the response class</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    $this
+                                            &mdash; <p>UserRequest class</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setPage" name="method_setPage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">setPage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setPage(  <span class="argument">$page</span>) </pre>
+                <p><em>Set the page number</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$page </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Request\IncorrectRequestParameterException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_addPage" name="method_addPage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">addPage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">addPage() : void</pre>
+                <p><em>Add one to the page</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_minusPage" name="method_minusPage" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">minusPage()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">minusPage() : void</pre>
+                <p><em>Take one from the page</em></p>
+                
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_next" name="method_next" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">next()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">next() : \Twigger\UnionCloud\Request\BaseRequest</pre>
+                <p><em>Return the BaseRequest populated with the next page in the pagination.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\BaseResponseException</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Pagination\PageNotFoundException</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound</dt>
+                            <dd></dd>
+                                                    <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html">\Twigger\UnionCloud\Request\BaseRequest</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_previous" name="method_previous" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">previous()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">previous() : \Twigger\UnionCloud\Request\BaseRequest</pre>
+                <p><em>Return the BaseRequest populated with the previous page in the pagination.</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\BaseResponseException</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Pagination\PageNotFoundException</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound</dt>
+                            <dd></dd>
+                                                    <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html">\Twigger\UnionCloud\Request\BaseRequest</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getAll" name="method_getAll" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getAll()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getAll() : \Twigger\UnionCloud\ResourceCollection</pre>
+                <p><em>Get all records in the API.</em></p>
+                <p>If you have many records, this API may take a long time. We suggest
+implementing a timeout, or checking there aren't too many rectords</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\BaseResponseException</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound</dt>
+                            <dd></dd>
+                                                    <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.ResourceCollection.html">\Twigger\UnionCloud\ResourceCollection</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_processResponse" name="method_processResponse" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">processResponse()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">processResponse(  <span class="argument">$responseHandler</span>) </pre>
+                <p><em>Populate the $response property of the request</em></p>
+                <p>Calls the construct of the chosen response handler,</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td></td>
+                                <td>$responseHandler </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\BaseResponseException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get" name="method_get" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">get()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get() : \Twigger\UnionCloud\ResourceCollection</pre>
+                <p><em>Return just the collection of resources</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\ResponseMustInheritIResponse</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.ResourceCollection.html">\Twigger\UnionCloud\ResourceCollection</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getResponse" name="method_getResponse" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getResponse()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getResponse() : \Twigger\UnionCloud\Response\BaseResponse|\Twigger\UnionCloud\Response\IResponse</pre>
+                <p><em>Get the whole response class</em></p>
+                
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\ResponseMustInheritIResponse</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.Response.BaseResponse.html">\Twigger\UnionCloud\Response\BaseResponse</a>|<a href="../classes/Twigger.UnionCloud.Response.IResponse.html">\Twigger\UnionCloud\Response\IResponse</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_search" name="method_search" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">search()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">search(array  <span class="argument">$parameters</span>) : $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection</pre>
+                <p><em>Search for a user by a variety of parameters</em></p>
+                <p>Pass the parameters as [
+'parameter-name'=&gt;'parameter-value'
+]</p>
+<p>The possible parameters are:</p>
+<ul>
+<li>//TODO</li>
+</ul>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$parameters </td>
+                                <td><p>Parameter to search for a user with</p></td>
+                            </tr>
+                                            </table>
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\BaseResponseException</dt>
+                            <dd></dd>
+                                                    <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                                    <h4>Returns</h4>
+                    $this|<a href="../classes/Twigger.UnionCloud.Response.IResponse.html">\Twigger\UnionCloud\Response\IResponse</a>|<a href="../classes/Twigger.UnionCloud.ResourceCollection.html">\Twigger\UnionCloud\ResourceCollection</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getInstance" name="method_getInstance" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">getInstance()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getInstance() : \Twigger\UnionCloud\Request\UserRequest</pre>
+                <p><em>Gets the current instance</em></p>
+                <p>Implement as:</p>
+<p>public function getIntance()
+{
+{
+return $this;
+}
+}</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.Request.UserRequest.html">\Twigger\UnionCloud\Request\UserRequest</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_enablePagination" name="method_enablePagination" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">enablePagination()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">enablePagination() : void</pre>
+                <p><em>Allows the API endpoint to support pagination</em></p>
+                <p>Call this when defining an API endpoint.</p>
+
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_enableMode" name="method_enableMode" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">enableMode()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">enableMode(string  <span class="argument">$mode = &#039;full&#039;</span>) </pre>
+                <p><em>Allow an API to use the ?mode= query</em></p>
+                <p>Pass the mode in, or leave it blank for full (recommended)</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$mode </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_setAPIParameters" name="method_setAPIParameters" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">setAPIParameters()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">setAPIParameters(string  <span class="argument">$endpoint</span>, string  <span class="argument">$method</span>, array  <span class="argument">$body</span>) </pre>
+                <p><em>A shortcut method for setting all required parameters in one function call</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$endpoint </td>
+                                <td><p>e.g. 'users/search'</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$method </td>
+                                <td></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$body </td>
+                                <td><p>If you don't include it in a data array, we will</p></td>
+                            </tr>
+                                            </table>
+                
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_call" name="method_call" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">call()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">call() </pre>
+                <p><em>Handles making an API call</em></p>
+                <p>Set all the parameters before calling this function.</p>
+<p>It will simply populate the property $this-&gt;response with the
+response from UnionCloud</p>
+
+                
+                                    <h4>Throws</h4>
+                    <dl>
+                                                    <dt>\Twigger\UnionCloud\Exception\Response\BaseResponseException</dt>
+                            <dd></dd>
+                                                    <dt>\Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound</dt>
+                            <dd></dd>
+                                                    <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                            <dd></dd>
+                                                                    </dl>
+                
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getReturnDetails" name="method_getReturnDetails" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">getReturnDetails()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getReturnDetails() : $this|\Twigger\UnionCloud\Response\BaseResponse</pre>
+                <p><em>Determine what to return to the user</em></p>
+                <p>Return the request, a debugged response or a normal response</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    $this|<a href="../classes/Twigger.UnionCloud.Response.BaseResponse.html">\Twigger\UnionCloud\Response\BaseResponse</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getChildInstance" name="method_getChildInstance" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getChildInstance()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getChildInstance() : \Twigger\UnionCloud\Request\BaseRequest</pre>
+                <p><em>Returns an instance of the child class, or of itself if
+the child class hasn&#039;t implemented the getInstance method</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    <a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html">\Twigger\UnionCloud\Request\BaseRequest</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getDefaultGuzzleOptions" name="method_getDefaultGuzzleOptions" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getDefaultGuzzleOptions()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getDefaultGuzzleOptions() : array</pre>
+                <p><em>Gets the default GuzzleHTTP array</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getBody" name="method_getBody" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getBody()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getBody() : array</pre>
+                <p><em>Get the body to put into the request</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getContentType" name="method_getContentType" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getContentType()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getContentType() : string</pre>
+                <p><em>Get the content type</em></p>
+                <p>Will return application\x-www-form-urlencoded if a POST request is made, or
+application/json otherwise.</p>
+<p>Can be overridden by using the $this-&gt;setContentType function</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_createClient" name="method_createClient" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">createClient()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">createClient() : \GuzzleHttp\Client</pre>
+                <p><em>Creates a client</em></p>
+                <p>Creates a default client with the user specified Base URL.</p>
+<p>Will also implement history middleware if debug is on</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    \GuzzleHttp\Client
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getMethod" name="method_getMethod" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getMethod()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getMethod() : string</pre>
+                <p><em>Gets the method for the request</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getFullURL" name="method_getFullURL" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getFullURL()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getFullURL() : string</pre>
+                <p><em>Get the full URL</em></p>
+                <p>This consists of:
+/api/endpoint?query</p>
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_getEndPoint" name="method_getEndPoint" class="anchor"></a>
+            <article class="method">
+                <h3 class="private ">getEndPoint()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">getEndPoint() : string</pre>
+                <p><em>Get the endpoint for the API</em></p>
+                
+
+                
+                
+                                    <h4>Returns</h4>
+                    string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                    <dt>Inherited from</dt>
+                    <dd><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html"><div class="path-wrapper">\Twigger\UnionCloud\Request\BaseRequest</div></a></dd>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">UserRequest.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/Request/UserRequest.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Twigger.html">\Twigger</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on December 11th, 2018 at 02:20.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>

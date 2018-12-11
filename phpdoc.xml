@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <parser>
+    <target>/home/toby/development/bristolsu/unioncloud-php-api-wrapper/unioncloud/docs</target>
+  </parser>
+  <transformer>
+    <target>/home/toby/development/bristolsu/unioncloud-php-api-wrapper/unioncloud/docs</target>
+  </transformer>
+  <files>
+    <directory>/home/toby/development/bristolsu/unioncloud-php-api-wrapper/unioncloud/src</directory>
+  </files>
+</phpdoc>

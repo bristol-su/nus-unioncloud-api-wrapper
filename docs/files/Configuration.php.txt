@@ -1,18 +1,35 @@
 <?php
+/**
+ * Configuration Class
+ */
 
 namespace Twigger\UnionCloud;
 
+/**
+ * Class Configuration
+ *
+ * @package Twigger\UnionCloud
+ */
 class Configuration
 {
 
     /**
+     * The base url to make the API request to.
+     *
+     * Don't include a protocol or /api
+     *
+     * e.g 'bristol.unioncloud.org'
+     *
     * @var string $baseURL
     */
     private $baseURL;
+
     /**
-     * @var string $mode
+     * If true, more information about the request will be returned
+     *
+     * @var bool $debug
      */
-    private $mode = 'full';
+    private $debug = false;
 
 
 
@@ -38,23 +55,23 @@ class Configuration
     }
 
     /**
-    * Get the property mode
+    * Get the property debug
     *
     * @return string
     */
-    public function getMode()
+    public function getDebug()
     {
-        return $this->mode;
+        return $this->debug;
     }
 
     /**
-    * Set the property mode
+    * Set the property debug
     *
-    * @param string $mode
+    * @param string $debug
     */
-    public function setMode($mode)
+    public function setDebug($debug)
     {
-        $this->mode = $mode;
+        $this->debug = $debug;
     }
 
 }

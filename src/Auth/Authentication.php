@@ -19,7 +19,7 @@ use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
  * class is an authenticator if it extends IAuthenticator.
  *
  * Class Authentication
- * @package Twigger\UnionCloud\Auth
+ * @package Twigger\UnionCloud
  */
 class Authentication
 {
@@ -72,7 +72,6 @@ class Authentication
      * @param IAuthenticator $authenticator The authenticator to use for authentication
      *
      * @throws AuthenticatorMustExtendIAuthenticator
-     * @throws AuthenticationParameterMissing
      *
      * @return void
      */
@@ -98,7 +97,10 @@ class Authentication
      */
     public function addAuthentication($options, $configuration)
     {
-        $this->authenticator->authenticate($configuration->getBaseURL());
+        if($this->authenticator->needsRefresh())
+        {
+            $this->authenticator->authenticate($configuration->getBaseURL());
+        }
         return $this->authenticator->addAuthentication($options);
     }
 
@@ -115,4 +117,6 @@ class Authentication
         }
         return true;
     }
+
+
 }

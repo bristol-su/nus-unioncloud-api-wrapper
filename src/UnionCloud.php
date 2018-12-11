@@ -50,7 +50,7 @@ class UnionCloud
      * @throws AuthenticatorNotFound
      * @throws Exception\Authentication\AuthenticationParameterMissing
      */
-    public function __construct($authParams = null, $authenticator=null)
+    public function __construct($authParams = null, $authenticator = null)
     {
         $this->authentication = new Authentication($authParams, $authenticator);
         $this->configuration = new Configuration();
@@ -77,7 +77,7 @@ class UnionCloud
      */
     private function checkReadyForRequest()
     {
-        if(! $this->authentication->hasAuthentication())
+        if (!$this->authentication->hasAuthentication())
         {
             throw new AuthenticatorNotFound();
         }

@@ -210,13 +210,13 @@ class BaseRequest
      */
     private $returnRequestClass = false;
 
-   /**
-    * Response from UnionCloud
-    *
-    * This is populated by the $this->call() function
-    *
-    * @var BaseResponse
-    */
+    /**
+     * Response from UnionCloud
+     *
+     * This is populated by the $this->call() function
+     *
+     * @var BaseResponse
+     */
     private $response;
 
 
@@ -262,7 +262,7 @@ class BaseRequest
      */
     private function getChildInstance()
     {
-        if(method_exists($this, 'getInstance'))
+        if (method_exists($this, 'getInstance'))
         {
             return $this->getInstance();
         }
@@ -372,8 +372,8 @@ class BaseRequest
      */
     public function setContentType($contentType)
     {
-        if($contentType === 'json') { $contentType = 'application/json'; }
-        elseif($contentType === 'form') { $contentType = 'application/x-www-form-urlencoded'; }
+        if ($contentType === 'json') { $contentType = 'application/json'; }
+        elseif ($contentType === 'form') { $contentType = 'application/x-www-form-urlencoded'; }
         $this->contentType = $contentType;
     }
 
@@ -396,11 +396,11 @@ class BaseRequest
      * @param string $method
      * @param array $body If you don't include it in a data array, we will
      */
-    protected function setAPIParameters($endpoint,$method,$body)
+    protected function setAPIParameters($endpoint, $method, $body)
     {
         $this->setEndpoint($endpoint);
         $this->setMethod($method);
-        $this->setBody((array_key_exists('data', $body)?$body:array('data'=>$body)));
+        $this->setBody((array_key_exists('data', $body) ? $body : array('data'=>$body)));
     }
 
 
@@ -452,7 +452,7 @@ class BaseRequest
         // Create a client
         $client = $this->createClient();
 
-        try{
+        try {
             $request = new Request(
                 $this->getMethod(),
                 $this->getFullURL()
@@ -465,11 +465,11 @@ class BaseRequest
         }
 
         // Extract the history
-        if( ! array_key_exists(0, $this->container))
+        if (!array_key_exists(0, $this->container))
         {
             throw new RequestHistoryNotFound('Request History wasn\'t recorded', 500);
         }
-        try{
+        try {
             $this->debugRequest = $this->container[0]['request'];
             $this->debugResponse = $this->container[0]['response'];
             $this->requestOptions = $this->container[0]['options'];
@@ -499,10 +499,10 @@ class BaseRequest
                 "Content-Type" => $this->getContentType(),
             ],
             'http_errors' => true,
-            'verify' => __DIR__ . '/../../unioncloud.pem',
+            'verify' => __DIR__.'/../../unioncloud.pem',
             'debug' => false
         ];
-        if($this->getContentType() === 'application/x-www-form-urlencoded')
+        if ($this->getContentType() === 'application/x-www-form-urlencoded')
         {
             $options['form_params'] = $this->getBody();
         } elseif ($this->getContentType() === 'application/json' && $this->getBody()) {
@@ -534,9 +534,9 @@ class BaseRequest
      */
     private function getContentType()
     {
-        if(!$this->contentType)
+        if (!$this->contentType)
         {
-            if($this->getMethod() === 'POST') { return 'application/x-www-form-urlencoded'; }
+            if ($this->getMethod() === 'POST') { return 'application/x-www-form-urlencoded'; }
             else { return 'application/json'; }
         }
         return $this->contentType;
@@ -593,7 +593,7 @@ class BaseRequest
     private function getFullURL()
     {
         $url = '/api/'.$this->getEndPoint();
-        if(($parameters = $this->getQueryParameters()) !== null)
+        if (($parameters = $this->getQueryParameters()) !== null)
         {
             $url .= '?'.http_build_query($parameters);
         }
@@ -620,15 +620,15 @@ class BaseRequest
         $queryParameters = [];
 
         // Add parameters set through settings
-        if($this->paginates)
+        if ($this->paginates)
         {
             $queryParameters['page'] = $this->page;
         }
-        if($this->useMode)
+        if ($this->useMode)
         {
             $queryParameters['mode'] = $this->mode;
         }
-        if(count($queryParameters) === 0)
+        if (count($queryParameters) === 0)
         {
             return null;
         }
@@ -679,7 +679,7 @@ class BaseRequest
      */
     public function setPage($page)
     {
-        if(!is_int($page))
+        if (!is_int($page))
         {
             throw new IncorrectRequestParameterException('Page must be an integer', 400);
         }
@@ -718,7 +718,7 @@ class BaseRequest
      */
     public function next()
     {
-        if(! $this->response instanceof IResponse || $this->page >= $this->response->getTotalPages())
+        if (!$this->response instanceof IResponse || $this->page >= $this->response->getTotalPages())
         {
             throw new PageNotFoundException();
         }
@@ -739,7 +739,7 @@ class BaseRequest
      */
     public function previous()
     {
-        if(! $this->response instanceof IResponse || $this->page <= 1) {
+        if (!$this->response instanceof IResponse || $this->page <= 1) {
             throw new PageNotFoundException();
         }
         $this->minusPage();
@@ -764,7 +764,7 @@ class BaseRequest
         $resourceCollection = new ResourceCollection();
         $resourceCollection->addResources($this->response->get()->toArray());
         $this->addPage();
-        while($this->page <= $this->response->getTotalPages())
+        while ($this->page <= $this->response->getTotalPages())
         {
             $this->call();
             $resourceCollection->addResources($this->response->get()->toArray());
@@ -846,11 +846,11 @@ class BaseRequest
      */
     protected function getReturnDetails()
     {
-        if($this->returnRequestClass)
+        if ($this->returnRequestClass)
         {
             return $this;
         } else {
-            if(!$this->configuration->getDebug())
+            if (!$this->configuration->getDebug())
             {
                 $this->response->removeDebugOptions();
             }
@@ -879,7 +879,7 @@ class BaseRequest
      */
     public function getResponse()
     {
-        if( ! $this->response instanceof IResponse)
+        if (!$this->response instanceof IResponse)
         {
             throw new ResponseMustInheritIResponse();
         }

@@ -20,8 +20,8 @@ class Configuration
      *
      * e.g 'bristol.unioncloud.org'
      *
-    * @var string $baseURL
-    */
+     * @var string $baseURL
+     */
     private $baseURL;
 
     /**
@@ -35,40 +35,40 @@ class Configuration
 
 
     /**
-    * Get the property baseURL
-    *
-    * @return string
-    */
+     * Get the property baseURL
+     *
+     * @return string
+     */
     public function getBaseURL()
     {
         return $this->baseURL;
     }
 
     /**
-    * Set the property baseURL
-    *
-    * @param string $baseURL
-    */
+     * Set the property baseURL
+     *
+     * @param string $baseURL
+     */
     public function setBaseURL($baseURL)
     {
         $this->baseURL = 'https://'.$baseURL;
     }
 
     /**
-    * Get the property debug
-    *
-    * @return string
-    */
+     * Get the property debug
+     *
+     * @return string
+     */
     public function getDebug()
     {
         return $this->debug;
     }
 
     /**
-    * Set the property debug
-    *
-    * @param string $debug
-    */
+     * Set the property debug
+     *
+     * @param string $debug
+     */
     public function setDebug($debug)
     {
         $this->debug = $debug;

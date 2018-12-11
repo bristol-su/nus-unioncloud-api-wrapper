@@ -84,7 +84,7 @@ class ResourceCollection
      */
     public function first()
     {
-        if(!isset($this->resources[0]))
+        if (!isset($this->resources[0]))
         {
             throw new ResourceNotFoundException('No resources were found.', 404);
         }

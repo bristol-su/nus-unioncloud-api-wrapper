@@ -25,7 +25,7 @@ class ResourceNotFoundException extends BaseResourceException
      * @param Throwable|null $previous
      * @param int $unionCloudCode
      */
-    public function __construct($message, $code, Throwable $previous = null, $unionCloudCode=0)
+    public function __construct($message, $code, Throwable $previous = null, $unionCloudCode = 0)
     {
         parent::__construct($message, $code, $previous, $unionCloudCode);
     }

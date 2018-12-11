@@ -44,21 +44,21 @@ class Authentication
      * @throws AuthenticationParameterMissing
      * @throws AuthenticatorNotFound
      */
-    public function __construct($authParams = null, $authenticator=null)
+    public function __construct($authParams = null, $authenticator = null)
     {
-        if(is_array($authParams))
+        if (is_array($authParams))
         {
             // Find the authenticator class
-            if($authenticator === null) {
+            if ($authenticator === null) {
                 $this->authenticator = new v0Authenticator();
-            } elseif($authenticator instanceof IAuthenticator) {
+            } elseif ($authenticator instanceof IAuthenticator) {
                 $this->authenticator = $authenticator;
             } else {
                 throw new AuthenticatorNotFound();
             }
 
             // Validate and set the parameters
-            if( ! $this->authenticator->validateParameters($authParams) )
+            if (!$this->authenticator->validateParameters($authParams))
             {
                 throw new AuthenticationParameterMissing();
             }
@@ -77,7 +77,7 @@ class Authentication
      */
     public function setAuthenticator($authenticator)
     {
-        if($authenticator instanceof IAuthenticator)
+        if ($authenticator instanceof IAuthenticator)
         {
             $this->authenticator = $authenticator;
             return;
@@ -97,7 +97,7 @@ class Authentication
      */
     public function addAuthentication($options, $configuration)
     {
-        if($this->authenticator->needsRefresh())
+        if ($this->authenticator->needsRefresh())
         {
             $this->authenticator->authenticate($configuration->getBaseURL());
         }
@@ -111,7 +111,7 @@ class Authentication
      */
     public function hasAuthentication()
     {
-        if ( ! $this->authenticator instanceof IAuthenticator)
+        if (!$this->authenticator instanceof IAuthenticator)
         {
             return false;
         }

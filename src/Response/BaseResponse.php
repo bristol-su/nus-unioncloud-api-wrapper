@@ -211,11 +211,11 @@ class BaseResponse
      */
     public function __construct($response, $request, $requestOptions, $resourceClass)
     {
-        if( ! $response instanceof Response)
+        if (!$response instanceof Response)
         {
             throw new IncorrectResponseTypeException('Request class didn\'t pass a response type into the response', 500);
         }
-        if( ! $request instanceof Request)
+        if (!$request instanceof Request)
         {
             throw new IncorrectResponseTypeException('Request class didn\'t pass a request type into the response', 500);
         }
@@ -239,7 +239,7 @@ class BaseResponse
     private function saveResponseBody()
     {
         $body = $this->response->getBody()->getContents();
-        if(is_string($body))
+        if (is_string($body))
         {
             $body = json_decode($body, true);
         }
@@ -289,7 +289,7 @@ class BaseResponse
         $this->runTime = (double) $this->getHeaderFromResponse('X-Runtime');
         $this->xRequestID = $this->getHeaderFromResponse('X-Request-ID');
 
-        if($this->responseContainsPagination())
+        if ($this->responseContainsPagination())
         {
             $this->hasPagination = true;
             $this->recordsPerPage = (int) $this->getHeaderFromResponse('records_per_page');
@@ -320,7 +320,7 @@ class BaseResponse
      */
     public function responseContainsPagination()
     {
-        if(
+        if (
             array_key_exists('records_per_page', $this->response->getHeaders())
             &&
             array_key_exists('total_records', $this->response->getHeaders())
@@ -361,7 +361,7 @@ class BaseResponse
     private function parseResources()
     {
         $resources = new ResourceCollection();
-        foreach($this->getRawData() as $resource)
+        foreach ($this->getRawData() as $resource)
         {
             $parsedResource = $this->parseResource($resource);
             $resources->addResource($parsedResource);

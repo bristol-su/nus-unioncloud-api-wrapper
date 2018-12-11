@@ -29,7 +29,7 @@ trait Authenticates
     public function authArrayKeysExist($keys, $parameters)
     {
         foreach ($keys as $key) {
-            if(!array_key_exists($key, $parameters)){
+            if (!array_key_exists($key, $parameters)) {
                 return false;
             }
         }

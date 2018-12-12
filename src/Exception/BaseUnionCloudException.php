@@ -24,7 +24,7 @@ class BaseUnionCloudException extends \Exception {
      *
      * @var int|null $unionCloudCode
      */
-    protected $unionCloudCode=null;
+    protected $unionCloudCode = null;
 
     /**
      * BaseUnionCloudException constructor.
@@ -36,7 +36,7 @@ class BaseUnionCloudException extends \Exception {
      * @param Throwable|null $previous
      * @param int $unionCloudCode
      */
-    public function __construct($message = "", $code = 0, Throwable $previous = null, $unionCloudCode=0)
+    public function __construct($message = "", $code = 0, Throwable $previous = null, $unionCloudCode = 0)
     {
         $this->unionCloudCode = $unionCloudCode;
         parent::__construct($message, $code, $previous);

@@ -272,7 +272,7 @@ class v0Authenticator implements IAuthenticator
                 "Accept-Version" => "v1",
             ],
             'http_errors' => true,
-            'verify' => __DIR__ . '/../../unioncloud.pem',
+            'verify' => __DIR__.'/../../unioncloud.pem',
             'debug' => false
         ];
     }
@@ -297,7 +297,7 @@ class v0Authenticator implements IAuthenticator
     {
 
         $response = $e->getResponse();
-        if($response === null)
+        if ($response === null)
         {
             throw new BaseUnionCloudException('No response received from UnionCloud', 500, $e);
         }
@@ -306,7 +306,7 @@ class v0Authenticator implements IAuthenticator
 
 
         // If there's a body, we may be able to process the error messages
-        if(strlen($body) > 0)
+        if (strlen($body) > 0)
         {
             // Get the message body
             try {
@@ -329,7 +329,7 @@ class v0Authenticator implements IAuthenticator
 
             $unionCloudErrorCodes = $this->getAuthFailureCodes();
 
-            if(array_key_exists($errorCode, $unionCloudErrorCodes))
+            if (array_key_exists($errorCode, $unionCloudErrorCodes))
             {
                 $throwable = $unionCloudErrorCodes[$errorCode]['throwable'];
                 throw new $throwable($unionCloudErrorCodes[$errorCode]['message'], $code, $e, $errorCode);

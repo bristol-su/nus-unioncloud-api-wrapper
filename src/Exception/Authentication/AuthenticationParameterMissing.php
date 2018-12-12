@@ -23,7 +23,7 @@ class AuthenticationParameterMissing extends BaseUnionCloudAuthenticationExcepti
      * @param Throwable|null $previous
      * @param int $unionCloudCode
      */
-    public function __construct($message = "", $code = 0, Throwable $previous = null, $unionCloudCode=0)
+    public function __construct($message = "", $code = 0, Throwable $previous = null, $unionCloudCode = 0)
     {
         parent::__construct($message, $code, $previous, $unionCloudCode);
     }

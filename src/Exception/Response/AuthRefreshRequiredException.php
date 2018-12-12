@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class AuthRefreshRequiredException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class AuthRefreshRequiredException extends BaseResponseException
 {

@@ -9,10 +9,9 @@ namespace Twigger\UnionCloud\Resource;
  *
  * Interface IResource
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core\Resources
  */
 interface IResource
 {
-
 
 }

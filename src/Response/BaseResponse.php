@@ -15,7 +15,7 @@ use Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException;
  *
  * Class BaseResponse
  *
- * @package Twigger\UnionCloud\Response
+ * @package Twigger\UnionCloud\Core\Responses
  */
 class BaseResponse
 {
@@ -172,8 +172,6 @@ class BaseResponse
      * @var ResourceCollection
      */
     protected $resources;
-
-
 
 
 
@@ -488,6 +486,16 @@ class BaseResponse
     public function getRequestOptions()
     {
         return $this->requestOptions;
+    }
+
+    /**
+     * Get the total number of pages for a pagination request
+     *
+     * @return int
+     */
+    public function getTotalPages()
+    {
+        return $this->totalPages;
     }
 
 

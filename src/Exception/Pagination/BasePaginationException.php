@@ -11,7 +11,7 @@ use Twigger\UnionCloud\Exception\BaseUnionCloudException;
 /**
  * Class BasePaginationException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class BasePaginationException extends BaseUnionCloudException
 {

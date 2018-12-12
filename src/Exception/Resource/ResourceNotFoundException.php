@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class ResourceNotFoundException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class ResourceNotFoundException extends BaseResourceException
 {

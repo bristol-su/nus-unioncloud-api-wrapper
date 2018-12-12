@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class InsufficientPermissionException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class InsufficientPermissionException extends BaseUnionCloudException
 {

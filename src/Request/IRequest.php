@@ -10,7 +10,7 @@ use Twigger\UnionCloud\Configuration;
 /**
  * Interface IRequest
  *
- * @package Twigger\UnionCloud\Request
+ * @package Twigger\UnionCloud\Core\Requests
  */
 interface IRequest
 {

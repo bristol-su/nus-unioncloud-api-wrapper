@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class IncorrectResponseTypeException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class IncorrectResponseTypeException extends BaseResponseException
 {

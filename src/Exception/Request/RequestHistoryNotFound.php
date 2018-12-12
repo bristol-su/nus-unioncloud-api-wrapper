@@ -11,7 +11,7 @@ use Twigger\UnionCloud\Exception\Request\BaseRequestException;
 /**
  * Class RequestHistoryNotFound
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class RequestHistoryNotFound extends BaseRequestException
 {

@@ -15,7 +15,7 @@ use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
  *
  * Class ResourceCollection
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core
  */
 class ResourceCollection
 {

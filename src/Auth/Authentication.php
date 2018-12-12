@@ -19,7 +19,8 @@ use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
  * class is an authenticator if it extends IAuthenticator.
  *
  * Class Authentication
- * @package Twigger\UnionCloud
+ *
+ * @package Twigger\UnionCloud\Core\Authentications
  */
 class Authentication
 {

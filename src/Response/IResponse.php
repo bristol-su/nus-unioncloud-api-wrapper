@@ -11,7 +11,7 @@ namespace Twigger\UnionCloud\Response;
  *
  * Interface IResponse
  *
- * @package Twigger\UnionCloud\Response
+ * @package Twigger\UnionCloud\Core\Responses
  */
 interface IResponse
 {

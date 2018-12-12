@@ -16,7 +16,7 @@ use Twigger\UnionCloud\Request;
  *
  * Choose your resource from here!
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  * @author     Toby Twigger <tt15951@bristol.ac.uk>
  */
@@ -118,6 +118,19 @@ class UnionCloud
     {
         $this->checkReadyForRequest();
         return new Request\UserRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a UserGroup Membership resource request.
+     *
+     * @return Request\UserGroupMembershipRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function userGroupMemberships()
+    {
+        $this->checkReadyForRequest();
+        return new Request\UserGroupMembershipRequest($this->authentication, $this->configuration);
     }
 
 }

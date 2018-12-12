@@ -11,7 +11,7 @@ namespace Twigger\UnionCloud\Traits;
  *      an array_keys_exist function, to validate parameters are all given
  *      A header function to add a header to Guzzle HTTP options
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core\Traits
  */
 trait Authenticates
 {

@@ -24,7 +24,7 @@ use Twigger\UnionCloud\Traits\Authenticates;
  *
  * Class v0Authenticator
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Authenticators
  */
 class v0Authenticator implements IAuthenticator
 {

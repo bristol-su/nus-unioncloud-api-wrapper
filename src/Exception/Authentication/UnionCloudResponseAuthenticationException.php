@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class UnionCloudResponseAuthenticationException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class UnionCloudResponseAuthenticationException extends BaseUnionCloudAuthenticationException
 {

@@ -11,7 +11,7 @@ namespace Twigger\UnionCloud\Auth;
  * Authentications. The Authentication wrapper interacts with it.
  *
  * Interface IAuthenticator
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core\Authentications
  */
 interface IAuthenticator
 {

@@ -9,7 +9,7 @@ use Throwable;
 
 /**
  * Class AuthenticationExpiredException
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class AuthenticationExpiredException extends UnionCloudResponseAuthenticationException
 {

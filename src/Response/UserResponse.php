@@ -9,7 +9,7 @@ use Twigger\UnionCloud\Resource\User;
 /**
  * Class UserResponse
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Users\Users
  */
 class UserResponse extends BaseResponse implements IResponse
 {

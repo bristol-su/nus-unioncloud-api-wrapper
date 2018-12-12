@@ -11,7 +11,7 @@ use Twigger\UnionCloud\Exception\BaseUnionCloudException;
 /**
  * Class BaseResponseException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class BaseResponseException extends BaseUnionCloudException
 {

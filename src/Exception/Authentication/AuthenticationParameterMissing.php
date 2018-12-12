@@ -8,7 +8,7 @@ use Throwable;
 
 /**
  * Class AuthenticationParameterMissing
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class AuthenticationParameterMissing extends BaseUnionCloudAuthenticationException
 {

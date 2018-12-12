@@ -9,7 +9,7 @@ use Throwable;
 /**
  * Class PageNotFoundException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class PageNotFoundException extends BasePaginationException
 {

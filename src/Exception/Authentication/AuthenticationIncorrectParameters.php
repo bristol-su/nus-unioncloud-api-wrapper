@@ -9,7 +9,7 @@ use Throwable;
 
 /**
  * Class AuthenticationIncorrectParameters
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class AuthenticationIncorrectParameters extends UnionCloudResponseAuthenticationException
 {

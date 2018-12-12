@@ -3,867 +3,567 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>API Documentation</title>
+    <title>    API Documentation &raquo; \Twigger\UnionCloud\UnionCloud
+</title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
 
-    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-    <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/prism.css" rel="stylesheet" media="all"/>
-    <link href="../css/template.css" rel="stylesheet" media="all"/>
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
     
-    <!--[if lt IE 9]>
-    <script src="../js/html5.js"></script>
-    <![endif]-->
-    <script src="../js/jquery-1.11.0.min.js"></script>
-    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/jquery.smooth-scroll.js"></script>
-    <script src="../js/prism.min.js"></script>
-    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
-    <script type="text/javascript">
-    function loadExternalCodeSnippets() {
-        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
-            var src = pre.getAttribute('data-src');
-            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
-            var language = 'php';
-
-            var code = document.createElement('code');
-            code.className = 'language-' + language;
-
-            pre.textContent = '';
-
-            code.textContent = 'Loading…';
-
-            pre.appendChild(code);
-
-            var xhr = new XMLHttpRequest();
-
-            xhr.open('GET', src, true);
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4) {
-
-                    if (xhr.status < 400 && xhr.responseText) {
-                        code.textContent = xhr.responseText;
-
-                        Prism.highlightElement(code);
-                    }
-                    else if (xhr.status >= 400) {
-                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
-                    }
-                    else {
-                        code.textContent = '✖ Error: File does not exist or is empty';
-                    }
-                }
-            };
-
-            xhr.send(null);
-        });
-    }
-
-    $(document).ready(function(){
-        loadExternalCodeSnippets();
-    });
-    $('#source-view').on('shown', function () {
-        loadExternalCodeSnippets();
-    })
-</script>
-
-    <link rel="shortcut icon" href="../images/favicon.ico"/>
-    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
-</head>
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
 <body>
 
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <i class="icon-ellipsis-vertical"></i>
-            </a>
-            <a class="brand" href="../index.html">API Documentation</a>
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
 
-            <div class="nav-collapse">
-                <ul class="nav pull-right">
-                                        <li class="dropdown">
-                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
-                            API Documentation <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                                                        <li><a href="../namespaces/Twigger.html">\Twigger</a></li>
-                                                    </ul>
-                    </li>
-                                        <li class="dropdown" id="charts-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Charts <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="../graphs/class.html">
-                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="dropdown" id="reports-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            Reports <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../reports/markers.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">6</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="../reports/deprecated.html">
-                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--<div class="go_to_top">-->
-    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
-    <!--</div>-->
-</div>
-
-<div id="___" class="container-fluid">
-        <section class="row-fluid">
-        <div class="span2 sidebar">
-                                <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-61476918"></a>
-                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
-            </div>
-            <div id="namespace-61476918" class="accordion-body collapse in">
-                <div class="accordion-inner">
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-890557448"></a>
-                                <a href="../namespaces/Twigger.html" style="margin-left: 30px; padding-left: 0">Twigger</a>
-            </div>
-            <div id="namespace-890557448" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-897851195"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.html" style="margin-left: 30px; padding-left: 0">UnionCloud</a>
-            </div>
-            <div id="namespace-897851195" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1537238934"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Auth.html" style="margin-left: 30px; padding-left: 0">Auth</a>
-            </div>
-            <div id="namespace-1537238934" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Auth.IAuthenticator.html">IAuthenticator</a></li>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Auth.Authentication.html">Authentication</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Auth.v0Authenticator.html">v0Authenticator</a></li>
-                                            </ul>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Twigger.html">Twigger</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1529031663"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Exception.html" style="margin-left: 30px; padding-left: 0">Exception</a>
-            </div>
-            <div id="namespace-1529031663" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1991798066"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Exception.Authentication.html" style="margin-left: 30px; padding-left: 0">Authentication</a>
-            </div>
-            <div id="namespace-1991798066" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticationExpiredException.html">AuthenticationExpiredException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticationIncorrectParameters.html">AuthenticationIncorrectParameters</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticationParameterMissing.html">AuthenticationParameterMissing</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticatorMustExtendIAuthenticator.html">AuthenticatorMustExtendIAuthenticator</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.AuthenticatorNotFound.html">AuthenticatorNotFound</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.BaseUnionCloudAuthenticationException.html">BaseUnionCloudAuthenticationException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Authentication.UnionCloudResponseAuthenticationException.html">UnionCloudResponseAuthenticationException</a></li>
-                                            </ul>
-                </div>
-            </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
         </div>
     </div>
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1891323947"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Exception.Pagination.html" style="margin-left: 30px; padding-left: 0">Pagination</a>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
             </div>
-            <div id="namespace-1891323947" class="accordion-body collapse ">
-                <div class="accordion-inner">
+        </noscript>
 
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Pagination.BasePaginationException.html">BasePaginationException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Pagination.PageNotFoundException.html">PageNotFoundException</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
     </div>
 
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-324147034"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Exception.Request.html" style="margin-left: 30px; padding-left: 0">Request</a>
-            </div>
-            <div id="namespace-324147034" class="accordion-body collapse ">
-                <div class="accordion-inner">
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public">
+        <a href="#method___construct" title="__construct :: UnionCloud constructor.">
+            <span class="description">UnionCloud constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
 
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Request.BaseRequestException.html">BaseRequestException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Request.IncorrectRequestParameterException.html">IncorrectRequestParameterException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Request.RequestHistoryNotFound.html">RequestHistoryNotFound</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+                                                                                                                                                                <li class="method public">
+        <a href="#method_debug" title="debug :: Set the debug status of the API call.">
+            <span class="description">Set the debug status of the API call.</span><pre>debug</pre>
+        </a>
+    </li>
 
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1189823837"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Exception.Resource.html" style="margin-left: 30px; padding-left: 0">Resource</a>
-            </div>
-            <div id="namespace-1189823837" class="accordion-body collapse ">
-                <div class="accordion-inner">
+                                                                                                        <li class="method public">
+        <a href="#method_setAuthenticator" title="setAuthenticator :: Manually set the authenticator">
+            <span class="description">Manually set the authenticator</span><pre>setAuthenticator</pre>
+        </a>
+    </li>
 
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Resource.BaseResourceException.html">BaseResourceException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Resource.ResourceNotFoundException.html">ResourceNotFoundException</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+                                                                                                        <li class="method public">
+        <a href="#method_setBaseURL" title="setBaseURL :: Set the Base URL in the configuration class">
+            <span class="description">Set the Base URL in the configuration class</span><pre>setBaseURL</pre>
+        </a>
+    </li>
 
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-378530619"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Exception.Response.html" style="margin-left: 30px; padding-left: 0">Response</a>
-            </div>
-            <div id="namespace-378530619" class="accordion-body collapse ">
-                <div class="accordion-inner">
+                                                                                                        <li class="method public">
+        <a href="#method_userGroupMemberships" title="userGroupMemberships :: Return a UserGroup Membership resource request.">
+            <span class="description">Return a UserGroup Membership resource request.</span><pre>userGroupMemberships</pre>
+        </a>
+    </li>
 
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.AuthRefreshRequiredException.html">AuthRefreshRequiredException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.BaseResponseException.html">BaseResponseException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.IncorrectResponseTypeException.html">IncorrectResponseTypeException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.Response.ResponseMustInheritIResponse.html">ResponseMustInheritIResponse</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+                                                                                                        <li class="method public">
+        <a href="#method_users" title="users :: Return a user resource request.">
+            <span class="description">Return a user resource request.</span><pre>users</pre>
+        </a>
+    </li>
 
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.BaseUnionCloudException.html">BaseUnionCloudException</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Exception.InsufficientPermissionException.html">InsufficientPermissionException</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                                                                                                                                                                                                        </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                <li class="method private">
+                            <a href="#method_checkReadyForRequest" title="checkReadyForRequest :: Check UnionCloud is ready for the request">
+                                <span class="description">Check UnionCloud is ready for the request</span><pre>checkReadyForRequest</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
 
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-336637853"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Request.html" style="margin-left: 30px; padding-left: 0">Request</a>
-            </div>
-            <div id="namespace-336637853" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Request.IRequest.html">IRequest</a></li>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Request.BaseRequest.html">BaseRequest</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Request.UserRequest.html">UserRequest</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-1213098127"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Resource.html" style="margin-left: 30px; padding-left: 0">Resource</a>
-            </div>
-            <div id="namespace-1213098127" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Resource.IResource.html">IResource</a></li>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Resource.BaseResource.html">BaseResource</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Resource.User.html">User</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-954443486"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Response.html" style="margin-left: 30px; padding-left: 0">Response</a>
-            </div>
-            <div id="namespace-954443486" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                    <li class="interface"><a href="../classes/Twigger.UnionCloud.Response.IResponse.html">IResponse</a></li>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Response.BaseResponse.html">BaseResponse</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Response.UserResponse.html">UserResponse</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                                                    <div class="accordion" style="margin-bottom: 0">
-        <div class="accordion-group">
-            <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-2117349479"></a>
-                                <a href="../namespaces/Twigger.UnionCloud.Traits.html" style="margin-left: 30px; padding-left: 0">Traits</a>
-            </div>
-            <div id="namespace-2117349479" class="accordion-body collapse ">
-                <div class="accordion-inner">
-
-                    
-                    <ul>
-                                                                            <li class="trait"><a href="../classes/Twigger.UnionCloud.Traits.Authenticates.html">Authenticates</a></li>
-                                                                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                    
-                    <ul>
-                                                                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.Configuration.html">Configuration</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.ResourceCollection.html">ResourceCollection</a></li>
-                                                    <li class="class"><a href="../classes/Twigger.UnionCloud.UnionCloud.html">UnionCloud</a></li>
-                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                    
-                    <ul>
-                                                                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-                    
-                    <ul>
-                                                                                            </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
         </div>
-    </section>
-    <section class="row-fluid">
-        <div class="span10 offset2">
-            <div class="row-fluid">
-                <div class="span8 content class">
-                    <nav>
-                                                <a href="../namespaces/Twigger.UnionCloud.html">\Twigger\UnionCloud</a> <i class="icon-level-up"></i>
-                                            </nav>
-                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
 
-                    <h1><small>\Twigger\UnionCloud</small>UnionCloud</h1>
-                    <p><em>Class UnionCloud</em></p>
-                    <p>Choose your resource from here!</p>
+        <div class="span8">
+            <div class="element class">
+                <h1>UnionCloud</h1>
+                <small style="display: block; text-align: right">
+                                                        </small>
+                <p class="short_description">Class UnionCloud</p>
+                <div class="details">
+                    <div class="long_description">
+                        <p>Choose your resource from here!</p>
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Twigger\UnionCloud\Core</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        license
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p><a href="https://opensource.org/licenses/GPL-3.0">https://opensource.org/licenses/GPL-3.0</a>  GNU Public License v3</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Toby Twigger <a href="mailto:tt15951@bristol.ac.uk">tt15951@bristol.ac.uk</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>UnionCloud constructor.</h2>
+                            <pre>__construct(null|array $authParams = null, null|string $authenticator = null) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Creates an Authenticator and a blank Configuration</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticationParameterMissing</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$authParams</h4>
+                                                <code>null|array</code><p><p>Associative array of the Authentication Parameters</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$authenticator</h4>
+                                                <code>null|string</code><p><p>AuthenticatorClass::class</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_checkReadyForRequest"></a>
+                        <div class="element clickable method private  method_checkReadyForRequest" data-toggle="collapse" data-target=".method_checkReadyForRequest .collapse">
+                            <h2>Check UnionCloud is ready for the request</h2>
+                            <pre>checkReadyForRequest() : void</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_debug"></a>
+                        <div class="element clickable method public  method_debug" data-toggle="collapse" data-target=".method_debug .collapse">
+                            <h2>Set the debug status of the API call.</h2>
+                            <pre>debug(boolean $debug = true) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>By calling debug(), you'll see a lot more details
+about the API call.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$debug</h4>
+                                                <code>boolean</code><p><p>Defaults to true</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setAuthenticator"></a>
+                        <div class="element clickable method public  method_setAuthenticator" data-toggle="collapse" data-target=".method_setAuthenticator .collapse">
+                            <h2>Manually set the authenticator</h2>
+                            <pre>setAuthenticator(\Twigger\UnionCloud\Auth\IAuthenticator $authenticator) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\Exception\Authentication\BaseUnionCloudAuthenticationException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$authenticator</h4>
+                                                <code><a href="../classes/Twigger.UnionCloud.Auth.IAuthenticator.html">\Twigger\UnionCloud\Auth\IAuthenticator</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setBaseURL"></a>
+                        <div class="element clickable method public  method_setBaseURL" data-toggle="collapse" data-target=".method_setBaseURL .collapse">
+                            <h2>Set the Base URL in the configuration class</h2>
+                            <pre>setBaseURL(string $baseURL) </pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$baseURL</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_userGroupMemberships"></a>
+                        <div class="element clickable method public  method_userGroupMemberships" data-toggle="collapse" data-target=".method_userGroupMemberships .collapse">
+                            <h2>Return a UserGroup Membership resource request.</h2>
+                            <pre>userGroupMemberships() : \Twigger\UnionCloud\Request\UserGroupMembershipRequest</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.Request.UserGroupMembershipRequest.html">\Twigger\UnionCloud\Request\UserGroupMembershipRequest</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_users"></a>
+                        <div class="element clickable method public  method_users" data-toggle="collapse" data-target=".method_users .collapse">
+                            <h2>Return a user resource request.</h2>
+                            <pre>users() : \Twigger\UnionCloud\Request\UserRequest</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.Request.UserRequest.html">\Twigger\UnionCloud\Request\UserRequest</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                     
-                                        
-                    <section id="summary">
-                        <h2>Summary</h2>
-                        <section class="row-fluid heading">
-                            <section class="span4">
-                                <a href="#methods">Methods</a>
-                            </section>
-                            <section class="span4">
-                                <a href="#properties">Properties</a>
-                            </section>
-                            <section class="span4">
-                                <a href="#constants">Constants</a>
-                            </section>
-                        </section>
-                        <section class="row-fluid public">
-                            <section class="span4">
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#method___construct" class="">__construct()</a><br />
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#method_setAuthenticator" class="">setAuthenticator()</a><br />
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#method_setBaseURL" class="">setBaseURL()</a><br />
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#method_debug" class="">debug()</a><br />
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#method_users" class="">users()</a><br />
-                                                            </section>
-                            <section class="span4">
-                                                                    <em>No public properties found</em>
-                                                            </section>
-                            <section class="span4">
-                                                                    <em>No constants found</em>
-                                                            </section>
-                        </section>
-                        <section class="row-fluid protected">
-                            <section class="span4">
-                                                                    <em>No protected methods found</em>
-                                                            </section>
-                            <section class="span4">
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#property_authentication" class="">$authentication</a><br />
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#property_configuration" class="">$configuration</a><br />
-                                                            </section>
-                            <section class="span4">
-                                <em>N/A</em>
-                            </section>
-                        </section>
-                        <section class="row-fluid private">
-                            <section class="span4">
-                                                                    <a href="../classes/Twigger.UnionCloud.UnionCloud.html#method_checkReadyForRequest" class="">checkReadyForRequest()</a><br />
-                                                            </section>
-                            <section class="span4">
-                                                                    <em>No private properties found</em>
-                                                            </section>
-                            <section class="span4">
-                                <em>N/A</em>
-                            </section>
-                        </section>
-                    </section>
-                </div>
-                <aside class="span4 detailsbar">
-                                        
                     
-                    <dl>
-                        <dt>File</dt>
-                            <dd><a href="../files/UnionCloud.html"><div class="path-wrapper">UnionCloud.php</div></a></dd>
-                                                <dt>Package</dt>
-                            <dd><div class="namespace-wrapper">Twigger\UnionCloud</div></dd>
-                                                <dt>Class hierarchy</dt>
-                            <dd class="hierarchy">
-                                                                                                                                                                    <div class="namespace-wrapper">\Twigger\UnionCloud\UnionCloud</div>
-                            </dd>
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_authentication"> </a>
+                            <div class="element clickable property  protected property_authentication" data-toggle="collapse" data-target=".property_authentication .collapse">
+                                <h2>Holds the Authentication wrapper, a wrapper for the authenticator</h2>
+                                <pre>authentication : \Twigger\UnionCloud\Auth\Authentication</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
 
-                        
-                        
-                        
-                        
-                                                                        </dl>
-                    <h2>Tags</h2>
-                    <table class="table table-condensed">
-                                            <tr>
-                            <th>
-                                license
-                            </th>
-                            <td>
-                                                                    <p><a href="https://opensource.org/licenses/GPL-3.0">https://opensource.org/licenses/GPL-3.0</a>  GNU Public License v3</p>
-                                                            </td>
-                        </tr>
-                                            <tr>
-                            <th>
-                                author
-                            </th>
-                            <td>
-                                                                    <p>Toby Twigger <a href="mailto:tt15951@bristol.ac.uk">tt15951@bristol.ac.uk</a></p>
-                                                            </td>
-                        </tr>
-                                        </table>
-                </aside>
-            </div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
 
-                        
-                                    <a id="properties" name="properties"></a>
-            <div class="row-fluid">
-                <div class="span8 content class">
-                    <h2>Properties</h2>
-                </div>
-                <aside class="span4 detailsbar"></aside>
-            </div>
-
-                                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_authentication" name="property_authentication" class="anchor"></a>
-            <article class="property">
-                <h3 class="protected ">$authentication</h3>
-                <pre class="signature">$authentication : \Twigger\UnionCloud\Auth\Authentication</pre>
-                <p><em>Holds the Authentication wrapper, a wrapper for the authenticator</em></p>
-                
-
-                                <h4>Type</h4>
-                <a href="../classes/Twigger.UnionCloud.Auth.Authentication.html">\Twigger\UnionCloud\Auth\Authentication</a>
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="property_configuration" name="property_configuration" class="anchor"></a>
-            <article class="property">
-                <h3 class="protected ">$configuration</h3>
-                <pre class="signature">$configuration : \Twigger\UnionCloud\Configuration</pre>
-                <p><em>Holds configuration variables
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Twigger.UnionCloud.Auth.Authentication.html">\Twigger\UnionCloud\Auth\Authentication</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_configuration"> </a>
+                            <div class="element clickable property  protected property_configuration" data-toggle="collapse" data-target=".property_configuration .collapse">
+                                <h2>Holds configuration variables
      - Base URL
-     - Debug</em></p>
-                
+     - Debug</h2>
+                                <pre>configuration : \Twigger\UnionCloud\Configuration</pre>
+                                <div class="labels">
+                                                                                                        </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
 
-                                <h4>Type</h4>
-                <a href="../classes/Twigger.UnionCloud.Configuration.html">\Twigger\UnionCloud\Configuration</a>
-                                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                        <dl>
-                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
 
-                                            
-                                    <a id="methods" name="methods"></a>
-            <div class="row-fluid">
-                <div class="span8 content class"><h2>Methods</h2></div>
-                <aside class="span4 detailsbar"></aside>
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Twigger.UnionCloud.Configuration.html">\Twigger\UnionCloud\Configuration</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
             </div>
+            <a id="\Twigger\UnionCloud\UnionCloud"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Twigger.UnionCloud.html">UnionCloud</a></li>
 
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method___construct" name="method___construct" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">__construct()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__construct(null|array  <span class="argument">$authParams = null</span>, null|string  <span class="argument">$authenticator = null</span>) </pre>
-                <p><em>UnionCloud constructor.</em></p>
-                <p>Creates an Authenticator and a blank Configuration</p>
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>null|array</td>
-                                <td>$authParams </td>
-                                <td><p>Associative array of the Authentication Parameters</p></td>
-                            </tr>
-                                                    <tr>
-                                <td>null|string</td>
-                                <td>$authenticator </td>
-                                <td><p>AuthenticatorClass::class</p></td>
-                            </tr>
-                                            </table>
-                
-                                    <h4>Throws</h4>
-                    <dl>
-                                                    <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
-                            <dd></dd>
-                                                    <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticationParameterMissing</dt>
-                            <dd></dd>
-                                                                    </dl>
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_setAuthenticator" name="method_setAuthenticator" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">setAuthenticator()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setAuthenticator(\Twigger\UnionCloud\Auth\IAuthenticator  <span class="argument">$authenticator</span>) </pre>
-                <p><em>Manually set the authenticator</em></p>
-                
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td><a href="../classes/Twigger.UnionCloud.Auth.IAuthenticator.html">\Twigger\UnionCloud\Auth\IAuthenticator</a></td>
-                                <td>$authenticator </td>
-                                <td></td>
-                            </tr>
-                                            </table>
-                
-                                    <h4>Throws</h4>
-                    <dl>
-                                                    <dt>\Twigger\UnionCloud\Exception\Authentication\BaseUnionCloudAuthenticationException</dt>
-                            <dd></dd>
-                                                                    </dl>
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_setBaseURL" name="method_setBaseURL" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">setBaseURL()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">setBaseURL(string  <span class="argument">$baseURL</span>) </pre>
-                <p><em>Set the Base URL in the configuration class</em></p>
-                
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>string</td>
-                                <td>$baseURL </td>
-                                <td></td>
-                            </tr>
-                                            </table>
-                
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_debug" name="method_debug" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">debug()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">debug(boolean  <span class="argument">$debug = true</span>) </pre>
-                <p><em>Set the debug status of the API call.</em></p>
-                <p>By calling debug(), you'll see a lot more details
-about the API call.</p>
-
-                                    <h4>Parameters</h4>
-                    <table class="table table-condensed table-hover">
-                                                    <tr>
-                                <td>boolean</td>
-                                <td>$debug </td>
-                                <td><p>Defaults to true</p></td>
-                            </tr>
-                                            </table>
-                
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_users" name="method_users" class="anchor"></a>
-            <article class="method">
-                <h3 class="public ">users()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">users() : \Twigger\UnionCloud\Request\UserRequest</pre>
-                <p><em>Return a user resource request.</em></p>
-                
-
-                
-                                    <h4>Throws</h4>
-                    <dl>
-                                                    <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
-                            <dd></dd>
-                                                                    </dl>
-                
-                                    <h4>Returns</h4>
-                    <a href="../classes/Twigger.UnionCloud.Request.UserRequest.html">\Twigger\UnionCloud\Request\UserRequest</a>
-                                    				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                                                    <div class="row-fluid">
-        <div class="span8 content class">
-            <a id="method_checkReadyForRequest" name="method_checkReadyForRequest" class="anchor"></a>
-            <article class="method">
-                <h3 class="private ">checkReadyForRequest()</h3>
-                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">checkReadyForRequest() : void</pre>
-                <p><em>Check UnionCloud is ready for the request</em></p>
-                
-
-                
-                                    <h4>Throws</h4>
-                    <dl>
-                                                    <dt>\Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound</dt>
-                            <dd></dd>
-                                                                    </dl>
-                
-                				
-                            </article>
-        </div>
-        <aside class="span4 detailsbar">
-            <h1><i class="icon-arrow-down"></i></h1>
-                                                            <dl>
-                                                                            </dl>
-            <h2>Tags</h2>
-            <table class="table table-condensed">
-                                    <tr><td colspan="2"><em>None found</em></td></tr>
-                            </table>
-        </aside>
-    </div>
-
-                                    </div>
-    </section>
-
-    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-            <h3 id="source-view-label">UnionCloud.php</h3>
-        </div>
-        <div class="modal-body">
-            <pre data-src="../files/UnionCloud.php.txt" class="language-php line-numbers"></pre>
+                <li class="active"><span class="divider">\</span><a href="../classes/Twigger.UnionCloud.UnionCloud.html">UnionCloud</a></li>
+            </ul>
         </div>
     </div>
 
-    <footer class="row-fluid">
-        <section class="span10 offset2">
-            <section class="row-fluid">
-                <section class="span10 offset1">
-                    <section class="row-fluid footer-sections">
-                        <section class="span4">
-                                                        <h1><i class="icon-code"></i></h1>
-                            <div>
-                                <ul>
-                                                                            <li><a href="../namespaces/Twigger.html">\Twigger</a></li>
-                                                                    </ul>
-                            </div>
-                        </section>
-                        <section class="span4">
-                                                        <h1><i class="icon-bar-chart"></i></h1>
-                            <div>
-                                <ul>
-                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
-                                </ul>
-                            </div>
-                        </section>
-                        <section class="span4">
-                                                        <h1><i class="icon-pushpin"></i></h1>
-                            <div>
-                                <ul>
-                                    <li><a href="../reports/errors.html">Errors</a></li>
-                                    <li><a href="../reports/markers.html">Markers</a></li>
-                                </ul>
-                            </div>
-                        </section>
-                    </section>
-                </section>
-            </section>
-            <section class="row-fluid">
-                <section class="span10 offset1">
-                    <hr />
-                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on December 11th, 2018 at 02:20.
-                </section>
-            </section>
-        </section>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Wed, 12 Dec 2018 17:06:36 +0000.<br/>
     </footer>
-</div>
-
-</body>
+    </body>
 </html>

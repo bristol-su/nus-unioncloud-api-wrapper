@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class AuthenticatorNotFound
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class AuthenticatorNotFound extends BaseUnionCloudAuthenticationException
 {

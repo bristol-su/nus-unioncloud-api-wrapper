@@ -9,7 +9,7 @@ use Throwable;
 /**
  * Class AuthenticatorMustExtendIAuthenticator
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class AuthenticatorMustExtendIAuthenticator extends BaseUnionCloudAuthenticationException
 {

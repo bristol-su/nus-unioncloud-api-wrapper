@@ -9,7 +9,7 @@ use Throwable;
 /**
  * Class ResponseMustInheritIResponse
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class ResponseMustInheritIResponse extends BaseResponseException
 {

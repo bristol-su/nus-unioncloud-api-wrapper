@@ -23,10 +23,11 @@ use Twigger\UnionCloud\Response\IResponse;
 /**
  * Contains helper functions relevant to making a request
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core\Requests
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  * @author     Toby Twigger <tt15951@bristol.ac.uk>
  */
+
 class BaseRequest
 {
 
@@ -245,7 +246,7 @@ class BaseRequest
      *
      * @param Authentication $authentication
      * @param Configuration $configuration
-     * @param BaseResponse $responseClass
+     * @param string $responseClass
      */
     public function __construct($authentication, $configuration, $responseClass)
     {
@@ -336,7 +337,7 @@ class BaseRequest
      *
      * @param $body
      */
-    public function setBody($body)
+    protected function setBody($body)
     {
         $this->body = $body;
     }
@@ -346,7 +347,7 @@ class BaseRequest
      *
      * @param string $endPoint
      */
-    public function setEndpoint($endPoint)
+    protected function setEndpoint($endPoint)
     {
         $this->endPoint = $endPoint;
     }
@@ -356,7 +357,7 @@ class BaseRequest
      *
      * @param $method
      */
-    public function setMethod($method)
+    protected function setMethod($method)
     {
         $this->method = $method;
     }
@@ -370,7 +371,7 @@ class BaseRequest
      *
      * @param $contentType
      */
-    public function setContentType($contentType)
+    protected function setContentType($contentType)
     {
         if($contentType === 'json') { $contentType = 'application/json'; }
         elseif($contentType === 'form') { $contentType = 'application/x-www-form-urlencoded'; }
@@ -384,7 +385,7 @@ class BaseRequest
      *
      * @param $responseClass
      */
-    public function setResponseClass($responseClass)
+    protected function setResponseClass($responseClass)
     {
         $this->responseClass = $responseClass;
     }
@@ -394,13 +395,27 @@ class BaseRequest
      *
      * @param string $endpoint e.g. 'users/search'
      * @param string $method
-     * @param array $body If you don't include it in a data array, we will
+     * @param array|null $body If you don't include it in a data array, we will
      */
-    protected function setAPIParameters($endpoint,$method,$body)
+    protected function setAPIParameters($endpoint,$method,$body=null)
     {
         $this->setEndpoint($endpoint);
         $this->setMethod($method);
-        $this->setBody((array_key_exists('data', $body)?$body:array('data'=>$body)));
+        if($body !== null)
+        {
+            $this->setBody((array_key_exists('data', $body)?$body:array('data'=>$body)));
+        }
+    }
+
+    /**
+     * Adds a query parameter to the URL of the request
+     *
+     * @param string $key Key of the query parameter
+     * @param string $value Value of the query parameter
+     */
+    protected function addQueryParameter($key, $value)
+    {
+        $this->queryParameters[$key] = $value;
     }
 
 
@@ -615,7 +630,7 @@ class BaseRequest
      *
      * @return array|null
      */
-    public function getQueryParameters()
+    private function getQueryParameters()
     {
         $queryParameters = [];
 
@@ -676,6 +691,8 @@ class BaseRequest
      *
      * @param $page
      * @throws IncorrectRequestParameterException
+     *
+     * @return $this
      */
     public function setPage($page)
     {
@@ -684,32 +701,38 @@ class BaseRequest
             throw new IncorrectRequestParameterException('Page must be an integer', 400);
         }
         $this->page = $page;
+
+        return $this->getChildInstance();
     }
 
     /**
      * Add one to the page
      *
-     * @return void
+     * @return $this
      */
-    public function addPage()
+    protected function addPage()
     {
         $this->page++;
+
+        return $this->getChildInstance();
     }
 
     /**
      * Take one from the page
      *
-     * @return void
+     * @return $this
      */
-    public function minusPage()
+    protected function minusPage()
     {
         $this->page--;
+
+        return $this->getChildInstance();
     }
 
     /**
      * Return the BaseRequest populated with the next page in the pagination.
      *
-     * @return BaseRequest
+     * @return $this
      *
      * @throws BaseResponseException
      * @throws PageNotFoundException
@@ -802,7 +825,7 @@ class BaseRequest
      *
      * @throws BaseResponseException
      */
-    public function processResponse($responseHandler)
+    private function processResponse($responseHandler)
     {
         if (!is_subclass_of($responseHandler, BaseResponse::class)) {
             throw new BaseResponseException('The response handler must extend BaseResponse', 500);

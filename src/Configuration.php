@@ -8,7 +8,7 @@ namespace Twigger\UnionCloud;
 /**
  * Class Configuration
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Core
  */
 class Configuration
 {

@@ -9,7 +9,7 @@ use Twigger\UnionCloud\Exception\Request\BaseRequestException;
 
 /**
  * Class IncorrectRequestParameterException
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class IncorrectRequestParameterException extends BaseRequestException
 {

@@ -10,7 +10,7 @@ use Throwable;
 /**
  * Class BaseUnionCloudException
  *
- * @package Twigger\UnionCloud
+ * @package Twigger\UnionCloud\Exceptions
  */
 class BaseUnionCloudException extends \Exception {
 

@@ -49,6 +49,7 @@ To resolve the UnionCloud instance from the Laravel service container
 ```php
 $unionCloud = resolve('Twigger\UnionCloud\API\UnionCloud');
 ```
+
 ## Usage
 
 ### Setup

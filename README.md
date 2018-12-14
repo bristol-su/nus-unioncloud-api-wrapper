@@ -1,5 +1,9 @@
 # PHP UnionCloud API Wrapper
+
 Toby Twigger (tt15951@bristol.ac.uk) on behalf of Bristol SU (https://www.bristolsu.org.uk).
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/build-status/master)
 
 ## Installation
 Add ``twigger/unioncloud`` as a require dependency in your ``composer.json`` file:

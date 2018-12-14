@@ -134,7 +134,8 @@ class UserRequest extends BaseRequest implements IRequest
     {
         $this->setAPIParameters(
             'users/'.$uid,
-            'PUT'
+            'PUT',
+            $parameters
         );
 
         $this->call();

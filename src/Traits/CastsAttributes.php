@@ -74,8 +74,8 @@ trait CastsAttributes
      *
      * Will pass each of the attribute values into the constructor of the resourceClass
      *
-     * @param $attributeValue
-     * @param $resourceClass
+     * @param array $attributeValue
+     * @param string $resourceClass
      *
      * @return ResourceCollection
      *
@@ -87,12 +87,11 @@ trait CastsAttributes
         foreach($attributeValue as $resource)
         {
             try{
-
+                $collection->addResource(new $resourceClass($resource));
             } catch (\Exception $e)
             {
                 throw new ResourceNotFoundException('Couldn\'t find the specified resource '.$resourceClass, 404, $e);
             }
-            $collection->addResource(new $resourceClass($resource));
         }
         return $collection;
     }

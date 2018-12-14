@@ -31,7 +31,7 @@ class BaseUnionCloudException extends \Exception {
      *
      * This is the message from UnionCloud
      *
-     * @var string$unionCloudCode
+     * @var string $unionCloudCode
      */
     public $unionCloudMessage = '';
 

@@ -790,7 +790,9 @@ class BaseResponse
                 $parsedResource = $this->parseResource($resource);
                 $resources->addResource($parsedResource);
             }
-        } catch(\Exception $e) { }
+        } catch(\Exception $e) {
+            // See the above TODO
+        }
         return $resources;
     }
 

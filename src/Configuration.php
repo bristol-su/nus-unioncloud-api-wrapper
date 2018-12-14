@@ -57,7 +57,7 @@ class Configuration
     /**
      * Get the property debug
      *
-     * @return string
+     * @return bool
      */
     public function getDebug()
     {
@@ -67,7 +67,7 @@ class Configuration
     /**
      * Set the property debug
      *
-     * @param string $debug
+     * @param bool $debug
      */
     public function setDebug($debug)
     {

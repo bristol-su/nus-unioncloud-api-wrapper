@@ -2,20 +2,20 @@
 /**
  * Base Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
 use Carbon\Carbon;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
-use Twigger\UnionCloud\Traits\CastsAttributes;
-use Twigger\UnionCloud\Traits\ParsesAttributes;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
+use Twigger\UnionCloud\API\Traits\CastsAttributes;
+use Twigger\UnionCloud\API\Traits\ParsesAttributes;
 
 /**
  * Contains methods to deal with a Resource
  *
  * Class BaseResource
  *
- * @package Twigger\UnionCloud\Core\Resources
+ * @package Twigger\UnionCloud\API\Core\Resources
  */
 class BaseResource
 {

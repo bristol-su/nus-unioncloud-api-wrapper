@@ -2,14 +2,14 @@
 /**
  * User Group Folder Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\UserGroupFolder;
+use Twigger\UnionCloud\API\Resource\UserGroupFolder;
 
 /**
  * Class User Group Folder Response
  *
- * @package Twigger\UnionCloud\UserGroups\UserGroupFolders
+ * @package Twigger\UnionCloud\API\UserGroups\UserGroupFolders
  */
 class UserGroupFolderResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class UserGroupFolderResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

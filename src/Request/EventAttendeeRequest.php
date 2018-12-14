@@ -2,17 +2,17 @@
 /**
  * Event Attendee Request class
  */
-namespace Twigger\UnionCloud\Request;
+namespace Twigger\UnionCloud\API\Request;
 
 
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Configuration;
-use Twigger\UnionCloud\Response\EventAttendeeResponse;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Configuration;
+use Twigger\UnionCloud\API\Response\EventAttendeeResponse;
 
 /**
  * Class Event Attendee Request
  *
- * @package Twigger\UnionCloud\Events\EventAttendees
+ * @package Twigger\UnionCloud\API\Events\EventAttendees
  *
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  *
@@ -59,11 +59,11 @@ class EventAttendeeRequest extends BaseRequest implements IRequest
      * 
      * @param
      * 
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function someFunction()
     {

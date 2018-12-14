@@ -17,7 +17,12 @@
     "minimum-stability": "dev",
     "autoload": {
          "psr-4": {
-             "Twigger\\UnionCloud\\": "src/"
+             "Twigger\\UnionCloud\\API\\": "src/",
+             "Twigger\\UnionCloud\\Tests\\": "tests/"
          }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7",
+        "vlucas/phpdotenv": "^2.5@dev"
     }
 }

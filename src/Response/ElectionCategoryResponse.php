@@ -2,14 +2,14 @@
 /**
  * Election Category Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\ElectionCategory;
+use Twigger\UnionCloud\API\Resource\ElectionCategory;
 
 /**
  * Class Election Response Category
  *
- * @package Twigger\UnionCloud\Elections\ElectionCategories
+ * @package Twigger\UnionCloud\API\Elections\ElectionCategories
  */
 class ElectionCategoryResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class ElectionCategoryResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

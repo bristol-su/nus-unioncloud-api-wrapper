@@ -2,16 +2,16 @@
 /**
  * Programme Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
 use phpDocumentor\Reflection\DocBlock;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Class Programme
  *
- * @package Twigger\UnionCloud\Programmes\Programmes
+ * @package Twigger\UnionCloud\API\Programmes\Programmes
  *
  */
 class Programme extends BaseResource implements IResource

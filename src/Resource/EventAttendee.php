@@ -2,16 +2,16 @@
 /**
  * Event Attendee Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
 use phpDocumentor\Reflection\DocBlock;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Class Event Attendee
  *
- * @package Twigger\UnionCloud\Events\EventAttendees
+ * @package Twigger\UnionCloud\API\Events\EventAttendees
  *
  */
 class EventAttendee extends BaseResource implements IResource

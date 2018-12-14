@@ -2,17 +2,17 @@
 /**
  * User Group Folder Request class
  */
-namespace Twigger\UnionCloud\Request;
+namespace Twigger\UnionCloud\API\Request;
 
 
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Configuration;
-use Twigger\UnionCloud\Response\UserGroupFolderResponse;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Configuration;
+use Twigger\UnionCloud\API\Response\UserGroupFolderResponse;
 
 /**
  * Class User Group Folder Request
  *
- * @package Twigger\UnionCloud\UserGroups\UserGroupFolders
+ * @package Twigger\UnionCloud\API\UserGroups\UserGroupFolders
  *
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  *
@@ -59,11 +59,11 @@ class UserGroupFolderRequest extends BaseRequest implements IRequest
      * 
      * @param
      * 
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function someFunction()
     {

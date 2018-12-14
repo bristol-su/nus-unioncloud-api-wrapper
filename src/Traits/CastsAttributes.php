@@ -3,18 +3,18 @@
  * Casts Attributes Class
  */
 
-namespace Twigger\UnionCloud\Traits;
+namespace Twigger\UnionCloud\API\Traits;
 
 use Carbon\Carbon;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Contains functions to aid with casting variables
  *
  * Trait CastsAttributes
  *
- * @package Twigger\UnionCloud\Core\Traits
+ * @package Twigger\UnionCloud\API\Core\Traits
  */
 trait CastsAttributes
 {

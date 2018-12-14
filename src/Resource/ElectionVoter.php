@@ -2,16 +2,16 @@
 /**
  * Election Voter Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
 use phpDocumentor\Reflection\DocBlock;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Class Election Voter
  *
- * @package Twigger\UnionCloud\Elections\ElectionVoters
+ * @package Twigger\UnionCloud\API\Elections\ElectionVoters
  *
  */
 class ElectionVoter extends BaseResource implements IResource

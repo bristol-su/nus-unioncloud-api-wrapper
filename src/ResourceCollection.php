@@ -3,10 +3,10 @@
  * Resource Collection Helper Class
  */
 
-namespace Twigger\UnionCloud;
+namespace Twigger\UnionCloud\API;
 
 
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
 
 /**
  * Contains a wrapper for an array, providing helpful functions.
@@ -15,7 +15,7 @@ use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
  *
  * Class ResourceCollection
  *
- * @package Twigger\UnionCloud\Core
+ * @package Twigger\UnionCloud\API\Core
  */
 class ResourceCollection
 {

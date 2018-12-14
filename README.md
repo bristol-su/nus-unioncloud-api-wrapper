@@ -2,16 +2,16 @@
 Toby Twigger (tt15951@bristol.ac.uk) on behalf of Bristol SU (https://www.bristolsu.org.uk).
 
 ## Installation
-Add ``tobytwigger/unioncloud`` as a require dependency in your ``composer.json`` file:
+Add ``twigger/unioncloud`` as a require dependency in your ``composer.json`` file:
 
 ```bash
-composer require tobytwigger/unioncloud
+composer require twigger/unioncloud
 ```
 
 Require composer's autoload, and point your scripts to the UnionCloud namespace
 
 ```php
-use \Twigger\UnionCloud\UnionCloud as UnionCloudWrapper
+use \Twigger\UnionCloud\API\UnionCloud as UnionCloudWrapper
 ```
 
 ##Usage
@@ -211,7 +211,6 @@ $users->previous(); // Return the RequestClass containing the response to the pr
 
 This is an unfinished repository, any any contributions would be welcomed! The following is an incomplete list of things to be done.
 
-- Automatically throw errors if the API call returns an error in the body (i.e. ```['data'']['error']```
 - Most the request classes have to be populated with their methods
 - Most the resource classes have to be populated with casting information and useful resource specific functions.
 - An authenticator for AWS needs to be written

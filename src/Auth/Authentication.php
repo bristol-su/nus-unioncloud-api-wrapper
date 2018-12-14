@@ -3,12 +3,12 @@
  * Authentication Class
  */
 
-namespace Twigger\UnionCloud\Auth;
+namespace Twigger\UnionCloud\API\Auth;
 
-use Twigger\UnionCloud\Configuration;
-use Twigger\UnionCloud\Exception\Authentication\AuthenticationParameterMissing;
-use Twigger\UnionCloud\Exception\Authentication\AuthenticatorMustExtendIAuthenticator;
-use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
+use Twigger\UnionCloud\API\Configuration;
+use Twigger\UnionCloud\API\Exception\Authentication\AuthenticationParameterMissing;
+use Twigger\UnionCloud\API\Exception\Authentication\AuthenticatorMustExtendIAuthenticator;
+use Twigger\UnionCloud\API\Exception\Authentication\AuthenticatorNotFound;
 
 /**
  * Thanks to a changeover in the authentication method
@@ -20,7 +20,7 @@ use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
  *
  * Class Authentication
  *
- * @package Twigger\UnionCloud\Core\Authentications
+ * @package Twigger\UnionCloud\API\Core\Authentications
  */
 class Authentication
 {

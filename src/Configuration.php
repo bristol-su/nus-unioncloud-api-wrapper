@@ -3,12 +3,12 @@
  * Configuration Class
  */
 
-namespace Twigger\UnionCloud;
+namespace Twigger\UnionCloud\API;
 
 /**
  * Class Configuration
  *
- * @package Twigger\UnionCloud\Core
+ * @package Twigger\UnionCloud\API\Core
  */
 class Configuration
 {

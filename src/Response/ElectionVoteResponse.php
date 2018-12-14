@@ -2,14 +2,14 @@
 /**
  * Election Vote Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\ElectionVote;
+use Twigger\UnionCloud\API\Resource\ElectionVote;
 
 /**
  * Class Election Vote Response
  *
- * @package Twigger\UnionCloud\Elections\ElectionVotes
+ * @package Twigger\UnionCloud\API\Elections\ElectionVotes
  */
 class ElectionVoteResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class ElectionVoteResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

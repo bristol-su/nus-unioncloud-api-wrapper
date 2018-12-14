@@ -2,14 +2,14 @@
 /**
  * Event Type Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\EventType;
+use Twigger\UnionCloud\API\Resource\EventType;
 
 /**
  * Class Event Type Response
  *
- * @package Twigger\UnionCloud\Events\EventTypes
+ * @package Twigger\UnionCloud\API\Events\EventTypes
  */
 class EventTypeResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class EventTypeResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

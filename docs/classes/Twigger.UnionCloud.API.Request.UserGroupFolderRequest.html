@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>    API Documentation &raquo; \Twigger\UnionCloud\API\Request\UserGroupFolderRequest
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="../js/bootstrap.js" type="text/javascript"></script>
+        <script src="../js/template.js" type="text/javascript"></script>
+        <script src="../js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="../img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="../img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="../index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                    <li><a>Namespaces</a></li>
+                                                                        <li><a href="../namespaces/Twigger.html">Twigger</a></li>
+                                                                                                                                </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+            <style>
+        .deprecated h2 {
+            text-decoration: line-through;
+        }
+    </style>
+    <div class="row">
+        <div class="span4">
+                    <div class="btn-group view pull-right" data-toggle="buttons-radio">
+        <button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button>
+        <button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+    </div>
+    <div class="btn-group visibility" data-toggle="buttons-checkbox">
+        <button class="btn public active" title="Show public elements">Public</button>
+        <button class="btn protected" title="Show protected elements">Protected</button>
+        <button class="btn private" title="Show private elements">Private</button>
+        <button class="btn inherited active" title="Show inherited elements">Inherited</button>
+    </div>
+
+        <ul class="side-nav nav nav-list">
+        <li class="nav-header">
+            <i class="icon-custom icon-method"></i> Methods
+            <ul>
+                                                                                                    <li class="method public inherited">
+        <a href="#method___construct" title="__construct :: BaseRequest constructor.">
+            <span class="description">BaseRequest constructor.</span><pre>__construct</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
+        <a href="#method_get" title="get :: Return just the collection of resources">
+            <span class="description">Return just the collection of resources</span><pre>get</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getAll" title="getAll :: Get all records in the API.">
+            <span class="description">Get all records in the API.</span><pre>getAll</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method public">
+        <a href="#method_getInstance" title="getInstance :: Gets the current instance">
+            <span class="description">Gets the current instance</span><pre>getInstance</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public inherited">
+        <a href="#method_getResponse" title="getResponse :: Get the whole response class">
+            <span class="description">Get the whole response class</span><pre>getResponse</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                        <li class="method public inherited">
+        <a href="#method_next" title="next :: Return the BaseRequest populated with the next page in the pagination.">
+            <span class="description">Return the BaseRequest populated with the next page in the pagination.</span><pre>next</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_paginate" title="paginate :: Enable pagination from the user side.">
+            <span class="description">Enable pagination from the user side.</span><pre>paginate</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_previous" title="previous :: Return the BaseRequest populated with the previous page in the pagination.">
+            <span class="description">Return the BaseRequest populated with the previous page in the pagination.</span><pre>previous</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method public inherited">
+        <a href="#method_setMode" title="setMode :: Allow the user to set the mode of the API">
+            <span class="description">Allow the user to set the mode of the API</span><pre>setMode</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setPage" title="setPage :: Set the page number">
+            <span class="description">Set the page number</span><pre>setPage</pre>
+        </a>
+    </li>
+
+                                                                                                                                                                <li class="method public">
+        <a href="#method_someFunction" title="someFunction :: Description">
+            <span class="description">Description</span><pre>someFunction</pre>
+        </a>
+    </li>
+
+                                                </ul>
+        </li>
+        <li class="nav-header protected">» Protected
+            <ul>
+                                                                                                                <li class="method protected inherited">
+                            <a href="#method_addPage" title="addPage :: Add one to the page">
+                                <span class="description">Add one to the page</span><pre>addPage</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_addQueryParameter" title="addQueryParameter :: Adds a query parameter to the URL of the request">
+                                <span class="description">Adds a query parameter to the URL of the request</span><pre>addQueryParameter</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_call" title="call :: Handles making an API call">
+                                <span class="description">Handles making an API call</span><pre>call</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method protected inherited">
+                            <a href="#method_enableMode" title="enableMode :: Allow an API to use the ?mode= query">
+                                <span class="description">Allow an API to use the ?mode= query</span><pre>enableMode</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_enablePagination" title="enablePagination :: Allows the API endpoint to support pagination">
+                                <span class="description">Allows the API endpoint to support pagination</span><pre>enablePagination</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <li class="method protected inherited">
+                            <a href="#method_getReturnDetails" title="getReturnDetails :: Determine what to return to the user">
+                                <span class="description">Determine what to return to the user</span><pre>getReturnDetails</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_minusPage" title="minusPage :: Take one from the page">
+                                <span class="description">Take one from the page</span><pre>minusPage</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method protected inherited">
+                            <a href="#method_setAPIParameters" title="setAPIParameters :: A shortcut method for setting all required parameters in one function call">
+                                <span class="description">A shortcut method for setting all required parameters in one function call</span><pre>setAPIParameters</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_setBody" title="setBody :: Set the body as an array">
+                                <span class="description">Set the body as an array</span><pre>setBody</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_setContentType" title="setContentType :: Set the content type">
+                                <span class="description">Set the content type</span><pre>setContentType</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_setEndpoint" title="setEndpoint :: Set the endpoint for the API request">
+                                <span class="description">Set the endpoint for the API request</span><pre>setEndpoint</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_setMethod" title="setMethod :: Set the method for the API">
+                                <span class="description">Set the method for the API</span><pre>setMethod</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected inherited">
+                            <a href="#method_setResponseClass" title="setResponseClass :: Set the class to handle the response">
+                                <span class="description">Set the class to handle the response</span><pre>setResponseClass</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
+        </li>
+        <li class="nav-header private">» Private
+            <ul>
+                                                                                                                                                                                                                            <li class="method private inherited">
+                            <a href="#method_createClient" title="createClient :: Creates a client">
+                                <span class="description">Creates a client</span><pre>createClient</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                <li class="method private inherited">
+                            <a href="#method_getBody" title="getBody :: Get the body to put into the request">
+                                <span class="description">Get the body to put into the request</span><pre>getBody</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_getChildInstance" title="getChildInstance :: Returns an instance of the child class, or of itself if
+the child class hasn&#039;t implemented the getInstance method">
+                                <span class="description">Returns an instance of the child class, or of itself if
+the child class hasn&#039;t implemented the getInstance method</span><pre>getChildInstance</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_getContentType" title="getContentType :: Get the content type">
+                                <span class="description">Get the content type</span><pre>getContentType</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_getDefaultGuzzleOptions" title="getDefaultGuzzleOptions :: Gets the default GuzzleHTTP array">
+                                <span class="description">Gets the default GuzzleHTTP array</span><pre>getDefaultGuzzleOptions</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_getEndPoint" title="getEndPoint :: Get the endpoint for the API">
+                                <span class="description">Get the endpoint for the API</span><pre>getEndPoint</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_getFullURL" title="getFullURL :: Get the full URL">
+                                <span class="description">Get the full URL</span><pre>getFullURL</pre>
+                            </a>
+                        </li>
+                                                                                                                    <li class="method private inherited">
+                            <a href="#method_getMethod" title="getMethod :: Gets the method for the request">
+                                <span class="description">Gets the method for the request</span><pre>getMethod</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private inherited">
+                            <a href="#method_getQueryParameters" title="getQueryParameters :: Get the query parameters for the API URL">
+                                <span class="description">Get the query parameters for the API URL</span><pre>getQueryParameters</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                        <li class="method private inherited">
+                            <a href="#method_processResponse" title="processResponse :: Populate the $response property of the request">
+                                <span class="description">Populate the $response property of the request</span><pre>processResponse</pre>
+                            </a>
+                        </li>
+                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+        </li>
+        <li class="nav-header">
+            <i class="icon-custom icon-constant"></i> Constants
+            <ul>
+                            </ul>
+        </li>
+    </ul>
+
+
+        </div>
+
+        <div class="span8">
+            <div class="element class">
+                <h1>UserGroupFolderRequest</h1>
+                <small style="display: block; text-align: right">
+                                            Extends <a href="../classes/Twigger.UnionCloud.API.Request.BaseRequest.html">\Twigger\UnionCloud\API\Request\BaseRequest</a>
+                                                                Implements <a href="../classes/Twigger.UnionCloud.API.Request.IRequest.html">\Twigger\UnionCloud\API\Request\IRequest</a>
+                                    </small>
+                <p class="short_description">Class User Group Folder Request</p>
+                <div class="details">
+                    <div class="long_description">
+                        
+                    </div>
+                    <table class="table table-bordered">
+                                                                                    <tr>
+                                    <th>
+                                        package
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Twigger\UnionCloud\API\UserGroups\UserGroupFolders</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        license
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p><a href="https://opensource.org/licenses/GPL-3.0">https://opensource.org/licenses/GPL-3.0</a>  GNU Public License v3</p>
+                                    </td>
+                                </tr>
+                                                                                                                <tr>
+                                    <th>
+                                        author
+                                                                            </th>
+                                    <td>
+                                                                                    
+                                                                                <p>Toby Twigger <a href="mailto:tt15951@bristol.ac.uk">tt15951@bristol.ac.uk</a></p>
+                                    </td>
+                                </tr>
+                                                                                                                                                                                </table>
+
+                    <h3><i class="icon-custom icon-method"></i> Methods</h3>
+                                                                <a id="method___construct"></a>
+                        <div class="element clickable method public  method___construct inherited" data-toggle="collapse" data-target=".method___construct .collapse">
+                            <h2>BaseRequest constructor.</h2>
+                            <pre>__construct(\Twigger\UnionCloud\API\Auth\Authentication $authentication, \Twigger\UnionCloud\API\Configuration $configuration, string $responseClass) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Saves the given authenticator and configuration</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$authentication</h4>
+                                                <code><a href="../classes/Twigger.UnionCloud.API.Auth.Authentication.html">\Twigger\UnionCloud\API\Auth\Authentication</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$configuration</h4>
+                                                <code><a href="../classes/Twigger.UnionCloud.API.Configuration.html">\Twigger\UnionCloud\API\Configuration</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$responseClass</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addPage"></a>
+                        <div class="element clickable method protected  method_addPage inherited" data-toggle="collapse" data-target=".method_addPage .collapse">
+                            <h2>Add one to the page</h2>
+                            <pre>addPage() : $this</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_addQueryParameter"></a>
+                        <div class="element clickable method protected  method_addQueryParameter inherited" data-toggle="collapse" data-target=".method_addQueryParameter .collapse">
+                            <h2>Adds a query parameter to the URL of the request</h2>
+                            <pre>addQueryParameter(string $key, string $value) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$key</h4>
+                                                <code>string</code><p><p>Key of the query parameter</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code>string</code><p><p>Value of the query parameter</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_call"></a>
+                        <div class="element clickable method protected  method_call inherited" data-toggle="collapse" data-target=".method_call .collapse">
+                            <h2>Handles making an API call</h2>
+                            <pre>call() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Set all the parameters before calling this function.</p>
+<p>It will simply populate the property $this-&gt;response with the
+response from UnionCloud</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\BaseResponseException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_createClient"></a>
+                        <div class="element clickable method private  method_createClient inherited" data-toggle="collapse" data-target=".method_createClient .collapse">
+                            <h2>Creates a client</h2>
+                            <pre>createClient() : \GuzzleHttp\Client</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Creates a default client with the user specified Base URL.</p>
+<p>Will also implement history middleware if debug is on</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>\GuzzleHttp\Client</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_enableMode"></a>
+                        <div class="element clickable method protected  method_enableMode inherited" data-toggle="collapse" data-target=".method_enableMode .collapse">
+                            <h2>Allow an API to use the ?mode= query</h2>
+                            <pre>enableMode(string $mode = &#039;full&#039;) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Pass the mode in, or leave it blank for full (recommended)</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mode</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_enablePagination"></a>
+                        <div class="element clickable method protected  method_enablePagination inherited" data-toggle="collapse" data-target=".method_enablePagination .collapse">
+                            <h2>Allows the API endpoint to support pagination</h2>
+                            <pre>enablePagination() : void</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Call this when defining an API endpoint.</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_get"></a>
+                        <div class="element clickable method public  method_get inherited" data-toggle="collapse" data-target=".method_get .collapse">
+                            <h2>Return just the collection of resources</h2>
+                            <pre>get() : \Twigger\UnionCloud\API\ResourceCollection</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\ResponseMustInheritIResponse</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.API.ResourceCollection.html">\Twigger\UnionCloud\API\ResourceCollection</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAll"></a>
+                        <div class="element clickable method public  method_getAll inherited" data-toggle="collapse" data-target=".method_getAll .collapse">
+                            <h2>Get all records in the API.</h2>
+                            <pre>getAll() : \Twigger\UnionCloud\API\ResourceCollection</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>If you have many records, this API may take a long time. We suggest
+implementing a timeout, or checking there aren't too many rectords</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\BaseResponseException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.API.ResourceCollection.html">\Twigger\UnionCloud\API\ResourceCollection</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getBody"></a>
+                        <div class="element clickable method private  method_getBody inherited" data-toggle="collapse" data-target=".method_getBody .collapse">
+                            <h2>Get the body to put into the request</h2>
+                            <pre>getBody() : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getChildInstance"></a>
+                        <div class="element clickable method private  method_getChildInstance inherited" data-toggle="collapse" data-target=".method_getChildInstance .collapse">
+                            <h2>Returns an instance of the child class, or of itself if
+the child class hasn&#039;t implemented the getInstance method</h2>
+                            <pre>getChildInstance() : \Twigger\UnionCloud\API\Request\BaseRequest</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.API.Request.BaseRequest.html">\Twigger\UnionCloud\API\Request\BaseRequest</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getContentType"></a>
+                        <div class="element clickable method private  method_getContentType inherited" data-toggle="collapse" data-target=".method_getContentType .collapse">
+                            <h2>Get the content type</h2>
+                            <pre>getContentType() : string</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Will return application\x-www-form-urlencoded if a POST request is made, or
+application/json otherwise.</p>
+<p>Can be overridden by using the $this-&gt;setContentType function</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDefaultGuzzleOptions"></a>
+                        <div class="element clickable method private  method_getDefaultGuzzleOptions inherited" data-toggle="collapse" data-target=".method_getDefaultGuzzleOptions .collapse">
+                            <h2>Gets the default GuzzleHTTP array</h2>
+                            <pre>getDefaultGuzzleOptions() : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getEndPoint"></a>
+                        <div class="element clickable method private  method_getEndPoint inherited" data-toggle="collapse" data-target=".method_getEndPoint .collapse">
+                            <h2>Get the endpoint for the API</h2>
+                            <pre>getEndPoint() : string</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getFullURL"></a>
+                        <div class="element clickable method private  method_getFullURL inherited" data-toggle="collapse" data-target=".method_getFullURL .collapse">
+                            <h2>Get the full URL</h2>
+                            <pre>getFullURL() : string</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This consists of:
+/api/endpoint?query</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getInstance"></a>
+                        <div class="element clickable method public  method_getInstance" data-toggle="collapse" data-target=".method_getInstance .collapse">
+                            <h2>Gets the current instance</h2>
+                            <pre>getInstance() : $this</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Implement as:</p>
+<p>public function getIntance()
+{
+{
+return $this;
+}
+}</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getMethod"></a>
+                        <div class="element clickable method private  method_getMethod inherited" data-toggle="collapse" data-target=".method_getMethod .collapse">
+                            <h2>Gets the method for the request</h2>
+                            <pre>getMethod() : string</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getQueryParameters"></a>
+                        <div class="element clickable method private  method_getQueryParameters inherited" data-toggle="collapse" data-target=".method_getQueryParameters .collapse">
+                            <h2>Get the query parameters for the API URL</h2>
+                            <pre>getQueryParameters() : array|null</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>array|null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getResponse"></a>
+                        <div class="element clickable method public  method_getResponse inherited" data-toggle="collapse" data-target=".method_getResponse .collapse">
+                            <h2>Get the whole response class</h2>
+                            <pre>getResponse() : \Twigger\UnionCloud\API\Response\BaseResponse|\Twigger\UnionCloud\API\Response\IResponse</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\ResponseMustInheritIResponse</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.API.Response.BaseResponse.html">\Twigger\UnionCloud\API\Response\BaseResponse</a>|<a href="../classes/Twigger.UnionCloud.API.Response.IResponse.html">\Twigger\UnionCloud\API\Response\IResponse</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getReturnDetails"></a>
+                        <div class="element clickable method protected  method_getReturnDetails inherited" data-toggle="collapse" data-target=".method_getReturnDetails .collapse">
+                            <h2>Determine what to return to the user</h2>
+                            <pre>getReturnDetails() : $this|\Twigger\UnionCloud\API\Response\BaseResponse</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Return the request, a debugged response or a normal response</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this|<a href="../classes/Twigger.UnionCloud.API.Response.BaseResponse.html">\Twigger\UnionCloud\API\Response\BaseResponse</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_minusPage"></a>
+                        <div class="element clickable method protected  method_minusPage inherited" data-toggle="collapse" data-target=".method_minusPage .collapse">
+                            <h2>Take one from the page</h2>
+                            <pre>minusPage() : $this</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_next"></a>
+                        <div class="element clickable method public  method_next inherited" data-toggle="collapse" data-target=".method_next .collapse">
+                            <h2>Return the BaseRequest populated with the next page in the pagination.</h2>
+                            <pre>next() : $this</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\BaseResponseException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Pagination\PageNotFoundException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_paginate"></a>
+                        <div class="element clickable method public  method_paginate inherited" data-toggle="collapse" data-target=".method_paginate .collapse">
+                            <h2>Enable pagination from the user side.</h2>
+                            <pre>paginate() : $this</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Will tell the UnionCloud request that the
+request class should be returned, as opposed to the response class</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p><p>UserRequest class</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_previous"></a>
+                        <div class="element clickable method public  method_previous inherited" data-toggle="collapse" data-target=".method_previous .collapse">
+                            <h2>Return the BaseRequest populated with the previous page in the pagination.</h2>
+                            <pre>previous() : \Twigger\UnionCloud\API\Request\BaseRequest</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\BaseResponseException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Pagination\PageNotFoundException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/Twigger.UnionCloud.API.Request.BaseRequest.html">\Twigger\UnionCloud\API\Request\BaseRequest</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_processResponse"></a>
+                        <div class="element clickable method private  method_processResponse inherited" data-toggle="collapse" data-target=".method_processResponse .collapse">
+                            <h2>Populate the $response property of the request</h2>
+                            <pre>processResponse( $responseHandler) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>Calls the construct of the chosen response handler,</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\BaseResponseException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$responseHandler</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setAPIParameters"></a>
+                        <div class="element clickable method protected  method_setAPIParameters inherited" data-toggle="collapse" data-target=".method_setAPIParameters .collapse">
+                            <h2>A shortcut method for setting all required parameters in one function call</h2>
+                            <pre>setAPIParameters(string $endpoint, string $method, array|null $body = null) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$endpoint</h4>
+                                                <code>string</code><p><p>e.g. 'users/search'</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$body</h4>
+                                                <code>array|null</code><p><p>If you don't include it in a data array, we will</p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setBody"></a>
+                        <div class="element clickable method protected  method_setBody inherited" data-toggle="collapse" data-target=".method_setBody .collapse">
+                            <h2>Set the body as an array</h2>
+                            <pre>setBody( $body) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$body</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setContentType"></a>
+                        <div class="element clickable method protected  method_setContentType inherited" data-toggle="collapse" data-target=".method_setContentType .collapse">
+                            <h2>Set the content type</h2>
+                            <pre>setContentType( $contentType) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>You may pass in full content types, or use the shortcuts
+'json' =&gt; 'application/json',
+'form' =&gt; 'application//x-www-form-urlencoded'</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$contentType</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setEndpoint"></a>
+                        <div class="element clickable method protected  method_setEndpoint inherited" data-toggle="collapse" data-target=".method_setEndpoint .collapse">
+                            <h2>Set the endpoint for the API request</h2>
+                            <pre>setEndpoint(string $endPoint) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$endPoint</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setMethod"></a>
+                        <div class="element clickable method protected  method_setMethod inherited" data-toggle="collapse" data-target=".method_setMethod .collapse">
+                            <h2>Set the method for the API</h2>
+                            <pre>setMethod( $method) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$method</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setMode"></a>
+                        <div class="element clickable method public  method_setMode inherited" data-toggle="collapse" data-target=".method_setMode .collapse">
+                            <h2>Allow the user to set the mode of the API</h2>
+                            <pre>setMode( $mode) : $this</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$mode</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setPage"></a>
+                        <div class="element clickable method public  method_setPage inherited" data-toggle="collapse" data-target=".method_setPage .collapse">
+                            <h2>Set the page number</h2>
+                            <pre>setPage( $page) : $this</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Request\IncorrectRequestParameterException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$page</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>$this</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setResponseClass"></a>
+                        <div class="element clickable method protected  method_setResponseClass inherited" data-toggle="collapse" data-target=".method_setResponseClass .collapse">
+                            <h2>Set the class to handle the response</h2>
+                            <pre>setResponseClass( $responseClass) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"><p>This must implement IResponse</p></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$responseClass</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_someFunction"></a>
+                        <div class="element clickable method public  method_someFunction" data-toggle="collapse" data-target=".method_someFunction .collapse">
+                            <h2>Description</h2>
+                            <pre>someFunction() : $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                            <tr>
+                                                <th>Throws</th>
+                                                <td>
+                                                    <dl>
+                                                                                                            <dt>\GuzzleHttp\Exception\GuzzleException</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound</dt>
+                                                        <dd></dd>
+                                                                                                            <dt>\Twigger\UnionCloud\API\Exception\Response\BaseResponseException</dt>
+                                                        <dd></dd>
+                                                                                                                                                            </dl>
+                                                </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>$this|<a href="../classes/Twigger.UnionCloud.API.Response.IResponse.html">\Twigger\UnionCloud\API\Response\IResponse</a>|<a href="../classes/Twigger.UnionCloud.API.ResourceCollection.html">\Twigger\UnionCloud\API\ResourceCollection</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                    
+                    
+                                                                <h3><i class="icon-custom icon-property"></i> Properties</h3>
+                                                    <a id="property_authentication"> </a>
+                            <div class="element clickable property  protected property_authentication inherited" data-toggle="collapse" data-target=".property_authentication .collapse">
+                                <h2>Authentication wrapper</h2>
+                                <pre>authentication : \Twigger\UnionCloud\API\Auth\Authentication</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Twigger.UnionCloud.API.Auth.Authentication.html">\Twigger\UnionCloud\API\Auth\Authentication</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_configuration"> </a>
+                            <div class="element clickable property  protected property_configuration inherited" data-toggle="collapse" data-target=".property_configuration .collapse">
+                                <h2>Configuration wrapper</h2>
+                                <pre>configuration : \Twigger\UnionCloud\API\Configuration</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Twigger.UnionCloud.API.Configuration.html">\Twigger\UnionCloud\API\Configuration</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_responseClass"> </a>
+                            <div class="element clickable property  private property_responseClass inherited" data-toggle="collapse" data-target=".property_responseClass .collapse">
+                                <h2>A response class that implements IResponse</h2>
+                                <pre>responseClass : \Twigger\UnionCloud\API\Response\BaseResponse</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Twigger.UnionCloud.API.Response.BaseResponse.html">\Twigger\UnionCloud\API\Response\BaseResponse</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_body"> </a>
+                            <div class="element clickable property  private property_body inherited" data-toggle="collapse" data-target=".property_body .collapse">
+                                <h2>Body of the request</h2>
+                                <pre>body : array</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_method"> </a>
+                            <div class="element clickable property  private property_method inherited" data-toggle="collapse" data-target=".property_method .collapse">
+                                <h2>Method to use for the API request</h2>
+                                <pre>method : string</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>POST, GET etc.</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_contentType"> </a>
+                            <div class="element clickable property  private property_contentType inherited" data-toggle="collapse" data-target=".property_contentType .collapse">
+                                <h2>Content Type of the request</h2>
+                                <pre>contentType : string</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>This is either
+-application\json if the body is a string
+-x-www-form-encoded if the body is an array</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_endPoint"> </a>
+                            <div class="element clickable property  private property_endPoint inherited" data-toggle="collapse" data-target=".property_endPoint .collapse">
+                                <h2>Endpoint to send the API request to</h2>
+                                <pre>endPoint : string</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>Relevant to '/api/'</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_queryParameters"> </a>
+                            <div class="element clickable property  private property_queryParameters inherited" data-toggle="collapse" data-target=".property_queryParameters .collapse">
+                                <h2>Query parameters to enter at the end of the URL</h2>
+                                <pre>queryParameters : array</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_useMode"> </a>
+                            <div class="element clickable property  private property_useMode inherited" data-toggle="collapse" data-target=".property_useMode .collapse">
+                                <h2>If this is true, the &#039;mode&#039; query parameter will be set</h2>
+                                <pre>useMode : boolean</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_mode"> </a>
+                            <div class="element clickable property  private property_mode inherited" data-toggle="collapse" data-target=".property_mode .collapse">
+                                <h2>Mode to use for the request.</h2>
+                                <pre>mode : string</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    <p>basic|standard|full</p>
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>string</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_paginates"> </a>
+                            <div class="element clickable property  private property_paginates inherited" data-toggle="collapse" data-target=".property_paginates .collapse">
+                                <h2>Should pagination be used?</h2>
+                                <pre>paginates : boolean</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>This will be set by the Request Class, i,e, by the developer</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_page"> </a>
+                            <div class="element clickable property  private property_page inherited" data-toggle="collapse" data-target=".property_page .collapse">
+                                <h2>Page to use.</h2>
+                                <pre>page : integer</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>This will be put into the query parameters if $pagination is true</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>integer</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_debugResponse"> </a>
+                            <div class="element clickable property  private property_debugResponse inherited" data-toggle="collapse" data-target=".property_debugResponse .collapse">
+                                <h2>Response captured from Guzzle for debugging</h2>
+                                <pre>debugResponse : \GuzzleHttp\Psr7\Response</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\GuzzleHttp\Psr7\Response</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_debugRequest"> </a>
+                            <div class="element clickable property  private property_debugRequest inherited" data-toggle="collapse" data-target=".property_debugRequest .collapse">
+                                <h2>Request captured from Guzzle for debugging</h2>
+                                <pre>debugRequest : \GuzzleHttp\Psr7\Request</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>\GuzzleHttp\Psr7\Request</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_requestOptions"> </a>
+                            <div class="element clickable property  private property_requestOptions inherited" data-toggle="collapse" data-target=".property_requestOptions .collapse">
+                                <h2>Request options passed into Guzzle, for debugging</h2>
+                                <pre>requestOptions : array</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_container"> </a>
+                            <div class="element clickable property  private property_container inherited" data-toggle="collapse" data-target=".property_container .collapse">
+                                <h2>Container for the Guzzle HTTP Stack</h2>
+                                <pre>container : array</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>array</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_returnRequestClass"> </a>
+                            <div class="element clickable property  private property_returnRequestClass inherited" data-toggle="collapse" data-target=".property_returnRequestClass .collapse">
+                                <h2>Determines what calling a request action (i.e. search()) will return</h2>
+                                <pre>returnRequestClass : boolean</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>If set to false, as is by default, the response class alone will be returned
+If set to true, the whole request class will be passed back. This allows the
+user to access the pagination methods</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code>boolean</code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_response"> </a>
+                            <div class="element clickable property  private property_response inherited" data-toggle="collapse" data-target=".property_response .collapse">
+                                <h2>Response from UnionCloud</h2>
+                                <pre>response : \Twigger\UnionCloud\API\Response\BaseResponse</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"><p>This is populated by the $this-&gt;call() function</p></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/Twigger.UnionCloud.API.Response.BaseResponse.html">\Twigger\UnionCloud\API\Response\BaseResponse</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                            </div>
+            </div>
+            <a id="\Twigger\UnionCloud\API\Request\UserGroupFolderRequest"></a>
+            <ul class="breadcrumb">
+                <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
+                    
+    
+    <li><span class="divider">\</span><a href="../namespaces/Twigger.UnionCloud.API.Request.html">Request</a></li>
+
+                <li class="active"><span class="divider">\</span><a href="../classes/Twigger.UnionCloud.API.Request.UserGroupFolderRequest.html">UserGroupFolderRequest</a></li>
+            </ul>
+        </div>
+    </div>
+
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Fri, 14 Dec 2018 03:17:42 +0000.<br/>
+    </footer>
+    </body>
+</html>

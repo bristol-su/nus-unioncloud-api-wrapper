@@ -2,17 +2,17 @@
 /**
  * UserRequest class
  */
-namespace Twigger\UnionCloud\Request;
+namespace Twigger\UnionCloud\API\Request;
 
 
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Configuration;
-use Twigger\UnionCloud\Response\UserResponse;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Configuration;
+use Twigger\UnionCloud\API\Response\UserResponse;
 
 /**
  * Class UserRequest
  *
- * @package Twigger\UnionCloud\Users\Users
+ * @package Twigger\UnionCloud\API\Users\Users
  *
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  *
@@ -66,10 +66,10 @@ class UserRequest extends BaseRequest implements IRequest
      *
      * @param array $parameters Parameter to search for a user with
      *
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function search($parameters)
@@ -95,11 +95,11 @@ class UserRequest extends BaseRequest implements IRequest
      *
      * @param $uid
      *
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function getByUID($uid)
     {
@@ -124,11 +124,11 @@ class UserRequest extends BaseRequest implements IRequest
      *
      * // TODO Calls like this should be made from the response. (i.e. edit the resource and call update() on it)
      *
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function update($uid, $parameters)
     {
@@ -147,11 +147,11 @@ class UserRequest extends BaseRequest implements IRequest
      *
      * @param string $uid
      *
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function delete($uid)
     {
@@ -170,11 +170,11 @@ class UserRequest extends BaseRequest implements IRequest
      * 
      * @param array $parameters Parameters of the new student
      * 
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function uploadStudent($parameters)
     {
@@ -194,11 +194,11 @@ class UserRequest extends BaseRequest implements IRequest
      *
      * @param array $parameters Parameters of the new guest
      *
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function uploadGuest($parameters)
     {

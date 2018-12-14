@@ -18,9 +18,9 @@ Require composer's autoload, and point your scripts to the UnionCloud namespace
 use \Twigger\UnionCloud\API\UnionCloud as UnionCloudWrapper
 ```
 
-##Usage
+## Usage
 
-###Setup
+### Setup
 
 Create a new UnionCloud Wrapper:
 
@@ -59,7 +59,7 @@ Any requests made take the following format:
 
 If your IDE supports DocBlocks, you should have hints at all available resources and methods.
 
-####Resource to interact with
+#### Resource to interact with
 These take the plural form of the resource name in camelCase. For example,
 
 ```php 

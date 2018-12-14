@@ -23,7 +23,7 @@ class PageNotFoundException extends BasePaginationException
      * @param int $unionCloudCode
      * @param string $unionCloudMessage
      */
-    public function __construct($message='Page of results not found', $code=404, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage='')
+    public function __construct($message = 'Page of results not found', $code = 404, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage = '')
     {
         parent::__construct($message, $code, $previous, $unionCloudCode, $unionCloudMessage);
     }

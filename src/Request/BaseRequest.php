@@ -373,8 +373,7 @@ class BaseRequest
      */
     protected function setContentType($contentType)
     {
-        if ($contentType === 'json') { $contentType = 'application/json'; }
-        elseif ($contentType === 'form') { $contentType = 'application/x-www-form-urlencoded'; }
+        if ($contentType === 'json') { $contentType = 'application/json'; } elseif ($contentType === 'form') { $contentType = 'application/x-www-form-urlencoded'; }
         $this->contentType = $contentType;
     }
 
@@ -397,13 +396,13 @@ class BaseRequest
      * @param string $method
      * @param array|null $body If you don't include it in a data array, we will
      */
-    protected function setAPIParameters($endpoint,$method,$body=null)
+    protected function setAPIParameters($endpoint, $method, $body = null)
     {
         $this->setEndpoint($endpoint);
         $this->setMethod($method);
-        if($body !== null)
+        if ($body !== null)
         {
-            $this->setBody((array_key_exists('data', $body)?$body:array('data'=>$body)));
+            $this->setBody((array_key_exists('data', $body) ? $body : array('data'=>$body)));
         }
     }
 
@@ -549,8 +548,7 @@ class BaseRequest
     {
         if (!$this->contentType)
         {
-            if ($this->getMethod() === 'POST') { return 'application/x-www-form-urlencoded'; }
-            else { return 'application/json'; }
+            if ($this->getMethod() === 'POST') { return 'application/x-www-form-urlencoded'; } else { return 'application/json'; }
         }
         return $this->contentType;
     }

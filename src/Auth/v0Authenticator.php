@@ -225,12 +225,12 @@ class v0Authenticator implements IAuthenticator
      */
     public function needsRefresh()
     {
-        if($this->expires === null)
+        if ($this->expires === null)
         {
             return true;
         } elseif ($this->expires instanceof Carbon)
         {
-            return ! $this->expires->isFuture();
+            return !$this->expires->isFuture();
         }
         return true;
     }

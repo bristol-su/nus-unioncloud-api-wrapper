@@ -25,7 +25,7 @@ class BaseRequestException extends BaseUnionCloudException
      * @param int $unionCloudCode
      * @param string $unionCloudMessage
      */
-    public function __construct($message='Error creating a request to UnionCloud', $code=500, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage='')
+    public function __construct($message = 'Error creating a request to UnionCloud', $code = 500, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage = '')
     {
         parent::__construct($message, $code, $previous, $unionCloudCode, $unionCloudMessage);
     }

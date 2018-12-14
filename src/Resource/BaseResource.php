@@ -97,10 +97,10 @@ class BaseResource
      */
     protected function setAllAttributes($attributes)
     {
-        foreach($attributes as $attributeKey => $value)
+        foreach ($attributes as $attributeKey => $value)
         {
             $value = $this->castAttribute($attributeKey, $value);
-            if($value !== null) // Will occur for customCasts, since we don't want the attribute to exist in this class but in the child resource
+            if ($value !== null) // Will occur for customCasts, since we don't want the attribute to exist in this class but in the child resource
             {
                 $this->attributes[$attributeKey] = $value;
             }
@@ -122,7 +122,7 @@ class BaseResource
      */
     public function __get($attributeKey)
     {
-        if($this->doesAttributeExist($attributeKey)) {
+        if ($this->doesAttributeExist($attributeKey)) {
             $attribute = $this->attributes[$attributeKey];
             return $this->castAttribute($attributeKey, $attribute);
         }
@@ -185,10 +185,10 @@ class BaseResource
      */
     private function castAttribute($attributeKey, $attributeValue)
     {
-        if(($castTo = $this->getAttributeCastSetting($attributeKey)) !== false)
+        if (($castTo = $this->getAttributeCastSetting($attributeKey)) !== false)
         {
             return $this->castAttributeFromCode($castTo, $attributeValue);
-        } elseif(($castToSettings = $this->getAttributeCustomCastSettings($attributeKey)) !== false)
+        } elseif (($castToSettings = $this->getAttributeCustomCastSettings($attributeKey)) !== false)
         {
             // The attribute under which the new resource is accessible
             $newAttribute = $castToSettings['new_attribute'];
@@ -199,7 +199,7 @@ class BaseResource
             // The attribute to be set in the new handler
             $newHandlerAttribute = $castToSettings['new_handler_attribute'];
 
-            if(!$this->doesAttributeExist($newAttribute))
+            if (!$this->doesAttributeExist($newAttribute))
             {
                 $this->$newAttribute = new $handler([]);
             }
@@ -252,9 +252,9 @@ class BaseResource
 
     private function getAttributeCastSetting($attributeKey)
     {
-        if(property_exists($this, 'casts'))
+        if (property_exists($this, 'casts'))
         {
-            if(array_key_exists($camelCase = $this->fromSnakeToCamel($attributeKey), $this->casts))
+            if (array_key_exists($camelCase = $this->fromSnakeToCamel($attributeKey), $this->casts))
             {
                 return $this->casts[$camelCase];
             }
@@ -277,11 +277,11 @@ class BaseResource
      */
     private function getAttributeCustomCastSettings($attributeKey)
     {
-        if(property_exists($this, 'customCasts') && is_array($this->customCasts))
+        if (property_exists($this, 'customCasts') && is_array($this->customCasts))
         {
-            foreach($this->customCasts as $classSettings=>$customCast)
+            foreach ($this->customCasts as $classSettings=>$customCast)
             {
-                if(array_key_exists($camelCase = $this->fromSnakeToCamel($attributeKey), $customCast))
+                if (array_key_exists($camelCase = $this->fromSnakeToCamel($attributeKey), $customCast))
                 {
                     $castSettings = explode('|', $classSettings);
                     return [
@@ -327,9 +327,9 @@ class BaseResource
      *
      * @return bool
      */
-    private function doesAttributeExist($attributeKey, $type='camel')
+    private function doesAttributeExist($attributeKey, $type = 'camel')
     {
-        if($type === 'camel')
+        if ($type === 'camel')
         {
             $attributeKey = $this->fromCamelToSnake($attributeKey);
         }
@@ -337,7 +337,7 @@ class BaseResource
         {
             if (array_key_exists($attributeKey, $this->attributes)) {
                 // TODO Check the attribute key isn't blank
-                if($this->attributes[$attributeKey])
+                if ($this->attributes[$attributeKey])
                 {
                     return true;
                 }

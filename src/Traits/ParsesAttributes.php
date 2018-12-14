@@ -28,13 +28,13 @@ use Carbon\Carbon;
 trait ParsesAttributes
 {
 
-     /**
-     * Convert camelCase to snake_case
-     *
-     * @param string $key
-     *
-     * @return string
-     */
+        /**
+         * Convert camelCase to snake_case
+         *
+         * @param string $key
+         *
+         * @return string
+         */
     public function fromCamelToSnake($key)
     {
         preg_match_all('!([A-Z][A-Z0-9]*(?=$|[A-Z][a-z0-9])|[A-Za-z][a-z0-9]+)!', $key, $matches);

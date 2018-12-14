@@ -24,7 +24,7 @@ class BaseResponseException extends BaseUnionCloudException
      * @param int $unionCloudCode
      * @param string $unionCloudMessage
      */
-    public function __construct($message='A problem occured processing the response', $code=500, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage='')
+    public function __construct($message = 'A problem occured processing the response', $code = 500, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage = '')
     {
         parent::__construct($message, $code, $previous, $unionCloudCode, $unionCloudMessage);
     }

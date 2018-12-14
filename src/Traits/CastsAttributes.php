@@ -52,17 +52,19 @@ trait CastsAttributes
             $newWords = array();
             foreach ($words as $word)
             {
-                if (in_array(strtoupper($word), $uppercase_exceptions))
-                    $word = strtoupper($word);
-                else
-                    if (!in_array($word, $lowercase_exceptions))
-                        $word = ucfirst($word);
+                if (in_array(strtoupper($word), $uppercase_exceptions)) {
+                                    $word = strtoupper($word);
+                } else
+                    if (!in_array($word, $lowercase_exceptions)) {
+                                            $word = ucfirst($word);
+                    }
 
                 $newWords[] = $word;
             }
 
-            if (in_array(strtolower($delimiter), $lowercase_exceptions))
-                $delimiter = strtolower($delimiter);
+            if (in_array(strtolower($delimiter), $lowercase_exceptions)) {
+                            $delimiter = strtolower($delimiter);
+            }
 
             $attributeValue = join($delimiter, $newWords);
         }
@@ -84,9 +86,9 @@ trait CastsAttributes
     public function parseCustomResource($attributeValue, $resourceClass)
     {
         $collection = new ResourceCollection();
-        foreach($attributeValue as $resource)
+        foreach ($attributeValue as $resource)
         {
-            try{
+            try {
 
             } catch (\Exception $e)
             {

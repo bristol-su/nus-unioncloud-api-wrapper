@@ -366,38 +366,38 @@ class BaseResponse
     {
 
         // If no data was returned, no resource was found
-        if($this->getRawData() === null)
+        if ($this->getRawData() === null)
         {
             throw new ResourceNotFoundException('The resource wasn\'t found', 404);
         }
 
-        $responseBody = (array_key_exists(0, $this->getRawData())?$this->getRawData()[0]:$this->getRawData());
+        $responseBody = (array_key_exists(0, $this->getRawData()) ? $this->getRawData()[0] : $this->getRawData());
 
         // Process the standard error code response.
 
-        if(array_key_exists('errors', $responseBody) || array_key_exists('error', $responseBody))
+        if (array_key_exists('errors', $responseBody) || array_key_exists('error', $responseBody))
         {
             $errors = [];
             // Get the errors
-            if(array_key_exists('errors', $responseBody))
+            if (array_key_exists('errors', $responseBody))
             {
                 $errors = $responseBody['errors'];
-            } elseif(array_key_exists('error', $responseBody))
+            } elseif (array_key_exists('error', $responseBody))
             {
                 $errors = $responseBody['error'];
             }
 
             // Standardize the errors. If the errors aren't in an enclosing array, put them in one so we can iterate through them
-            if(! array_key_exists(0, $errors))
+            if (!array_key_exists(0, $errors))
             {
                 $errors = [$errors];
             }
 
             // Throw the error
             // TODO allow all errors to be seen by the user
-            foreach($errors as $error)
+            foreach ($errors as $error)
             {
-                if(array_key_exists('error_code', $error) && array_key_exists('error_message', $error))
+                if (array_key_exists('error_code', $error) && array_key_exists('error_message', $error))
                 {
                     $this->throwCustomUnionCloudError($error);
                 }
@@ -424,7 +424,7 @@ class BaseResponse
     {
         $errorCode = $error['error_code'];
         $errorMessage = $error['error_message'];
-        if(($errorDetails = $this->getUnionCloudErrorDetails($errorCode)) !== false)
+        if (($errorDetails = $this->getUnionCloudErrorDetails($errorCode)) !== false)
         {
             throw new $errorDetails['errorClass']($errorDetails['message'], $errorDetails['code'], null, $errorCode, $errorMessage);
         }
@@ -761,7 +761,7 @@ class BaseResponse
             ],
         ];
 
-        if(array_key_exists($errorCode, $errors))
+        if (array_key_exists($errorCode, $errors))
         {
             $error = $errors[$errorCode];
             return [
@@ -790,7 +790,7 @@ class BaseResponse
                 $parsedResource = $this->parseResource($resource);
                 $resources->addResource($parsedResource);
             }
-        } catch(\Exception $e) { }
+        } catch (\Exception $e) { }
         return $resources;
     }
 

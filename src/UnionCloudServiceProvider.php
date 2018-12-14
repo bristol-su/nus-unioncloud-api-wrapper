@@ -32,8 +32,8 @@ class UnionCloudServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../laravel/resources/config/unioncloud.php' => config_path('unioncloud.php'),
-        ]);
+            __DIR__.'/../laravel/resources/config/unioncloud.php' => config_path('unioncloud.php'),
+        ], 'config');
 
     }
 
@@ -45,15 +45,14 @@ class UnionCloudServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->singleton('handleuc', function($app){
-            return new UnionCloud();
+        $this->app->singleton('Twigger\UnionCloud\API\UnionCloud', function($app){
             $unionCloud = new UnionCloud([
-                'email' => $app->config['unioncloud']['v0auth']['email'],
-                'password' => $app->config['unioncloud']['v0auth']['password'],
-                'appID' => $app->config['unioncloud']['v0auth']['appID'],
-                'appPassword' => $app->config['unioncloud']['v0auth']['appPassword'],
+                'email' => config('unioncloud.v0auth.email', 'email'),
+                'password' => config('unioncloud.v0auth.password', 'password'),
+                'appID' => config('unioncloud.v0auth.appID', 'appID'),
+                'appPassword' => config('unioncloud.v0auth.appPassword', 'appPassword'),
             ]);
-            $unionCloud->setBaseURL($app->config['unioncloud']['baseURL']);
+            $unionCloud->setBaseURL(config('unioncloud.baseURL', 'union.unioncloud.org'));
             return $unionCloud;
         });
     }

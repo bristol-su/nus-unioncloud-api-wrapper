@@ -3,9 +3,10 @@
  * Service provider for UnionCloud
  */
 
-namespace Twigger\UnionCloud\API;
+namespace Twigger\UnionCloud\API\Laravel;
 
 use Illuminate\Support\ServiceProvider;
+use Twigger\UnionCloud\API\UnionCloud;
 
 
 /**
@@ -32,7 +33,7 @@ class UnionCloudServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../laravel/resources/config/unioncloud.php' => config_path('unioncloud.php'),
+            __DIR__ . '/config/unioncloud.php' => config_path('unioncloud.php'),
         ], 'config');
 
     }

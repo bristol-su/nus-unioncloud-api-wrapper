@@ -50,6 +50,8 @@ To resolve the UnionCloud instance from the Laravel service container
 $unionCloud = resolve('Twigger\UnionCloud\API\UnionCloud');
 ```
 
+This will be set with your authentication parameters and base URL.
+
 ## Usage
 
 ### Setup

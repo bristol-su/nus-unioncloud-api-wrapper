@@ -13,7 +13,7 @@ use Twigger\UnionCloud\API\UnionCloud;
  * Allow Laravel to use UnionCloud
  * Class UnionCloudServiceProvider
  *
- * @package Twigger\UnionCloud\API
+ * @package Twigger\UnionCloud\API\Laravel
  */
 class UnionCloudServiceProvider extends ServiceProvider
 {

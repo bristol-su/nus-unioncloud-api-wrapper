@@ -19,7 +19,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
      *
      * Extract the environment variables from testing.env
      *
-     * @param null $name
+     * @param null|string $name
      * @param array $data
      * @param string $dataName
      */

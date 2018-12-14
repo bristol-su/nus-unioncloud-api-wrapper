@@ -72,7 +72,7 @@ class ResourceCollection
      */
     public function toJson()
     {
-        return json_encode($this->resources, true);
+        return json_encode($this->resources);
     }
 
     /**

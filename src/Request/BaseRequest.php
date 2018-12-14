@@ -518,7 +518,7 @@ class BaseRequest
         {
             $options['form_params'] = $this->getBody();
         } elseif ($this->getContentType() === 'application/json' && $this->getBody()) {
-            $options["body"] = json_encode($this->getBody(), true);
+            $options["body"] = json_encode($this->getBody());
         }
 
         return $options;
@@ -880,7 +880,7 @@ class BaseRequest
     /**
      * Return just the collection of resources
      *
-     * @return ResourceCollection
+     * @return ResourceCollection\
      *
      * @throws ResponseMustInheritIResponse
      */

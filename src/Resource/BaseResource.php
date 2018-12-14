@@ -124,7 +124,8 @@ class BaseResource
     {
         if ($this->doesAttributeExist($attributeKey)) {
             $attribute = $this->attributes[$attributeKey];
-            return $this->castAttribute($attributeKey, $attribute);
+            return $attribute;
+            //return $this->castAttribute($attributeKey, $attribute);
         }
         return false;
     }
@@ -187,15 +188,16 @@ class BaseResource
     {
         if (($castTo = $this->getAttributeCastSetting($attributeKey)) !== false)
         {
+            # Cast is one of date, properName etc
             return $this->castAttributeFromCode($castTo, $attributeValue);
         } elseif (($castToSettings = $this->getAttributeCustomCastSettings($attributeKey)) !== false)
         {
+            # Cast is custom
+
             // The attribute under which the new resource is accessible
             $newAttribute = $castToSettings['new_attribute'];
             // The new resource to use
             $handler = $castToSettings['handler'];
-            // The attribute to transfer from this class
-            $currentAttribute = $castToSettings['current_attribute'];
             // The attribute to be set in the new handler
             $newHandlerAttribute = $castToSettings['new_handler_attribute'];
 

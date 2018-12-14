@@ -40,7 +40,7 @@ class Authentication
      * Creates and populates an authenticator if possible.
      *
      * @param array $authParams
-     * @param IAuthenticator $authenticator
+     * @param IAuthenticator|string $authenticator
      *
      * @throws AuthenticationParameterMissing
      * @throws AuthenticatorNotFound

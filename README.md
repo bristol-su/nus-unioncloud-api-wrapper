@@ -18,6 +18,37 @@ Require composer's autoload, and point your scripts to the UnionCloud namespace
 use \Twigger\UnionCloud\API\UnionCloud as UnionCloudWrapper
 ```
 
+### Laravel
+
+Support for Laravel is supplied out of the box
+
+#### Configuration
+
+Publish the UnionCloud configuration
+
+```bash
+php artisan vendor:publish --provider="Twigger\UnionCloud\API"
+```
+Add the following to your .env file
+```dotenv
+UNIONCLOUD_BASEURL=bristol.unioncloud.org
+UNIONCLOUD_V0AUTH_EMAIL=myEmail
+UNIONCLOUD_V0AUTH_PASSWORD=myPassword
+UNIONCLOUD_V0AUTH_APPID=appID
+UNIONCLOUD_V0AUTH_APPPASSWORD=appPassword
+```
+
+If you're using Laravel <5.5, you'll also need to register the service provider. Put the following in the ```providers``` array in ```config/app.php```
+
+```php
+Twigger\UnionCloud\API\UnionCloudServiceProvider::class
+```
+
+To resolve the UnionCloud instance from the Laravel service container
+
+```php
+$unionCloud = resolve('Twigger\UnionCloud\API\UnionCloud');
+```
 ## Usage
 
 ### Setup

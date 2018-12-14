@@ -7,4 +7,4 @@
 ast.dump
 phpDocumentor.phar
 
-testing.env
+./testing.env

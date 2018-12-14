@@ -207,7 +207,7 @@ $users->next(); // Return the RequestClass containing the response to the next p
 $users->previous(); // Return the RequestClass containing the response to the previous page.
 ```
 
-## Contributing
+# Contributing
 
 This is an unfinished repository, any any contributions would be welcomed! The following is an incomplete list of things to be done.
 
@@ -215,3 +215,7 @@ This is an unfinished repository, any any contributions would be welcomed! The f
 - Most the resource classes have to be populated with casting information and useful resource specific functions.
 - An authenticator for AWS needs to be written
 
+# Repository Documentation
+
+The automatically generated phpDocumentor documentation may be found on Github Pages
+[phpDoc Documentation](https://tobytwigger.github.io/nus-unioncloud-api-wrapper/)

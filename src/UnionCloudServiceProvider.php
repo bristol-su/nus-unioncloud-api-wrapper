@@ -45,7 +45,8 @@ class UnionCloudServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->singleton('Unioncloud', function($app){
+        $this->app->singleton('handleuc', function($app){
+            return new UnionCloud();
             $unionCloud = new UnionCloud([
                 'email' => $app->config['unioncloud']['v0auth']['email'],
                 'password' => $app->config['unioncloud']['v0auth']['password'],
@@ -53,7 +54,7 @@ class UnionCloudServiceProvider extends ServiceProvider
                 'appPassword' => $app->config['unioncloud']['v0auth']['appPassword'],
             ]);
             $unionCloud->setBaseURL($app->config['unioncloud']['baseURL']);
-
+            return $unionCloud;
         });
     }
 

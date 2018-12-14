@@ -2,28 +2,28 @@
 /**
  * BaseRequest Class, provides ability to create API calls
  */
-namespace Twigger\UnionCloud\Request;
+namespace Twigger\UnionCloud\API\Request;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Configuration;
-use Twigger\UnionCloud\Exception\Pagination\PageNotFoundException;
-use Twigger\UnionCloud\Exception\Request\IncorrectRequestParameterException;
-use Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound;
-use Twigger\UnionCloud\Exception\Response\BaseResponseException;
-use Twigger\UnionCloud\Exception\Response\ResponseMustInheritIResponse;
-use Twigger\UnionCloud\ResourceCollection;
-use Twigger\UnionCloud\Response\BaseResponse;
-use Twigger\UnionCloud\Response\IResponse;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Configuration;
+use Twigger\UnionCloud\API\Exception\Pagination\PageNotFoundException;
+use Twigger\UnionCloud\API\Exception\Request\IncorrectRequestParameterException;
+use Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound;
+use Twigger\UnionCloud\API\Exception\Response\BaseResponseException;
+use Twigger\UnionCloud\API\Exception\Response\ResponseMustInheritIResponse;
+use Twigger\UnionCloud\API\ResourceCollection;
+use Twigger\UnionCloud\API\Response\BaseResponse;
+use Twigger\UnionCloud\API\Response\IResponse;
 
 /**
  * Contains helper functions relevant to making a request
  *
- * @package Twigger\UnionCloud\Core\Requests
+ * @package Twigger\UnionCloud\API\Core\Requests
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  * @author     Toby Twigger <tt15951@bristol.ac.uk>
  */
@@ -472,7 +472,7 @@ class BaseRequest
                 $this->getMethod(),
                 $this->getFullURL()
             );
-            $response = $client->send($request, $options);
+            $client->send($request, $options);
         } catch (\Exception $e)
         {
             // TODO extract any errors from the response itself
@@ -492,8 +492,6 @@ class BaseRequest
             throw new RequestHistoryNotFound('The element wasn\'t found in the history array', 500, $e);
         }
 
-
-        // Set the results to be processed
         // TODO Ensure this method doesn't use the debug variables. That way these don't have to be recorded if not debugging
         $this->processResponse($this->responseClass);
     }
@@ -632,7 +630,7 @@ class BaseRequest
      */
     private function getQueryParameters()
     {
-        $queryParameters = [];
+        $queryParameters = $this->queryParameters;
 
         // Add parameters set through settings
         if ($this->paginates)

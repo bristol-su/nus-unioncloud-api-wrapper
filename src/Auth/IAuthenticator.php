@@ -2,7 +2,7 @@
 /**
  * IAuthenticator Class
  */
-namespace Twigger\UnionCloud\Auth;
+namespace Twigger\UnionCloud\API\Auth;
 
 /**
  * Interface to guide the creation of an authenticator.
@@ -11,7 +11,7 @@ namespace Twigger\UnionCloud\Auth;
  * Authentications. The Authentication wrapper interacts with it.
  *
  * Interface IAuthenticator
- * @package Twigger\UnionCloud\Core\Authentications
+ * @package Twigger\UnionCloud\API\Core\Authentications
  */
 interface IAuthenticator
 {

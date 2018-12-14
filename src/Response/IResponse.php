@@ -3,7 +3,7 @@
  * IResponse class
  */
 
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
 /**
  * Recipe for creating a response class. You should
@@ -11,7 +11,7 @@ namespace Twigger\UnionCloud\Response;
  *
  * Interface IResponse
  *
- * @package Twigger\UnionCloud\Core\Responses
+ * @package Twigger\UnionCloud\API\Core\Responses
  */
 interface IResponse
 {
@@ -37,7 +37,7 @@ interface IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions);
 

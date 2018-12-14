@@ -3,20 +3,20 @@
  * UnionCloud Wrapper Class
  */
 
-namespace Twigger\UnionCloud;
+namespace Twigger\UnionCloud\API;
 
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Auth\IAuthenticator;
-use Twigger\UnionCloud\Exception\Authentication\AuthenticatorNotFound;
-use Twigger\UnionCloud\Exception\Authentication\BaseUnionCloudAuthenticationException;
-use Twigger\UnionCloud\Request;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Auth\IAuthenticator;
+use Twigger\UnionCloud\API\Exception\Authentication\AuthenticatorNotFound;
+use Twigger\UnionCloud\API\Exception\Authentication\BaseUnionCloudAuthenticationException;
+use Twigger\UnionCloud\API\Request;
 
 /**
  * Class UnionCloud
  *
  * Choose your resource from here!
  *
- * @package Twigger\UnionCloud\Core
+ * @package Twigger\UnionCloud\API\Core
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  * @author     Toby Twigger <tt15951@bristol.ac.uk>
  */

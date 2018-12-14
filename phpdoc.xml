@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <phpdoc>
   <parser>
-    <target>/home/toby/development/bristolsu/unioncloud-php-api-wrapper/unioncloud/docs</target>
+    <target>docs</target>
   </parser>
   <transformer>
-    <target>/home/toby/development/bristolsu/unioncloud-php-api-wrapper/unioncloud/docs</target>
+    <target>docs</target>
   </transformer>
   <files>
-    <directory>/home/toby/development/bristolsu/unioncloud-php-api-wrapper/unioncloud/src</directory>
+    <directory>src</directory>
+    <directory>tests</directory>
   </files>
+  <transformations>
+    <template name="responsive-twig" />
+  </transformations>
 </phpdoc>

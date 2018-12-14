@@ -2,15 +2,15 @@
 /**
  * IRequest Interface
  */
-namespace Twigger\UnionCloud\Request;
+namespace Twigger\UnionCloud\API\Request;
 
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Configuration;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Configuration;
 
 /**
  * Interface IRequest
  *
- * @package Twigger\UnionCloud\Core\Requests
+ * @package Twigger\UnionCloud\API\Core\Requests
  */
 interface IRequest
 {

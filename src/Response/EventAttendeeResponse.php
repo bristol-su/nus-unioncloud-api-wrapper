@@ -2,14 +2,14 @@
 /**
  * Event Attendee Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\EventAttendee;
+use Twigger\UnionCloud\API\Resource\EventAttendee;
 
 /**
  * Class Event Attendee Response
  *
- * @package Twigger\UnionCloud\Events\EventAttendees
+ * @package Twigger\UnionCloud\API\Events\EventAttendees
  */
 class EventAttendeeResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class EventAttendeeResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

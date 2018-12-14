@@ -2,18 +2,18 @@
 /**
  * V0 Authenticator
  */
-namespace Twigger\UnionCloud\Auth;
+namespace Twigger\UnionCloud\API\Auth;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;
-use Twigger\UnionCloud\Exception\Authentication\AuthenticationIncorrectParameters;
-use Twigger\UnionCloud\Exception\Authentication\AuthenticationParameterMissing;
-use Twigger\UnionCloud\Exception\Authentication\UnionCloudResponseAuthenticationException;
-use Twigger\UnionCloud\Exception\InsufficientPermissionException;
-use Twigger\UnionCloud\Exception\BaseUnionCloudException;
-use Twigger\UnionCloud\Traits\Authenticates;
+use Twigger\UnionCloud\API\Exception\Authentication\AuthenticationIncorrectParameters;
+use Twigger\UnionCloud\API\Exception\Authentication\AuthenticationParameterMissing;
+use Twigger\UnionCloud\API\Exception\Authentication\UnionCloudResponseAuthenticationException;
+use Twigger\UnionCloud\API\Exception\InsufficientPermissionException;
+use Twigger\UnionCloud\API\Exception\BaseUnionCloudException;
+use Twigger\UnionCloud\API\Traits\Authenticates;
 
 /**
  * The authenticator for version 0 of the API.
@@ -24,7 +24,7 @@ use Twigger\UnionCloud\Traits\Authenticates;
  *
  * Class v0Authenticator
  *
- * @package Twigger\UnionCloud\Authenticators
+ * @package Twigger\UnionCloud\API\Authenticators
  */
 class v0Authenticator implements IAuthenticator
 {
@@ -71,6 +71,13 @@ class v0Authenticator implements IAuthenticator
      * @var string
      */
     private $union_id;
+
+    /**
+     * Expiry of the Auth Token
+     *
+     * @var Carbon
+     */
+    private $expires;
 
     /*
     |--------------------------------------------------------------------------
@@ -218,7 +225,13 @@ class v0Authenticator implements IAuthenticator
      */
     public function needsRefresh()
     {
-        // TODO implement check on expiry date and auth token content
+        if($this->expires === null)
+        {
+            return true;
+        } elseif ($this->expires instanceof Carbon)
+        {
+            return ! $this->expires->isFuture();
+        }
         return true;
     }
 
@@ -393,7 +406,7 @@ class v0Authenticator implements IAuthenticator
 
         try {
             $this->authToken = $responseBody['response']['auth_token'];
-            $this->expires = $responseBody['response']['expires'];
+            $this->expires = Carbon::now()->addSeconds($responseBody['response']['expires']);
             $this->union_id = $responseBody['response']['union_id'];
         } catch (\Exception $e) {
             throw new UnionCloudResponseAuthenticationException('Couldn\'t find required Auth Token parameters in the response', 500, $e);

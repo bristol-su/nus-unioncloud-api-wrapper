@@ -2,7 +2,7 @@
 /**
  * Authenticates Trait
  */
-namespace Twigger\UnionCloud\Traits;
+namespace Twigger\UnionCloud\API\Traits;
 
 /**
  * Helper functions for Authenticators
@@ -11,7 +11,7 @@ namespace Twigger\UnionCloud\Traits;
  *      an array_keys_exist function, to validate parameters are all given
  *      A header function to add a header to Guzzle HTTP options
  *
- * @package Twigger\UnionCloud\Core\Traits
+ * @package Twigger\UnionCloud\API\Core\Traits
  */
 trait Authenticates
 {

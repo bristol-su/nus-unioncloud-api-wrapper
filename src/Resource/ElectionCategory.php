@@ -2,16 +2,16 @@
 /**
  * Election Category Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
 use phpDocumentor\Reflection\DocBlock;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Class User Group Membership
  *
- * @package Twigger\UnionCloud\Elections\ElectionCategories
+ * @package Twigger\UnionCloud\API\Elections\ElectionCategories
  *
  */
 class ElectionCategory extends BaseResource implements IResource

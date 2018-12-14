@@ -3,14 +3,14 @@
  * Base exception thrown by this package
  */
 
-namespace Twigger\UnionCloud\Exception;
+namespace Twigger\UnionCloud\API\Exception;
 
 use Throwable;
 
 /**
  * Class BaseUnionCloudException
  *
- * @package Twigger\UnionCloud\Exceptions
+ * @package Twigger\UnionCloud\API\Exceptions
  */
 class BaseUnionCloudException extends \Exception {
 
@@ -22,9 +22,18 @@ class BaseUnionCloudException extends \Exception {
      * message in the API documentation, allowing
      * for easier debugging.
      *
-     * @var int|null $unionCloudCode
+     * @var int $unionCloudCode
      */
-    protected $unionCloudCode = null;
+    public $unionCloudCode = 0;
+
+    /**
+     * The unioncloud message
+     *
+     * This is the message from UnionCloud
+     *
+     * @var string$unionCloudCode
+     */
+    public $unionCloudMessage = '';
 
     /**
      * BaseUnionCloudException constructor.
@@ -35,10 +44,12 @@ class BaseUnionCloudException extends \Exception {
      * @param int $code
      * @param Throwable|null $previous
      * @param int $unionCloudCode
+     * @param string $unionCloudMessage
      */
-    public function __construct($message = "", $code = 0, Throwable $previous = null, $unionCloudCode = 0)
+    public function __construct($message = "Something went wrong with the UnionCloud API", $code = 500, Throwable $previous = null, $unionCloudCode = 0, $unionCloudMessage = '')
     {
         $this->unionCloudCode = $unionCloudCode;
+        $this->unionCloudMessage = $unionCloudMessage;
         parent::__construct($message, $code, $previous);
     }
 

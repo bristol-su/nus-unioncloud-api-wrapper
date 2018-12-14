@@ -2,18 +2,18 @@
 /**
  * UserGroup Membership Request class
  */
-namespace Twigger\UnionCloud\Request;
+namespace Twigger\UnionCloud\API\Request;
 
 
 use Carbon\Carbon;
-use Twigger\UnionCloud\Auth\Authentication;
-use Twigger\UnionCloud\Configuration;
-use Twigger\UnionCloud\Response\UserGroupMembershipResponse;
+use Twigger\UnionCloud\API\Auth\Authentication;
+use Twigger\UnionCloud\API\Configuration;
+use Twigger\UnionCloud\API\Response\UserGroupMembershipResponse;
 
 /**
  * Class UserRequest
  *
- * @package Twigger\UnionCloud\UserGroups\UserGroupMemberships
+ * @package Twigger\UnionCloud\API\UserGroups\UserGroupMemberships
  *
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  *
@@ -65,11 +65,10 @@ class UserGroupMembershipRequest extends BaseRequest implements IRequest
      * @param Carbon $updatedAfter Date which the user group membership should have been updated after
      * @param Carbon $updatedBefore Date which the user group membership should have been updated before
      * 
-     * @return $this|\Twigger\UnionCloud\Response\IResponse|\Twigger\UnionCloud\ResourceCollection
-     * 
-     * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Twigger\UnionCloud\Exception\Request\RequestHistoryNotFound
-     * @throws \Twigger\UnionCloud\Exception\Response\BaseResponseException
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
     public function users($uid, $updatedAfter = null, $updatedBefore = null)
     {
@@ -80,7 +79,6 @@ class UserGroupMembershipRequest extends BaseRequest implements IRequest
 
         if($updatedAfter !== null) { $this->addQueryParameter('updated_at_after', $updatedAfter->format('d-m-y H:i:s')); }
         if($updatedBefore !== null) { $this->addQueryParameter('updated_at_before', $updatedBefore->format('d-m-y H:i:s')); }
-
         $this->enableMode();
         $this->enablePagination();
         

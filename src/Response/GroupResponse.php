@@ -2,14 +2,14 @@
 /**
  * Group Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\Group;
+use Twigger\UnionCloud\API\Resource\Group;
 
 /**
  * Class Group Response
  *
- * @package Twigger\UnionCloud\Groups\Groups
+ * @package Twigger\UnionCloud\API\Groups\Groups
  */
 class GroupResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class GroupResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

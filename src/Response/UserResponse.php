@@ -2,14 +2,14 @@
 /**
  * User Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\User;
+use Twigger\UnionCloud\API\Resource\User;
 
 /**
  * Class UserResponse
  *
- * @package Twigger\UnionCloud\Users\Users
+ * @package Twigger\UnionCloud\API\Users\Users
  */
 class UserResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class UserResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

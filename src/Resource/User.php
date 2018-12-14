@@ -2,15 +2,15 @@
 /**
  * User Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Class User
  *
- * @package Twigger\UnionCloud\Users\Users
+ * @package Twigger\UnionCloud\API\Users\Users
  *
  * @property int $id ID of the user. Not quite sure what this is!
  * @property int $uid UID of the user.

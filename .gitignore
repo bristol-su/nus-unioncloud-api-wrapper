@@ -6,3 +6,5 @@
 /build/
 ast.dump
 phpDocumentor.phar
+
+testing.env

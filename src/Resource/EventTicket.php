@@ -2,16 +2,16 @@
 /**
  * Event Ticket Resource
  */
-namespace Twigger\UnionCloud\Resource;
+namespace Twigger\UnionCloud\API\Resource;
 
 use phpDocumentor\Reflection\DocBlock;
-use Twigger\UnionCloud\Exception\Resource\ResourceNotFoundException;
-use Twigger\UnionCloud\ResourceCollection;
+use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
+use Twigger\UnionCloud\API\ResourceCollection;
 
 /**
  * Class Event Ticket
  *
- * @package Twigger\UnionCloud\Events\EventTickets
+ * @package Twigger\UnionCloud\API\Events\EventTickets
  *
  */
 class EventTicket extends BaseResource implements IResource

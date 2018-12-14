@@ -2,15 +2,15 @@
 /**
  * Election Voter Demographic Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
 
-use Twigger\UnionCloud\Resource\ElectionVoterDemographic;
+use Twigger\UnionCloud\API\Resource\ElectionVoterDemographic;
 
 /**
  * Class Election Voter Demographic Response
  *
- * @package Twigger\UnionCloud\Elections\ElectionVoterDemographics
+ * @package Twigger\UnionCloud\API\Elections\ElectionVoterDemographics
  */
 class ElectionVoterDemographicResponse extends BaseResponse implements IResponse
 {
@@ -26,7 +26,7 @@ class ElectionVoterDemographicResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

@@ -2,14 +2,14 @@
 /**
  * Event Ticket Type Response Class
  */
-namespace Twigger\UnionCloud\Response;
+namespace Twigger\UnionCloud\API\Response;
 
-use Twigger\UnionCloud\Resource\EventTicketType;
+use Twigger\UnionCloud\API\Resource\EventTicketType;
 
 /**
  * Class Event Ticket Type
  *
- * @package Twigger\UnionCloud\Events\EventTicketTypes
+ * @package Twigger\UnionCloud\API\Events\EventTicketTypes
  */
 class EventTicketTypeResponse extends BaseResponse implements IResponse
 {
@@ -25,7 +25,7 @@ class EventTicketTypeResponse extends BaseResponse implements IResponse
      * @param $response
      * @param $request
      * @param $requestOptions
-     * @throws \Twigger\UnionCloud\Exception\Response\IncorrectResponseTypeException
+     * @throws \Twigger\UnionCloud\API\Exception\Response\IncorrectResponseTypeException
      */
     public function __construct($response, $request, $requestOptions)
     {

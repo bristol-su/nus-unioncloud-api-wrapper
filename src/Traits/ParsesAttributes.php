@@ -2,7 +2,7 @@
 /**
  * GetsSetsAttributes Trait
  */
-namespace Twigger\UnionCloud\Traits;
+namespace Twigger\UnionCloud\API\Traits;
 
 use Carbon\Carbon;
 
@@ -23,7 +23,7 @@ use Carbon\Carbon;
  * This will set the initial resource attributes to
  *
  *
- * @package Twigger\UnionCloud\Core\Traits
+ * @package Twigger\UnionCloud\API\Core\Traits
  */
 trait ParsesAttributes
 {

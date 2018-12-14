@@ -33,7 +33,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Twigger\\UnionCloud\\API\\UnionCloudServiceProvider"
+                "Twigger\\UnionCloud\\API\\Laravel\\UnionCloudServiceProvider"
             ]
         }
     }

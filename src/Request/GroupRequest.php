@@ -55,9 +55,9 @@ class GroupRequest extends BaseRequest implements IRequest
     |
     */
     /**
-     * Description
+     * Get a group by group ID
      * 
-     * @param
+     * @param integer $groupID Group ID
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,12 +65,11 @@ class GroupRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getByID($groupID)
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'groups/'.$groupID,
+            'GET'
         );
         
         $this->enableMode();

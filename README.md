@@ -38,7 +38,7 @@ UNIONCLOUD_V0AUTH_APPID=appID
 UNIONCLOUD_V0AUTH_APPPASSWORD=appPassword
 ```
 
-If you're using Laravel <5.5, you'll also need to register the service provider. Put the following in the ```providers``` array in ```config/app.php```
+If you're using Laravel <5.5, you'll also need to register the service provider in the ```providers``` array in ```config/app.php```
 
 ```php
 Twigger\UnionCloud\API\UnionCloudServiceProvider::class
@@ -49,7 +49,6 @@ To resolve the UnionCloud instance from the Laravel service container
 ```php
 $unionCloud = resolve('Twigger\UnionCloud\API\UnionCloud');
 ```
-
 This will be set with your authentication parameters and base URL.
 
 ## Usage

@@ -133,4 +133,17 @@ class UnionCloud
         return new Request\UserGroupMembershipRequest($this->authentication, $this->configuration);
     }
 
+    /**
+     * Return a Group resource request.
+     *
+     * @return Request\GroupRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function groups()
+    {
+        $this->checkReadyForRequest();
+        return new Request\GroupRequest($this->authentication, $this->configuration);
+    }
+
 }

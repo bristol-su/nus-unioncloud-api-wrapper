@@ -7,7 +7,7 @@ namespace Twigger\UnionCloud\API\Response;
 use Twigger\UnionCloud\API\Resource\EventTicketType;
 
 /**
- * Class Event Ticket Type
+ * Class Event Ticket Type Response
  *
  * @package Twigger\UnionCloud\API\Events\EventTicketTypes
  */
@@ -15,7 +15,7 @@ class EventTicketTypeResponse extends BaseResponse implements IResponse
 {
 
     /**
-     * Event Ticket Type Response constructor.
+     * Event Ticket Types Response constructor.
      *
      * Holds information about the resourceClass
      *

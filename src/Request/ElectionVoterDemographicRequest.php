@@ -54,30 +54,34 @@ class ElectionVoterDemographicRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
-     * 
-     * @param
-     * 
+     * Get election voter demographics for an election
+     *
+     * @param integer $electionID ID of the election
+     * @param string $voterType actual or eligible
+     *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
-     * 
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getByElection($electionID, $voterType='actual')
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'elections/'.$electionID.'/election_voters_demographics',
+            'GET'
         );
-        
+
+        $this->addQueryParameter('voter_type', $voterType);
+
         $this->enableMode();
         $this->enablePagination();
-        
+        $this->enableTimes();
+
         $this->call();
-        
+
         return $this->getReturnDetails();
     }
 

@@ -55,9 +55,9 @@ class EventAttendeeRequest extends BaseRequest implements IRequest
     |
     */
     /**
-     * Description
+     * Get the event attendees for an event
      * 
-     * @param
+     * @param integer $eventID ID of the event
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,16 +65,15 @@ class EventAttendeeRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function someFunction($eventID)
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'events/'.$eventID.'/attendees',
+            'GET'
         );
         
         $this->enableMode();
-        $this->enablePagination();
+        $this->enableTimes();
         
         $this->call();
         

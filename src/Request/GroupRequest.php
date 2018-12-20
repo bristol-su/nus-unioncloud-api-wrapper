@@ -54,10 +54,9 @@ class GroupRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
-     * 
-     * @param
+     * Get all groups from the union
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,19 +64,73 @@ class GroupRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getAll()
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'groups',
+            'GET'
         );
         
         $this->enableMode();
         $this->enablePagination();
+        $this->enableTimes();
         
         $this->call();
         
+        return $this->getReturnDetails();
+    }
+
+    /**
+     * Get a group from UnionCloud
+     *
+     * @param integer $groupID ID of the group to get
+     *
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
+     */
+    public function getByID($groupID)
+    {
+        $this->setAPIParameters(
+            'groups/'.$groupID,
+            'GET'
+        );
+
+        $this->enableMode();
+
+        $this->call();
+
+        return $this->getReturnDetails();
+    }
+
+    /**
+     * Join a Group on UnionCloud
+     *
+     * @param integer $groupID ID of the group to join
+     * @param integer $uid UID of the User joining the group
+     * @param integer $group_membership_id ID of the group membership for the user
+     *
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
+     */
+    public function join($groupID, $uid, $group_membership_id)
+    {
+        $this->setAPIParameters(
+            'groups/'.$groupID.'/join',
+            'POST',
+            [
+                'uid' => $uid,
+                'membership_type_id' => $group_membership_id
+            ]
+        );
+
+        $this->call();
+
         return $this->getReturnDetails();
     }
 

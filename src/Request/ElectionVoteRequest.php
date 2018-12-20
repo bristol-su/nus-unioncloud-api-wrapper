@@ -54,30 +54,30 @@ class ElectionVoteRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
-     * 
-     * @param
-     * 
+     * Get votes for an election
+     *
+     * @param integer $electionID ID of the election
+     *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
-     * 
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getByElection($electionID)
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'elections/'.$electionID.'/votes',
+            'GET'
         );
-        
-        $this->enableMode();
+
         $this->enablePagination();
-        
+        $this->enableTimes();
+
         $this->call();
-        
+
         return $this->getReturnDetails();
     }
 

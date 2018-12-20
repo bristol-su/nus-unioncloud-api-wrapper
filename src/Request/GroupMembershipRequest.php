@@ -54,10 +54,11 @@ class GroupMembershipRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
+     * Get all group memberships owned by a user
      * 
-     * @param
+     * @param integer $uid User ID
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,12 +66,11 @@ class GroupMembershipRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getByUser($uid)
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'users/'.$uid.'/group_memberships',
+            'GET'
         );
         
         $this->enableMode();

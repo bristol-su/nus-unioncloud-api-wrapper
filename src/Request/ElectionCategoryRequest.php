@@ -54,30 +54,52 @@ class ElectionCategoryRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
+
     /**
-     * Description
-     * 
-     * @param
-     * 
+     * Get all election categories
+     *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
-     * 
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getAll()
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'election_categories',
+            'GET'
         );
-        
-        $this->enableMode();
+
         $this->enablePagination();
-        
+        $this->enableTimes();
+
         $this->call();
-        
+
+        return $this->getReturnDetails();
+    }
+
+    /**
+     * Get a specific election category
+     *
+     * @param integer $categoryID ID of the election category
+     *
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
+     */
+    public function getByID($categoryID)
+    {
+        $this->setAPIParameters(
+            'election_categories/'.$categoryID,
+            'GET'
+        );
+
+        $this->call();
+
         return $this->getReturnDetails();
     }
 

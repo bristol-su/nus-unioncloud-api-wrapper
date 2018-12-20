@@ -1,35 +1,36 @@
 <?php
 /**
- * Event Question Request class
+ * Event Ticket Type Request class
  */
 namespace Twigger\UnionCloud\API\Request;
 
 
 use Twigger\UnionCloud\API\Auth\Authentication;
 use Twigger\UnionCloud\API\Configuration;
-use Twigger\UnionCloud\API\Response\EventQuestionResponse;
+use Twigger\UnionCloud\API\Response\EventTicketResponse;
+use Twigger\UnionCloud\API\Response\EventTicketTypeResponse;
 
 /**
- * Class Event Question Request
+ * Class Event Ticket Type Request
  *
- * @package Twigger\UnionCloud\API\Events\EventQuestions
+ * @package Twigger\UnionCloud\API\Events\EventTicketTypes
  *
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  *
  * @author     Toby Twigger <tt15951@bristol.ac.uk>
  *
  */
-class EventQuestionRequest extends BaseRequest implements IRequest
+class EventTicketTypeRequest extends BaseRequest implements IRequest
 {
     /**
-     * Event Question Request constructor.
+     * Event Ticket Types Request constructor.
      *
      * @param Authentication $authentication
      * @param Configuration $configuration
      */
     public function __construct($authentication, $configuration)
     {
-        parent::__construct($authentication, $configuration, EventQuestionResponse::class);
+        parent::__construct($authentication, $configuration, EventTicketTypeResponse::class);
     }
 
 
@@ -56,10 +57,10 @@ class EventQuestionRequest extends BaseRequest implements IRequest
     */
 
     /**
-     * Create a new Event Question
+     * Create a new Event Ticket Type
      *
-     * @param integer $eventID ID of the event to create the question for
-     * @param mixed[] $questionData Data to construct the question
+     * @param integer $eventID ID of the event to create the ticket type for
+     * @param mixed[] $ticketData Data to construct the Ticket Type
      *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
@@ -67,12 +68,12 @@ class EventQuestionRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function create($eventID, $questionData)
+    public function create($eventID, $ticketData)
     {
         $this->setAPIParameters(
-            'events/'.$eventID.'/questions',
+            'events/'.$eventID.'/event_ticket_types',
             'POST',
-            $questionData
+            $ticketData
         );
 
         $this->call();
@@ -81,11 +82,11 @@ class EventQuestionRequest extends BaseRequest implements IRequest
     }
 
     /**
-     * Update an Event Question
+     * Update an Event Ticket Type
      *
      * @param integer $eventID ID of the event
-     * @param integer $questionID ID of the question to update
-     * @param mixed[] $questionData Data of the question to update
+     * @param integer $eventTicketTypeID ID of the event ticket type
+     * @param mixed[] $ticketData Data of the ticket to update
      *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
@@ -93,12 +94,12 @@ class EventQuestionRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function update($eventID, $questionID, $questionData)
+    public function update($eventID, $eventTicketTypeID, $ticketData)
     {
         $this->setAPIParameters(
-            'events/'.$eventID.'/questions/'.$questionID,
+            'events/'.$eventID.'/event_ticket_types/'.$eventTicketTypeID,
             'PUT',
-            $questionData
+            $ticketData
         );
 
         $this->call();
@@ -107,10 +108,10 @@ class EventQuestionRequest extends BaseRequest implements IRequest
     }
 
     /**
-     * Delete an event question
+     * Delete an Event Ticket Type
      *
      * @param integer $eventID ID of the event
-     * @param integer $questionID ID of the event ticket type
+     * @param integer $eventTicketTypeID ID of the event ticket type
      *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
@@ -118,10 +119,10 @@ class EventQuestionRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function delete($eventID, $questionID)
+    public function delete($eventID, $eventTicketTypeID)
     {
         $this->setAPIParameters(
-            'events/'.$eventID.'/questions/'.$questionID,
+            'events/'.$eventID.'/event_ticket_types/'.$eventTicketTypeID,
             'DELETE'
         );
 
@@ -129,5 +130,4 @@ class EventQuestionRequest extends BaseRequest implements IRequest
 
         return $this->getReturnDetails();
     }
-
 }

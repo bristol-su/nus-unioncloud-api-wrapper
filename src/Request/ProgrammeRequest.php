@@ -54,10 +54,11 @@ class ProgrammeRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
+     * Upload a Programme
      * 
-     * @param
+     * @param mixed[] $details associative array of details of the programme
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,17 +66,14 @@ class ProgrammeRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function uploadProgramme($details)
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'json/upload/programmes',
+            'POST',
+            $details
         );
-        
-        $this->enableMode();
-        $this->enablePagination();
-        
+
         $this->call();
         
         return $this->getReturnDetails();

@@ -57,9 +57,9 @@ class GroupRequest extends BaseRequest implements IRequest
 
     /**
      * Get all groups from the union
-     * 
+     *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
-     * 
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
@@ -70,13 +70,13 @@ class GroupRequest extends BaseRequest implements IRequest
             'groups',
             'GET'
         );
-        
+
         $this->enableMode();
         $this->enablePagination();
         $this->enableTimes();
-        
+
         $this->call();
-        
+
         return $this->getReturnDetails();
     }
 

@@ -61,10 +61,8 @@ class UserRequest extends BaseRequest implements IRequest
      *      'parameter-name'=>'parameter-value'
      * ]
      *
-     * The possible parameters are:
-     *      - //TODO
-     *
      * @param array $parameters Parameter to search for a user with
+     * @param boolean $searchAcrossEmail Should the API search across all email fields?
      *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
@@ -72,7 +70,7 @@ class UserRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function search($parameters)
+    public function search($parameters, $searchAcrossEmail = true)
     {
         // Set the parameters to make the call
         $this->setAPIParameters(
@@ -80,6 +78,8 @@ class UserRequest extends BaseRequest implements IRequest
             'POST',
             $parameters
         );
+
+        $this->addQueryParameter('search_across_email', $searchAcrossEmail);
 
         $this->enablePagination();
         $this->enableMode();
@@ -169,7 +169,7 @@ class UserRequest extends BaseRequest implements IRequest
     /**
      * Upload a Student
      * 
-     * @param array $parameters Parameters of the new student
+     * @param array $details Parameters of the new student
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -177,12 +177,12 @@ class UserRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function uploadStudent($parameters)
+    public function uploadStudent($details)
     {
         $this->setAPIParameters(
             'json/upload/students',
             'POST',
-            $parameters
+            $details
         );
         
         $this->call();
@@ -193,7 +193,7 @@ class UserRequest extends BaseRequest implements IRequest
     /**
      * Upload a Guest
      *
-     * @param array $parameters Parameters of the new guest
+     * @param array $details Parameters of the new guest
      *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      *
@@ -201,12 +201,12 @@ class UserRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function uploadGuest($parameters)
+    public function uploadGuest($details)
     {
         $this->setAPIParameters(
             'json/upload/guests',
             'POST',
-            $parameters
+            $details
         );
 
         $this->call();

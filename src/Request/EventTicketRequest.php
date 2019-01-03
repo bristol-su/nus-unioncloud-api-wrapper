@@ -12,7 +12,7 @@ use Twigger\UnionCloud\API\Response\EventTicketResponse;
 /**
  * Class Event Ticket Request
  *
- * @package Twigger\UnionCloud\API\Events\EventTickets
+ * @package Twigger\UnionCloud\API\Events\EventTicketTypes
  *
  * @license    https://opensource.org/licenses/GPL-3.0  GNU Public License v3
  *
@@ -54,31 +54,57 @@ class EventTicketRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
-     * 
-     * @param
-     * 
+     * Get all event tickets belonging to a user
+     *
+     * @param int $uid User ID of the user
+     *
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
-     * 
+     *
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getByUser($uid)
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'users/'.$uid.'/tickets',
+            'GET'
         );
-        
+
         $this->enableMode();
         $this->enablePagination();
-        
+
         $this->call();
-        
+
         return $this->getReturnDetails();
     }
 
+    /**
+     * Redeem a ticket from a user
+     *
+     * @param int $eventID ID of the event
+     * @param string $ticketNo Ticket number
+     *
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
+     */
+    public function redeem($eventID, $ticketNo)
+    {
+        $this->setAPIParameters(
+            'events/'.$eventID.'/ticket_redemption',
+            'POST',
+            [
+                'ticket_number' => $ticketNo
+            ]
+        );
+
+        $this->call();
+
+        return $this->getReturnDetails();
+    }
 }

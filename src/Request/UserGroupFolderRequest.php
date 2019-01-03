@@ -54,10 +54,9 @@ class UserGroupFolderRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
-     * 
-     * @param
+     * Get the UserGroup Folder Structure
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,17 +64,15 @@ class UserGroupFolderRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getStructure()
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'user_groups/folderstructure',
+            'GET'
         );
         
-        $this->enableMode();
-        $this->enablePagination();
-        
+        $this->enableTimes();
+
         $this->call();
         
         return $this->getReturnDetails();

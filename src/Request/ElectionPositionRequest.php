@@ -54,10 +54,9 @@ class ElectionPositionRequest extends BaseRequest implements IRequest
     | Define your API endpoints below here
     |
     */
+
     /**
-     * Description
-     * 
-     * @param
+     * Get all election positions
      * 
      * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
      * 
@@ -65,19 +64,43 @@ class ElectionPositionRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction()
+    public function getAll()
     {
         $this->setAPIParameters(
-            'endpoint',
-            'GET',
-            []
+            'election_positions',
+            'GET'
         );
         
         $this->enableMode();
         $this->enablePagination();
+        $this->enableTimes();
         
         $this->call();
         
+        return $this->getReturnDetails();
+    }
+
+    /**
+     * Get a specific election position
+     *
+     * @param integer $positionID ID of the election position
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
+     */
+    public function getByID($positionID)
+    {
+        $this->setAPIParameters(
+            'election_positions/'.$positionID,
+            'GET'
+        );
+
+        $this->enableMode();
+
+        $this->call();
+
         return $this->getReturnDetails();
     }
 

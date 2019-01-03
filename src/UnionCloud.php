@@ -24,6 +24,16 @@ use Twigger\UnionCloud\API\Request;
 class UnionCloud
 {
 
+
+    /*
+    |--------------------------------------------------------------------------
+    | Class Holders
+    |--------------------------------------------------------------------------
+    |
+    | Holders for the authenticator and configuration
+    |
+    */
+
     /**
      * Holds the Authentication wrapper, a wrapper for the authenticator
      *
@@ -38,6 +48,7 @@ class UnionCloud
      * @var Configuration
      */
     protected $configuration;
+
 
     /**
      * UnionCloud constructor.
@@ -107,17 +118,236 @@ class UnionCloud
         $this->configuration->setDebug($debug);
     }
 
+
+    /*
+   |--------------------------------------------------------------------------
+   | API Request Classes
+   |--------------------------------------------------------------------------
+   |
+   | A set of functions which return request classes, allowing access to
+   | the methods of each resource
+   |
+   */
+
     /**
-     * Return a user resource request.
+     * Return an election category resource request.
      *
-     * @return Request\UserRequest
+     * @return Request\ElectionCategoryRequest
      *
      * @throws AuthenticatorNotFound
      */
-    public function users()
+    public function electionCategories()
     {
         $this->checkReadyForRequest();
-        return new Request\UserRequest($this->authentication, $this->configuration);
+        return new Request\ElectionCategoryRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a Election Position resource request.
+     *
+     * @return Request\ElectionPositionRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function electionPositions()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ElectionPositionRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a Election resource request.
+     *
+     * @return Request\ElectionRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function elections()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ElectionRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a election standing resource request.
+     *
+     * @return Request\ElectionStandingRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function electionStandings()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ElectionStandingRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a election voter demographic resource request.
+     *
+     * @return Request\ElectionVoterDemographicRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function electionVoterDemographics()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ElectionVoterDemographicRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a election vote resource request.
+     *
+     * @return Request\ElectionVoteRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function electionVotes()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ElectionVoteRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a election voter resource request.
+     *
+     * @return Request\ElectionVoterRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function electionVoters()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ElectionVoterRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a event Attendee resource request.
+     *
+     * @return Request\EventAttendeeRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function eventAttendees()
+    {
+        $this->checkReadyForRequest();
+        return new Request\EventAttendeeRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a event question resource request.
+     *
+     * @return Request\EventQuestionRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function eventQuestions()
+    {
+        $this->checkReadyForRequest();
+        return new Request\EventQuestionRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a event resource request.
+     *
+     * @return Request\EventRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function events()
+    {
+        $this->checkReadyForRequest();
+        return new Request\EventRequest($this->authentication, $this->configuration);
+    }
+    /**
+     * Return a event ticket resource request.
+     *
+     * @return Request\EventTicketRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function eventTickets()
+    {
+        $this->checkReadyForRequest();
+        return new Request\EventTicketRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a event ticket type resource request.
+     *
+     * @return Request\EventTicketTypeRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function eventTicketTypes()
+    {
+        $this->checkReadyForRequest();
+        return new Request\EventTicketTypeRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a event type resource request.
+     *
+     * @return Request\EventTypeRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function eventTypes()
+    {
+        $this->checkReadyForRequest();
+        return new Request\EventTypeRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a group membership resource request.
+     *
+     * @return Request\GroupMembershipRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function groupMemberships()
+    {
+        $this->checkReadyForRequest();
+        return new Request\GroupMembershipRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a group resource request.
+     *
+     * @return Request\GroupRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function groups()
+    {
+        $this->checkReadyForRequest();
+        return new Request\GroupRequest($this->authentication, $this->configuration);
+    }
+
+
+    /**
+     * Return a programme resource request.
+     *
+     * @return Request\ProgrammeRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function programmes()
+    {
+        $this->checkReadyForRequest();
+        return new Request\ProgrammeRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a UserGroup Folder resource request.
+     *
+     * @return Request\UserGroupFolderRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function userGroupFolders()
+    {
+        $this->checkReadyForRequest();
+        return new Request\UserGroupFolderRequest($this->authentication, $this->configuration);
     }
 
     /**
@@ -131,6 +361,32 @@ class UnionCloud
     {
         $this->checkReadyForRequest();
         return new Request\UserGroupMembershipRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a usergroup resource request.
+     *
+     * @return Request\UserGroupRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function userGroups()
+    {
+        $this->checkReadyForRequest();
+        return new Request\UserGroupRequest($this->authentication, $this->configuration);
+    }
+
+    /**
+     * Return a user resource request.
+     *
+     * @return Request\UserRequest
+     *
+     * @throws AuthenticatorNotFound
+     */
+    public function users()
+    {
+        $this->checkReadyForRequest();
+        return new Request\UserRequest($this->authentication, $this->configuration);
     }
 
 }

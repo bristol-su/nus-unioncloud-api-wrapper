@@ -4,10 +4,12 @@
  */
 namespace Twigger\UnionCloud\API\Response;
 
+use Twigger\UnionCloud\API\Resource\EventTicket;
+
 /**
  * Class UserResponse
  *
- * @package Twigger\UnionCloud\API\Events\EventTickets
+ * @package Twigger\UnionCloud\API\Events\EventTicketTypes
  */
 class EventTicketResponse extends BaseResponse implements IResponse
 {
@@ -27,7 +29,7 @@ class EventTicketResponse extends BaseResponse implements IResponse
      */
     public function __construct($response, $request, $requestOptions)
     {
-        $resourceClass = EventTicketResponse::class;
+        $resourceClass = EventTicket::class;
 
         parent::__construct($response, $request, $requestOptions, $resourceClass);
 

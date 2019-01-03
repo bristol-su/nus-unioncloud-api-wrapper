@@ -5,6 +5,14 @@ Toby Twigger (tt15951@bristol.ac.uk) on behalf of Bristol SU (https://www.bristo
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/build-status/master)
 
+## Warning
+This package is still in an alpha state - DO NOT use in production without testing first.
+
+As and when I spot errors, I'll be making updates so make sure to always update this package to the most recent version.
+
+As always, any pull requests with bug fixes/feature updates (see the TODOs) will be hugely appreciated!
+
+
 ## Installation
 Add ``twigger/unioncloud`` as a require dependency in your ``composer.json`` file:
 
@@ -239,7 +247,7 @@ This will return a UserRequest class.
 The following methods are now available to be used:
 ```php
 $users->getResponse(); // Get the UserResponse class for the first page
-$users->getAll(); // Return a collection containing all users. This will iterate through pages until the final page is reached, so may take a while (although syncronous requests are coming!)
+$users->getAllPages(); // Return a collection containing all users. This will iterate through pages until the final page is reached, so may take a while (although syncronous requests are coming!)
 $users->next(); // Return the RequestClass containing the response to the next page.
 $users->previous(); // Return the RequestClass containing the response to the previous page.
 ```

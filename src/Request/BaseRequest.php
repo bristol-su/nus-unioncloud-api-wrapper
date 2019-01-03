@@ -273,11 +273,63 @@ class BaseRequest
 
 
 
+    /*
+   |--------------------------------------------------------------------------
+   | User options for APIs
+   |--------------------------------------------------------------------------
+   |
+   | These can be used by the end user to alter default options when creating
+   | API calls.
+   |
+   */
 
 
+    /**
+     * Allow the user to set the mode of the API
+     *
+     * @param $mode
+     *
+     * @return $this
+     */
+    public function setMode($mode)
+    {
+        $this->mode = $mode;
+        return $this;
+    }
 
 
+    /**
+     * Enable pagination from the user side.
+     *
+     * Will tell the UnionCloud request that the
+     * request class should be returned, as opposed to the response class
+     *
+     * @return $this UserRequest class
+     */
+    public function paginate()
+    {
+        $this->returnRequestClass = true;
+        return $this->getChildInstance();
+    }
 
+    /**
+     * Set the page number
+     *
+     * @param $page
+     * @throws IncorrectRequestParameterException
+     *
+     * @return $this
+     */
+    public function setPage($page)
+    {
+        if (!is_int($page))
+        {
+            throw new IncorrectRequestParameterException('Page must be an integer', 400);
+        }
+        $this->page = $page;
+
+        return $this->getChildInstance();
+    }
 
 
 
@@ -304,32 +356,25 @@ class BaseRequest
     protected function enablePagination()
     {
         $this->paginates = true;
+        // TODO Enable supoport for number of records per page
     }
 
     /**
      * Allow an API to use the ?mode= query
      *
-     * Pass the mode in, or leave it blank for full (recommended)
-     *
      * @param string $mode
      */
-    protected function enableMode($mode = 'full')
+    protected function enableMode()
     {
         $this->useMode = true;
-        $this->setMode($mode);
     }
 
     /**
-     * Allow the user to set the mode of the API
-     *
-     * @param $mode
-     *
-     * @return $this
+     * Allow an API to use the updated_at_before and updated_at_after parameters
      */
-    public function setMode($mode)
+    protected function enableTimes()
     {
-        $this->mode = $mode;
-        return $this;
+        // TODO Implement the enableTimes method
     }
 
     /**
@@ -671,39 +716,6 @@ class BaseRequest
 
 
     /**
-     * Enable pagination from the user side.
-     *
-     * Will tell the UnionCloud request that the
-     * request class should be returned, as opposed to the response class
-     *
-     * @return $this UserRequest class
-     */
-    public function paginate()
-    {
-        $this->returnRequestClass = true;
-        return $this->getChildInstance();
-    }
-
-    /**
-     * Set the page number
-     *
-     * @param $page
-     * @throws IncorrectRequestParameterException
-     *
-     * @return $this
-     */
-    public function setPage($page)
-    {
-        if (!is_int($page))
-        {
-            throw new IncorrectRequestParameterException('Page must be an integer', 400);
-        }
-        $this->page = $page;
-
-        return $this->getChildInstance();
-    }
-
-    /**
      * Add one to the page
      *
      * @return $this
@@ -780,7 +792,7 @@ class BaseRequest
      * @throws RequestHistoryNotFound
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getAll()
+    public function getAllPages()
     {
         $resourceCollection = new ResourceCollection();
         $resourceCollection->addResources($this->response->get()->toArray());

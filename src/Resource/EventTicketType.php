@@ -11,7 +11,7 @@ use Twigger\UnionCloud\API\ResourceCollection;
 /**
  * Class Event Ticket Type
  *
- * @package Twigger\UnionCloud\API\Events\EventTicketTypes
+ * @package Twigger\UnionCloud\API\Events\EventTickets
  *
  */
 class EventTicketType extends BaseResource implements IResource
@@ -40,7 +40,7 @@ class EventTicketType extends BaseResource implements IResource
     /**
      * Set the model parameters
      *
-     * Event Ticket Type constructor.
+     * Event Ticket constructor.
      *
      * @throws ResourceNotFoundException
      *

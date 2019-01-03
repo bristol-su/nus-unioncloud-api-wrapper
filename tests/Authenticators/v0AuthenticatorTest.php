@@ -2,9 +2,10 @@
 /**
  * v0Authenticator Test
  */
-namespace Twigger\UnionCloud\Tests;
+namespace Twigger\UnionCloud\Tests\Framework;
 
 use Twigger\UnionCloud\API\Auth\v0Authenticator;
+use Twigger\UnionCloud\Tests\TestCase;
 
 /**
  * Class v0AuthenticatorTest

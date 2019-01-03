@@ -131,7 +131,7 @@ class UserGroupRequest extends BaseRequest implements IRequest
     {
         $this->setAPIParameters(
             'user_groups/'.$ugID,
-            'DELETE',
+            'DELETE'
         );
 
         $this->call();

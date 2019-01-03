@@ -247,7 +247,7 @@ This will return a UserRequest class.
 The following methods are now available to be used:
 ```php
 $users->getResponse(); // Get the UserResponse class for the first page
-$users->getAll(); // Return a collection containing all users. This will iterate through pages until the final page is reached, so may take a while (although syncronous requests are coming!)
+$users->getAllPages(); // Return a collection containing all users. This will iterate through pages until the final page is reached, so may take a while (although syncronous requests are coming!)
 $users->next(); // Return the RequestClass containing the response to the next page.
 $users->previous(); // Return the RequestClass containing the response to the previous page.
 ```

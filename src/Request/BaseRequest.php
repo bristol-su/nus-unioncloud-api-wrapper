@@ -792,7 +792,7 @@ class BaseRequest
      * @throws RequestHistoryNotFound
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
-    public function getAll()
+    public function getAllPages()
     {
         $resourceCollection = new ResourceCollection();
         $resourceCollection->addResources($this->response->get()->toArray());

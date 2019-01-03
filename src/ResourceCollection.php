@@ -17,7 +17,7 @@ use Twigger\UnionCloud\API\Exception\Resource\ResourceNotFoundException;
  *
  * @package Twigger\UnionCloud\API\Core
  */
-class ResourceCollection
+class ResourceCollection implements \IteratorAggregate
 {
 
     /**
@@ -89,6 +89,15 @@ class ResourceCollection
             throw new ResourceNotFoundException('No resources were found.', 404);
         }
         return $this->resources[0];
+    }
+
+    /**
+     * Allow iteration over the elements in the collection
+     *
+     * @return \Traversable|ArrayIterator
+     */
+    public function getIterator() {
+        return new \ArrayIterator( $this->resources );
     }
 
 }

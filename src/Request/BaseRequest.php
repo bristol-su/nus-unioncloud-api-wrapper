@@ -881,6 +881,7 @@ class BaseRequest
     {
         if ($this->returnRequestClass)
         {
+            $this->container = [];
             return $this;
         } else {
             if (!$this->configuration->getDebug())

@@ -92,6 +92,28 @@ class ResourceCollection implements \IteratorAggregate
     }
 
     /**
+     * Create an array populated by the key in each of the models
+     *
+     * @param string $key
+     *
+     * @return array
+     */
+    public function pluck($key)
+    {
+        $values = array();
+
+        foreach($this->resources as $resource)
+        {
+            if(($value = $resource->$key) !== false)
+            {
+                $values[] = $value;
+            }
+        }
+
+        return $values;
+    }
+
+    /**
      * Allow iteration over the elements in the collection
      *
      * @return \Traversable|ArrayIterator

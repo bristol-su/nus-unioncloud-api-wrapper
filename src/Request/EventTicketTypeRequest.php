@@ -75,6 +75,7 @@ class EventTicketTypeRequest extends BaseRequest implements IRequest
             'POST',
             $ticketData
         );
+        $this->setContentType('application/json');
 
         $this->call();
 

@@ -4,6 +4,7 @@
  */
 namespace Twigger\UnionCloud\API\Response;
 
+use Twigger\UnionCloud\API\Resource\Event;
 /**
  * Class Event Response
  *
@@ -27,7 +28,7 @@ class EventResponse extends BaseResponse implements IResponse
      */
     public function __construct($response, $request, $requestOptions)
     {
-        $resourceClass = EventResponse::class;
+        $resourceClass = Event::class;
 
         parent::__construct($response, $request, $requestOptions, $resourceClass);
 

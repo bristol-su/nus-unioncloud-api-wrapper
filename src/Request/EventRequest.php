@@ -73,7 +73,8 @@ class EventRequest extends BaseRequest implements IRequest
             'POST',
             $event
         );
-        
+        $this->setContentType('application/json');
+
         $this->call();
         
         return $this->getReturnDetails();

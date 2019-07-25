@@ -6,7 +6,7 @@ Toby Twigger (tt15951@bristol.ac.uk) on behalf of Bristol SU (https://www.bristo
 [![Build Status](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/tobytwigger/nus-unioncloud-api-wrapper/build-status/master)
 
 ## Warning
-This package is still in an alpha state - DO NOT use in production without testing first.
+This package is still in an beta state - although we're reasonably confident the package works as expected, and we use it in all production systems, not all API endpoints have been tested.
 
 As and when I spot errors, I'll be making updates so make sure to always update this package to the most recent version.
 

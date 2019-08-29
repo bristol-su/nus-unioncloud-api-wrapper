@@ -62,10 +62,11 @@ interface IAuthenticator
      * required for authentication.
      *
      * @param string $baseURL Base URL for making API calls
+     * @param array $options Additional options for the Guzzle client
      *
      * @return void
      */
-    public function authenticate($baseURL);
+    public function authenticate($baseURL, $options = []);
 
     /**
      * Determine if the authenticate function needs to be called.

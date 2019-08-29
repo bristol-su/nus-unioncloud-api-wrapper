@@ -32,7 +32,7 @@ class Authentication
      *
      * @var IAuthenticator
      */
-    private $authenticator;
+    protected $authenticator;
 
     /**
      * Authentication constructor.
@@ -59,6 +59,7 @@ class Authentication
             }
 
             // Validate and set the parameters
+
             if (!$this->authenticator->validateParameters($authParams))
             {
                 throw new AuthenticationParameterMissing();

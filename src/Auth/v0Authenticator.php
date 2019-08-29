@@ -157,6 +157,7 @@ class v0Authenticator implements IAuthenticator
      * required for authentication.
      *
      * @param string $baseURL Base URL for making API calls
+     * @param array $options Additional options for the Guzzle HTTP client
      *
      * @see IAuthenticator::authenticate()
      *
@@ -166,9 +167,9 @@ class v0Authenticator implements IAuthenticator
      *
      * @return void
      */
-    public function authenticate($baseURL)
+    public function authenticate($baseURL, $options = [])
     {
-        $client = new Client(['base_uri' => $baseURL]);
+        $client = new Client(array_merge(['base_uri' => $baseURL], $options));
         try {
             $response = $client->request(
                 'POST',

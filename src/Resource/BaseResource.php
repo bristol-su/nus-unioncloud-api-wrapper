@@ -31,6 +31,11 @@ class BaseResource
     public $attributes = [];
 
     /**
+     * Holds an array representing the original attributes of a resource
+     */
+    protected $original = [];
+    
+    /**
      * Enable casting variables.
      *
      * The key of the array should be the attribute in camelCase
@@ -82,6 +87,7 @@ class BaseResource
      */
     public function __construct($attributes = [])
     {
+        $this->original = $attributes;
         $this->setAllAttributes($attributes);
     }
 
@@ -357,6 +363,16 @@ class BaseResource
     public function getAttributes()
     {
         return $this->attributes;
+    }
+    
+    /**
+     * Get the original attributes of the model
+     * 
+     * @return array
+     */
+    public function getOriginalAttributes()
+    {
+        return $this->original;
     }
 
 }

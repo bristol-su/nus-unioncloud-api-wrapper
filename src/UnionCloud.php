@@ -57,14 +57,25 @@ class UnionCloud
      *
      * @param null|array $authParams Associative array of the Authentication Parameters
      * @param null|string $authenticator AuthenticatorClass::class
+     * @param Authentication|null $authentication
+     * @param Configuration|null $configuration
      *
      * @throws AuthenticatorNotFound
      * @throws Exception\Authentication\AuthenticationParameterMissing
      */
-    public function __construct($authParams = null, $authenticator = null)
+    public function __construct($authParams = null, $authenticator = null, Authentication $authentication = null, Configuration $configuration = null)
     {
-        $this->authentication = new Authentication($authParams, $authenticator);
-        $this->configuration = new Configuration();
+        if($authentication === null) {
+            $this->authentication = new Authentication($authParams, $authenticator);
+        } else {
+            $this->authentication = $authentication;
+        }
+
+        if($configuration === null) {
+            $this->configuration = new Configuration;
+        } else {
+            $this->configuration = $configuration;
+        }
     }
 
     /**

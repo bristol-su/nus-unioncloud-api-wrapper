@@ -12,7 +12,7 @@ use Twigger\UnionCloud\API\ResourceCollection;
  *
  * @package Twigger\UnionCloud\API\Users\Users
  *
- * @property int $id ID of the user. Not quite sure what this is!
+ * @property int $id ID of the user. Usually their Student ID
  * @property int $uid UID of the user.
  * @property string $forename User Forename
  * @property string $surname User Surname

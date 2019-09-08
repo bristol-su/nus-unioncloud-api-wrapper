@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "nesbot/carbon": "^1.36.1",
+        "nesbot/carbon": "^2.24",
         "guzzlehttp/guzzle": "^6.3",
         "ext-json": "^1.5"
     },

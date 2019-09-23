@@ -65,7 +65,7 @@ class EventAttendeeRequest extends BaseRequest implements IRequest
      * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
      * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
      */
-    public function someFunction($eventID)
+    public function forEvent($eventID)
     {
         $this->setAPIParameters(
             'events/'.$eventID.'/attendees',
@@ -74,6 +74,7 @@ class EventAttendeeRequest extends BaseRequest implements IRequest
         
         $this->enableMode();
         $this->enableTimes();
+	$this->enablePagination();
         
         $this->call();
         

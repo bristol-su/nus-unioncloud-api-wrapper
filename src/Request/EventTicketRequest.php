@@ -95,13 +95,21 @@ class EventTicketRequest extends BaseRequest implements IRequest
      */
     public function redeem($eventID, $ticketNo)
     {
-        $this->setAPIParameters(
+
+	$this->setAPIParameters(
             'events/'.$eventID.'/ticket_redemption',
-            'POST',
-            [
-                'ticket_number' => $ticketNo
-            ]
+            'POST'
         );
+
+        $this->setBody([
+            "data" => [
+                [
+                    "ticket_number" => $ticketNo
+                ]
+            ]
+        ]);
+
+	$this->setContentType('json');
 
         $this->call();
 

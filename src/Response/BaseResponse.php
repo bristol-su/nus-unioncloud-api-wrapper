@@ -244,9 +244,13 @@ class BaseResponse
         {
             $body = json_decode($body, true);
         }
-        $this->rawData = $body['data'];
-        $this->rawMeta = $body['meta'];
-
+        if(is_null($body)) {
+            $this->rawData = null;
+            $this->rawMeta = ['Summary' => ['Total'=>0, 'Failure'=>0, 'Success'=>0]];
+        } else {
+            $this->rawData = $body['data'];
+            $this->rawMeta = $body['meta'];   
+        }
     }
 
 

@@ -5,6 +5,7 @@
 
 namespace Twigger\UnionCloud\API\Auth;
 
+use Psr\Http\Message\RequestInterface;
 use Twigger\UnionCloud\API\Configuration;
 use Twigger\UnionCloud\API\Exception\Authentication\AuthenticationParameterMissing;
 use Twigger\UnionCloud\API\Exception\Authentication\AuthenticatorMustExtendIAuthenticator;
@@ -88,6 +89,11 @@ class Authentication
         throw new AuthenticatorMustExtendIAuthenticator();
     }
 
+    public function basePath()
+    {
+        return $this->authenticator->basePath();
+    }
+
 
     /**
      * Add authentication options to a GuzzleHTTP request option array.
@@ -106,6 +112,11 @@ class Authentication
         return $this->authenticator->addAuthentication($options);
     }
 
+    public function prepareRequest(RequestInterface $request)
+    {
+        return $this->authenticator->modifyRequest($request);
+    }
+    
     /**
      * Check the authenticator has been loaded and is ready to be used.
      *
@@ -118,6 +129,11 @@ class Authentication
             return false;
         }
         return true;
+    }
+
+    public function isV1()
+    {
+        return $this->authenticator instanceof awsAuthenticator;
     }
 
 

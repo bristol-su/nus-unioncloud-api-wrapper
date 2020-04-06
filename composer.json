@@ -12,7 +12,8 @@
     "require": {
         "nesbot/carbon": "^2.24",
         "guzzlehttp/guzzle": "^6.3",
-        "ext-json": "*"
+        "ext-json": "*",
+        "aws/aws-sdk-php": "^3.0@dev"
     },
     "minimum-stability": "dev",
     "autoload": {

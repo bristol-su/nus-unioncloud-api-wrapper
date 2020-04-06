@@ -7,6 +7,7 @@ namespace Twigger\UnionCloud\API\Auth;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Twigger\UnionCloud\API\Exception\Authentication\AuthenticationIncorrectParameters;
 use Twigger\UnionCloud\API\Exception\Authentication\AuthenticationParameterMissing;
@@ -414,4 +415,16 @@ class v0Authenticator implements IAuthenticator
         }
     }
 
+    public function modifyRequest(RequestInterface $request)
+    {
+        return $request;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function basePath()
+    {
+        return 'api';
+    }
 }

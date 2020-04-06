@@ -4,6 +4,8 @@
  */
 namespace Twigger\UnionCloud\API\Auth;
 
+use Psr\Http\Message\RequestInterface;
+
 /**
  * Interface to guide the creation of an authenticator.
  *
@@ -15,6 +17,13 @@ namespace Twigger\UnionCloud\API\Auth;
  */
 interface IAuthenticator
 {
+
+    /**
+     * Get the base path for the authenticator
+     * 
+     * @return string e.g. api, v1
+     */
+    public function basePath();
 
     /**
      * Validate the parameters used to authenticate
@@ -104,4 +113,12 @@ interface IAuthenticator
      * @return void
      */
     public function setParameters($parameters);
+
+    /**
+     * Modify the completed request in any way before sending it
+     * 
+     * @param RequestInterface $request
+     * @return mixed
+     */
+    public function modifyRequest(RequestInterface $request);
 }

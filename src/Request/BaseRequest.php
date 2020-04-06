@@ -432,9 +432,11 @@ class BaseRequest
         
         if ($this->getContentType() === 'application/x-www-form-urlencoded') {
             $body = stream_for(http_build_query($body, '', '&'));
-        } elseif ($this->getContentType() === 'application/json' && $this->getBody()) {
+        } elseif ($this->getContentType() === 'application/json' && $body) {
             $body = stream_for(json_encode($body));
-        }
+        } else {
+            $body = null;
+	}
         return $body;
     }
     

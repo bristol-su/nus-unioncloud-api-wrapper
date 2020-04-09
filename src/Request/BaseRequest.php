@@ -424,7 +424,7 @@ class BaseRequest
     private function getParsedBody()
     {
         $body = ($this->getBody() ?: []);
-        if($this->authentication->isV1()) {
+        if($this->authentication->isV1() && $this->getMethod() !== 'GET') {
             foreach($this->getQueryParameters() as $key => $value) {
                 $body[$key] = $value;
             }
@@ -532,7 +532,7 @@ class BaseRequest
     private function getFullURL()
     {
         $url = $this->configuration->getBaseURL() . '/' . $this->authentication->basePath() . '/' . $this->getEndPoint();
-        if(! $this->authentication->isV1()) {
+        if(! $this->authentication->isV1() || $this->getMethod() === 'GET') {
             if (($parameters = $this->getQueryParameters()) !== null) {
                 $url .= '?' . http_build_query($parameters);
             }   

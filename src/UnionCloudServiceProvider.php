@@ -60,6 +60,8 @@ class UnionCloudServiceProvider extends ServiceProvider
                     'secretKey' => config('unioncloud.v1auth.secretKey'),
                     'apiKey' => config('unioncloud.v1auth.apiKey')
                 ], new awsAuthenticator());
+            } else {
+                return;
             }
             $unionCloud->setBaseURL(config('unioncloud.baseURL'));
             return $unionCloud;

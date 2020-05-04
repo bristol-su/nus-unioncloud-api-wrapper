@@ -239,7 +239,7 @@ class BaseResponse
      */
     private function saveResponseBody()
     {
-        $body = $this->response->getBody()->getContents();
+        $body = (string) $this->response->getBody();
         if (is_string($body))
         {
             $body = json_decode($body, true);

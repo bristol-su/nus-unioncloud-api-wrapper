@@ -32,11 +32,21 @@ php artisan vendor:publish --provider="Twigger\UnionCloud\API"
 ```
 Add the following to your .env file
 ```dotenv
+AUTHENTICATOR=v0
 UNIONCLOUD_BASEURL=bristol.unioncloud.org
 UNIONCLOUD_V0AUTH_EMAIL=myEmail
 UNIONCLOUD_V0AUTH_PASSWORD=myPassword
 UNIONCLOUD_V0AUTH_APPID=appID
 UNIONCLOUD_V0AUTH_APPPASSWORD=appPassword
+```
+
+If you're using the version 1 authentication (AWS), you will instead need the following:
+```dotenv
+AUTHENTICATOR=v1
+UNIONCLOUD_BASEURL=api.unioncloud.org
+UNIONCLOUD_V1_ACCESS_KEY=ACCESS_KEY
+UNIONCLOUD_V1_SECRET_KEY=API_SECRET
+UNIONCLOUD_V1_API_KEY=APIKEY
 ```
 
 If you're using Laravel <5.5, you'll also need to register the service provider in the ```providers``` array in ```config/app.php```

@@ -449,7 +449,6 @@ class BaseRequest
     {
         $options = [
             'http_errors' => true,
-            'verify' => __DIR__ . '/../../unioncloud.pem',
             'debug' => false
         ];
 

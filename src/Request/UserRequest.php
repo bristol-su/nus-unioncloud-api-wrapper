@@ -55,6 +55,39 @@ class UserRequest extends BaseRequest implements IRequest
     |
     */
     /**
+     * Get all available users
+     *
+     * Pass the parameters as [
+     *      'parameter-name'=>'parameter-value'
+     * ]
+     *
+     * @param array $parameters Parameter to search for a user with
+     *
+     * @return $this|\Twigger\UnionCloud\API\Response\IResponse|\Twigger\UnionCloud\API\ResourceCollection
+     *
+     * @throws \Twigger\UnionCloud\API\Exception\Request\RequestHistoryNotFound
+     * @throws \Twigger\UnionCloud\API\Exception\Response\BaseResponseException
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function all($parameters)
+    {
+        // Set the parameters to make the call
+        $this->setAPIParameters(
+            'users',
+            'GET',
+            $parameters
+        );
+
+        $this->enablePagination();
+        $this->enableMode();
+
+        $this->call();
+
+
+        return $this->getReturnDetails();
+    }
+
+    /**
      * Search for a user by a variety of parameters
      *
      * Pass the parameters as [

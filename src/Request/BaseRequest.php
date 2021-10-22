@@ -22,7 +22,7 @@ use Twigger\UnionCloud\API\Exception\Response\ResponseMustInheritIResponse;
 use Twigger\UnionCloud\API\ResourceCollection;
 use Twigger\UnionCloud\API\Response\BaseResponse;
 use Twigger\UnionCloud\API\Response\IResponse;
-use function GuzzleHttp\Psr7\stream_for;
+use GuzzleHttp\Psr7\Utils;
 
 /**
  * Contains helper functions relevant to making a request
@@ -431,9 +431,9 @@ class BaseRequest
         }
         
         if ($this->getContentType() === 'application/x-www-form-urlencoded') {
-            $body = stream_for(http_build_query($body, '', '&'));
+            $body = Utils::streamFor(http_build_query($body, '', '&'));
         } elseif ($this->getContentType() === 'application/json' && $body) {
-            $body = stream_for(json_encode($body));
+            $body = Utils::streamFor(json_encode($body));
         } else {
             $body = null;
 	}

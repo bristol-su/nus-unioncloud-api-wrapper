@@ -685,6 +685,7 @@ class BaseRequest
             $this->call();
             $resourceCollection->addResources($this->response->get()->toArray());
             $this->addPage();
+	    $this->container = [];
         }
         return $resourceCollection;
     }
